@@ -8,36 +8,42 @@
 </head>
 <header>
 	<div class='bar-top'>
+		<ul class="nav navbar-nav navbar-left">
+					<li><a href="#"><img src="images/logo/LOGO_Sans_Pression.jpg" alt="Logo"/></a></li>
+					<li><p class="slogan">Cave et bar à bières et vins</p></li>
+		</ul>
 		<div class="container-fluid bar-top-right">
-			<a href="#"><img src="images/logo/LOGO_Sans_Pression.jpg" alt="Logo"/></a>
-			<ul class="nav navbar-nav navbar-right">
-			  <li><a href="#"><span class="glyphicon glyphicon-user pills"></span> S'inscrire</a></li>
-			  <li><a href="#"><span class="glyphicon glyphicon-log-in pills"></span> Se connecter</a></li>
-			</ul>
-			<form class="navbar-form navbar-right">
-				<div class="input-group">
-				<span class="input-group-addon glyphicon glyphicon-search" id="sizing-addon2"></span>
-				<input type="text" class="form-control" aria-describedby="sizing-addon2" placeholder="Produit, Evenement, ...">
-				</div>
-			</form>
+				<ul class="nav navbar-nav navbar-right">
+				  <li><a href="#"><span class="glyphicon glyphicon-user pills"></span> S'inscrire</a></li>
+				  <li><a href="#"><span class="glyphicon glyphicon-log-in pills"></span> Se connecter</a></li>
+				</ul>
+				<form class="nav navbar-nav navbar-right">
+					<div class="input-group">
+					<span class="input-group-addon glyphicon glyphicon-search" id="sizing-addon2"></span>
+					<input type="text" class="form-control recherche" aria-describedby="sizing-addon2" placeholder="Produit, Evenement, ...">
+					</div>
+				</form>
 		</div>
 	</div>
-	<nav class="navbar navbar-default">
+	<nav class="navbar navbar-default bar-nav">
 		<div class="container-fluid">
 			<ul class="nav nav-pills nav-justified">
-			  <li><a href="#">Actu</a></li>
+			  <li><a href="#">Actualités</a></li>
 			  <li><a href="#">Événements</a></li>
 			  <li><a href="#">Produits</a></li>
+			  <li><a href="#">Promotions</a></li>
+			  <li><a href="#">Magasin</a></li>
+			  <li><a href="#">Horraires</a></li>
 			</ul>
 		</div>
 	</nav>
+	<img src="images/tireuse/tireuse.jpg" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 band-tireuse" alt="Logo"/>
 </header>
 
 <body>
 {% block body %}{% endblock %}
 <footer>
     <hr/>
-    &copy; SARL Sans pression
 </footer>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>

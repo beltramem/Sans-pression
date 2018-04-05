@@ -3,9 +3,29 @@
 		background-color : #f8f8f8	 !important;
 }
 
+.navbar{
+	border-top-style: solid;
+	border-top-width : 3px;
+	border-top-color : #9e9e97;
+	box-shadow: 8px 8px 12px #aaa;
+}
+
 .bar-top-right
 {
 	padding-top : 3px;
+	width : auto;
+}
+
+.slogan 
+{
+	padding-top : 53px;
+	color : #c8c135;
+}
+
+@font-face
+{
+	font-family: 'Apple_Chancery';
+	src: url('police/Apple Chancery.ttf') format('truetype');
 }
 
 .navbar-right
@@ -22,5 +42,36 @@
 .input-group-addon, .form-control
 {
 	border-radius : 20px;
+	width : 30px;
 }
 
+
+.band-tireuse
+{
+
+	height : auto;
+	padding-top : 0px;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.input-group
+{
+	margin-top : 8.5px;
+}
+
+.recherche
+{
+	width : 100%;
+}
+
+img
+{
+	margin-top: 35px;
+	padding-right : 15px;
+}
+
+body
+{
+	background-color : #f8f8f8;
+}
