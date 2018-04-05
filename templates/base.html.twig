@@ -1,12 +1,46 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Sans Pression{% endblock %}</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<header>
+	<div class='bar-top'>
+		<div class="container-fluid bar-top-right">
+			<a href="#"><img src="images/logo/LOGO_Sans_Pression.jpg" alt="Logo"/></a>
+			<ul class="nav navbar-nav navbar-right">
+			  <li><a href="#"><span class="glyphicon glyphicon-user pills"></span> S'inscrire</a></li>
+			  <li><a href="#"><span class="glyphicon glyphicon-log-in pills"></span> Se connecter</a></li>
+			</ul>
+			<form class="navbar-form navbar-right">
+				<div class="input-group">
+				<span class="input-group-addon glyphicon glyphicon-search" id="sizing-addon2"></span>
+				<input type="text" class="form-control" aria-describedby="sizing-addon2" placeholder="Produit, Evenement, ...">
+				</div>
+			</form>
+		</div>
+	</div>
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+			<ul class="nav nav-pills nav-justified">
+			  <li><a href="#">Actu</a></li>
+			  <li><a href="#">Événements</a></li>
+			  <li><a href="#">Produits</a></li>
+			</ul>
+		</div>
+	</nav>
+</header>
+
+<body>
+{% block body %}{% endblock %}
+<footer>
+    <hr/>
+    &copy; SARL Sans pression
+</footer>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
 </html>

@@ -1,0 +1,26 @@
+.bar-top{
+	    height: auto;
+		background-color : #f8f8f8	 !important;
+}
+
+.bar-top-right
+{
+	padding-top : 3px;
+}
+
+.navbar-right
+{
+	padding-top : 28px;
+	padding-right : 2%;
+}
+
+.pills, .navbar a, .bar-top a
+{
+	color : #000000 !important;
+}
+
+.input-group-addon, .form-control
+{
+	border-radius : 20px;
+}
+
