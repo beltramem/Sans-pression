@@ -1,77 +1,37 @@
-.bar-top{
-	    height: auto;
-		background-color : #f8f8f8	 !important;
+.navbar{
+	background-color : rgba(0,0,0,0.4);
+	position: absolute; /* Set the navbar to fixed position */
+    top: 0;
+	width: 100%;
+} 
+.nav a{
+	color : #ffffff !important;
 }
 
 .navbar{
-	border-top-style: solid;
-	border-top-width : 3px;
-	border-top-color : #9e9e97;
-	box-shadow: 8px 8px 12px #aaa;
+	min-height : 65px;
+	border-style : none;
+	z-index : 85;
 }
 
-.bar-top-right
+.navbar-brand
 {
-	padding-top : 3px;
-	width : auto;
+	padding-top : 2px;
+	padding-bottom : 0px;
+	padding-left : 100px;
 }
 
-.slogan 
-{
-	padding-top : 53px;
-	color : #c8c135;
-}
-
-@font-face
-{
-	font-family: 'Apple_Chancery';
-	src: url('police/Apple Chancery.ttf') format('truetype');
-}
-
-.navbar-right
-{
-	padding-top : 28px;
-	padding-right : 2%;
-}
-
-.pills, .navbar a, .bar-top a
-{
-	color : #000000 !important;
-}
-
-.input-group-addon, .form-control
-{
-	border-radius : 20px;
-	width : 30px;
-}
-
-
-.band-tireuse
-{
-
-	height : auto;
-	padding-top : 0px;
-	padding-left: 20px;
-	padding-right: 20px;
-}
-
-.input-group
-{
-	margin-top : 8.5px;
-}
-
-.recherche
+.background
 {
 	width : 100%;
 }
 
-img
+.fond-noir
 {
-	margin-top: 35px;
-	padding-right : 15px;
-}
-
-body
-{
-	background-color : #f8f8f8;
+	position : absolute ;
+	top : 0;
+	z-index : 84;
+	background-color :  rgba(0,0,0,0.4);
+	width: 100%;
+	height :auto;
 }
