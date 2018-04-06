@@ -1,25 +1,35 @@
 .navbar{
 	background-color : rgba(0,0,0,0.4);
+	width: 100%;
+}
+.navbar-1{
 	position: absolute; /* Set the navbar to fixed position */
     top: 0;
-	width: 100%;
 } 
+
 .nav a{
 	color : #ffffff !important;
 }
 
 .navbar{
-	min-height : 65px;
+	min-height : 120px;
 	border-style : none;
 	z-index : 85;
 }
 
 .navbar-brand
 {
-	padding-top : 2px;
+	padding-top : 0px;
 	padding-bottom : 0px;
 	padding-left : 100px;
 }
+
+.navbar-brand img
+{
+	max-height : 50px;
+	max-width : 50px;
+}
+
 
 .background
 {
@@ -34,4 +44,22 @@
 	background-color :  rgba(0,0,0,0.4);
 	width: 100%;
 	height :auto;
+}
+
+.contact li
+{
+	color : white;
+	padding-top :10px;
+	font-size : x-small;
+}
+
+.contact span
+{
+	padding-left : 5px;
+	padding-right : 5px;
+}
+
+.account
+{
+	font-size : x-small;
 }
