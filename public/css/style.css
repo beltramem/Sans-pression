@@ -35,6 +35,7 @@
 {
 	width : 100%;
 	max-height : 100vh;
+	box-shadow: 0px 12px 30px black;
 }
 
 .fond-noir
@@ -80,8 +81,80 @@
 	font-size : large;
 }
 
+@font-face { /* Définition d'une nouvelle police nommée CAC Champagne */
+    font-family: 'titre-graphique';
+    src: url('../police/Apalu.ttf') format('truetype');
+}
+
 .description h1
 {
 	text-align : center;
-	color : #c8c135;
+	color : #a7a129;
+	font-family: 'titre-graphique';
+	font-size : 60px;
+	background-attachment : fixed;
+}
+
+.facebook 
+{
+	width : 30px;
+	height : auto;	
+	padding-right : 10%;
+}
+
+h1
+{
+	margin-top :50px;
+	text-align : center;
+	color : #a7a129;
+	font-family: 'titre-graphique';
+	font-size : 120px;
+}
+
+h2
+{
+	margin-top : 20px;
+	text-align : center;
+	color : #535352;
+	font-family: sherif;
+	font-size : 25px;
+}
+
+.inline
+{
+	display : inline;
+}
+
+ul#menu li {
+   display: inline;
+   text-align: center;
+   padding: 2px ;
+   margin: 0;
+   width: 19%;
+}
+
+h2 span
+{
+	padding : 25px;
+}
+
+.produit-home
+{
+	background-color : red;
+	margin : 15px;
+}
+
+.ligne-produit-home
+{
+	padding-top : 25px;
+}
+
+.btn-produit-home
+{
+	box-shadow: 0px -2px 30px black;
+	margin-top : 75px;
+	vertical-align : center;
+	background-color : #a7a129;
+	color : white;
+	font-size : 20px;
 }
