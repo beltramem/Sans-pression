@@ -157,6 +157,7 @@ h3
 .ligne-produit-home
 {
 	padding-top : 25px;
+	margin : 30px;
 }
 
 .btn-produit-home
@@ -197,10 +198,10 @@ h3
 {
 	margin-top : 20px !important;
 	margin-bottom : 15px !important;
-	font-size : 70% !important;
-	color : #aaaaaa !important;
+	font-size : 78% !important;
+	color : #8e8e8b !important;
 }
-.produit-home-alcool
+.produit-home-tableau-gauche
 {
 	border-right-style : solid;
 	border-right-width : 0.5px;
