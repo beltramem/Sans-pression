@@ -111,14 +111,6 @@ h1
 	font-size : 120px;
 }
 
-h2
-{
-	margin-top : 20px;
-	text-align : center;
-	color : #535352;
-	font-family: sherif;
-	font-size : 25px;
-}
 
 .inline
 {
@@ -138,10 +130,28 @@ h2 span
 	padding : 25px;
 }
 
+h2
+{
+	margin-top : 20px;
+	text-align : center;
+	color : #535352;
+	font-family: sherif;
+	font-size : 25px;
+}
+
+h3 
+{
+	font-size : 40px;
+	color : #535352;
+	font-family : 'titre-graphique';
+	margin : 0px;
+	padding : 0px;
+}
+
+
 .produit-home
 {
-	background-color : red;
-	margin : 15px;
+	margin-right : 15px;
 }
 
 .ligne-produit-home
@@ -157,4 +167,51 @@ h2 span
 	background-color : #a7a129;
 	color : white;
 	font-size : 20px;
+	border-radius: 20px;
+}
+
+.produit-home-photo
+{
+	margin : 0px;
+	padding : 0px;
+}
+
+.barre-separation, .barre-separation-2
+{
+	border-bottom-style : solid;
+	border-bottom-width :3px;
+}
+
+.barre-separation
+{
+	border-bottom-color : #a7a129;
+}
+
+.barre-separation-2
+{
+	border-bottom-color : #aaaaaa;
+	border-bottom-width :1px;
+}
+
+.produit-home-description
+{
+	margin-top : 20px !important;
+	margin-bottom : 15px !important;
+	font-size : 70% !important;
+	color : #aaaaaa !important;
+}
+.produit-home-alcool
+{
+	border-right-style : solid;
+	border-right-width : 0.5px;
+	border-right-color : #aaaaaa !important;
+}
+
+.produit-home-text p
+{
+	padding : 0px;
+	margin : 0px;
+	padding-left : 10%;
+	color : #535352;
+	font-size : 100%;
 }
