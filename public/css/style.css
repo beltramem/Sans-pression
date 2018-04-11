@@ -221,3 +221,86 @@ h3
 {
 	display : none;
 }
+
+.div-image-tireuse
+{
+	background-image : url("../images/tireuse/tireuse.jpg");
+	background-size : 100%;
+	background-repeat : no-repeat;
+	height  : calc(100vw / 3.3);
+}
+
+table
+{
+	width : 100%;
+}
+
+.help-tireuse
+{
+	text-align : center;
+	color : #8e8e8b;
+	font-size : 100%;
+}
+
+.tireuse
+{
+	height  : calc(100vw / 3.3);
+	margin : 0px;
+	padding : 0px;
+}
+
+.tireuse:hover
+{
+	background-color : rgba(0,0,0,0.4);
+}
+
+#tireuse-1
+{	
+	width : 15%;
+}
+
+#tireuse-2
+{
+	width : 14%;
+}
+#tireuse-3
+{
+	width : 5.5%;
+}
+#tireuse-4
+{
+	width : 5.5%;
+}
+#tireuse-5
+{
+	width : 5%;
+}
+#tireuse-6
+{
+	width : 5%;
+}
+#tireuse-7
+{
+	width : 5%;
+}
+#tireuse-8
+{
+	width : 5.5%;
+}
+#tireuse-9
+{
+	width : 5.5%;
+
+}
+#tireuse-10
+{
+	width : 5.5%;
+}
+#tireuse-11
+{
+	width : 14%;
+}
+#tireuse-12
+{
+	width : 18%;
+}
