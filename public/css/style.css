@@ -216,3 +216,8 @@ h3
 	color : #535352;
 	font-size : 100%;
 }
+
+.section-produit-tireuse
+{
+	display : none;
+}
