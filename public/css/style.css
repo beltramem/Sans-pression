@@ -303,3 +303,13 @@ table
 {
 	width : 18%;
 }
+
+.tireuse-titre
+{  writing-mode: vertical-rl;
+	text-orientation: sideways;
+	font-family: 'titre-graphique';
+	float : right;
+	padding : 5%;
+	margin : 0px;
+	background-image : url("../images/texture/bois.jpg");
+}
