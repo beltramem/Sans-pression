@@ -76,7 +76,19 @@ function menuRight(){
 }
 
 function selectTireuse(id){
-	console.log(id);
+	var tireuse = document.getElementsByClassName(id)
+	tireuse[0].style.textDecoration = "underline";
+	tireuse[0].style.textDecorationColor = '#a7a129';
+	tireuse[0].style.fontSize = '25px';
+	tireuse[1].style.backgroundColor = 'rgba(0,0,0,0.4)';
+}
+
+function unselectTireuse(id)
+{
+	var tireuse = document.getElementsByClassName(id)
+	tireuse[0].style.textDecoration = "none";
+	tireuse[0].style.fontSize = '100%';
+	tireuse[1].style.backgroundColor = 'rgba(0,0,0,0)';
 }
 
 $(document).ready(function() {
@@ -85,6 +97,12 @@ $(document).ready(function() {
 	});
 	$(".glyphicon-menu-right").click(function() {
 		menuRight();
+	});
+	$(".click-tireuse").hover(function(){
+		selectTireuse(this.getAttribute('id'));
+	});	
+	$(".click-tireuse").mouseout(function(){
+		unselectTireuse(this.getAttribute('id'));
 	});
 	}
 );
