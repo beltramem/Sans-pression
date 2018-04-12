@@ -75,6 +75,10 @@ function menuRight(){
 	}
 }
 
+function selectTireuse(id){
+	console.log(id);
+}
+
 $(document).ready(function() {
 	$(".glyphicon-menu-left").click(function() {
 		menuLeft();

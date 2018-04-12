@@ -86,6 +86,11 @@
     src: url('../police/Apalu.ttf') format('truetype');
 }
 
+@font-face { /* Définition d'une nouvelle police nommée CAC Champagne */
+    font-family: 'tableau';
+    src: url('../police/SplendidB.ttf') format('truetype');
+}
+
 .description h1
 {
 	text-align : center;
@@ -226,12 +231,15 @@ h3
 	background-image : url("../images/tireuse/tireuse.jpg");
 	background-size : 100%;
 	background-repeat : no-repeat;
-	height  : calc(100vw / 3.3);
+	height  : calc(50vw);
+	margin-top : 100px;
 }
 
-table
+.table-image-tireuse
 {
 	width : 100%;
+	position : relative;
+	top : calc((-100vw / 3.3)*0.78);
 }
 
 .help-tireuse
@@ -243,9 +251,9 @@ table
 
 .tireuse
 {
-	height  : calc(100vw / 3.3);
-	margin : 0px;
-	padding : 0px;
+	height  : calc(47vw);
+	position : relative;
+	top : calc(-1.2vw);
 }
 
 .tireuse:hover
@@ -304,12 +312,25 @@ table
 	width : 18%;
 }
 
-.tireuse-titre
-{  writing-mode: vertical-rl;
-	text-orientation: sideways;
-	font-family: 'titre-graphique';
-	float : right;
-	padding : 5%;
-	margin : 0px;
-	background-image : url("../images/texture/bois.jpg");
+.div-tableau-tireuse
+{
+	font-family: 'tableau';
+	background-image : url("../images/background/ardoise.png");
+	height : calc(0.38 * 66vw);
+	background-size : 100%;
+	background-repeat : no-repeat;
+	color : white;
+	position : relative;
+	top : calc(-1vw);
+	z-index : 1;
+}
+
+.table-table-tireuse
+{
+	width : 90%;
+	position : relative;
+	left :5%;
+	top : 15%;
+	font-weight:bold;
+	font-size : calc(1.7vw);
 }
