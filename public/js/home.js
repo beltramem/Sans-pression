@@ -91,7 +91,32 @@ function unselectTireuse(id)
 	tireuse[1].style.backgroundColor = 'rgba(0,0,0,0)';
 }
 
+function dispoHappyHour()
+{
+	var happyHour = document.getElementsByClassName("dispo-happy-hour");
+	console.log(happyHour[0].innerHTML)
+	if(happyHour[0].innerHTML=="<div class=\"glyphicon glyphicon-ok-circle\"></div>Disponible en happy hour")
+	{
+		happyHour[0].style.color = "green";
+	}
+	else
+	{
+		happyHour[0].style.color = "red";
+		var happyIcon = document.getElementsByClassName("glyphicon glyphicon-ok-circle")
+		happyIcon[0].className = "glyphicon glyphicon-remove-circle"
+	}
+}
+
+function scrollTireuse()
+{
+	var speed = 750; // Durée de l'animation (en ms)
+	$('html, body').animate( { scrollTop: $(".description-tireuse").offset().top }, speed ); // Go
+	return false;
+}
+
+
 $(document).ready(function() {
+	dispoHappyHour();
 	$(".glyphicon-menu-left").click(function() {
 		menuLeft();
 	});
@@ -103,6 +128,9 @@ $(document).ready(function() {
 	});	
 	$(".click-tireuse").mouseout(function(){
 		unselectTireuse(this.getAttribute('id'));
+	});
+	$('.click-tireuse').on('click', function() {
+		scrollTireuse();
 	});
 	}
 );
