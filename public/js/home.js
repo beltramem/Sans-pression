@@ -114,6 +114,14 @@ function scrollTireuse()
 	return false;
 }
 
+function scrollTo(div)
+{
+	var page = $(div).attr('href'); // Page cible
+	console.log(page)
+	var speed = 750; // Durée de l'animation (en ms)
+	$('html, body').animate( { scrollTop: $("#produit").offset().top }, speed ); // Go
+	return false;
+}
 
 $(document).ready(function() {
 	dispoHappyHour();
@@ -131,6 +139,9 @@ $(document).ready(function() {
 	});
 	$('.click-tireuse').on('click', function() {
 		scrollTireuse();
+	});	
+	$('.js-scrollTo').on('click', function() {
+		scrollTo(this);
 	});
 	}
 );
