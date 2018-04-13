@@ -111,7 +111,7 @@ h1
 {
 	margin-top :50px;
 	text-align : center;
-	color : #a7a129;
+	color : #a7a129;      /* couleur murs*/
 	font-family: 'titre-graphique';
 	font-size : 120px;
 }
@@ -210,6 +210,8 @@ h3
 	border-right-style : solid;
 	border-right-width : 0.5px;
 	border-right-color : #aaaaaa !important;
+	padding : 0px;
+	margin : 0px;
 }
 
 .produit-home-text p
@@ -333,4 +335,15 @@ h3
 	top : 15%;
 	font-weight:bold;
 	font-size : calc(1.7vw);
+}
+
+.note-star
+{
+	color : #a7a129;
+	font-size : 20px;
+}
+
+.note-star-empty
+{
+	color : auto;
 }
