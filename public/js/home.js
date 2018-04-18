@@ -94,7 +94,6 @@ function unselectTireuse(id)
 function dispoHappyHour()
 {
 	var happyHour = document.getElementsByClassName("dispo-happy-hour");
-	console.log(happyHour[0].innerHTML)
 	if(happyHour[0].innerHTML=="<div class=\"glyphicon glyphicon-ok-circle\"></div>Disponible en happy hour")
 	{
 		happyHour[0].style.color = "green";
@@ -117,7 +116,6 @@ function scrollTireuse()
 function scrollTo(div)
 {
 	var page = $(div).attr('href'); // Page cible
-	console.log(page)
 	var speed = 750; // Durée de l'animation (en ms)
 	$('html, body').animate( { scrollTop: $("#produit").offset().top }, speed ); // Go
 	return false;

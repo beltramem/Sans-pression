@@ -1,0 +1,328 @@
+#------------------------------------------------------------
+#        Script MySQL.
+#------------------------------------------------------------
+
+
+#------------------------------------------------------------
+# Table: Compte-utilisateur
+#------------------------------------------------------------
+
+CREATE TABLE Compte_utilisateur(
+        ID_utilisateur             int (11) Auto_increment  NOT NULL ,
+        Mail_utilisateur           Varchar (50) NOT NULL ,
+        Nom_utilisateur            Varchar (50) NOT NULL ,
+        Prenom_utlisateur          Varchar (50) NOT NULL ,
+        Droit_utilisateur          Int NOT NULL ,
+        Date_naissance_utilisateur Date NOT NULL ,
+        PRIMARY KEY (ID_utilisateur ) ,
+        UNIQUE (Mail_utilisateur )
+)ENGINE=InnoDB;
+
+
+#------------------------------------------------------------
+# Table: Biere
+#------------------------------------------------------------
+
+CREATE TABLE Biere(
+        ID_biere             int (11) Auto_increment  NOT NULL ,
+        Degree_biere         Double ,
+        Note_amertume_biere  Int ,
+        Note_alcool_biere    Int ,
+        Note_puissance_biere Int ,
+        Volume               Float NOT NULL ,
+        ID_produit           Int NOT NULL ,
+        ID_type              Int NOT NULL ,
+        ID_brasserie         Int NOT NULL ,
+        PRIMARY KEY (ID_biere ,ID_produit )
+)ENGINE=InnoDB;
+
+
+#------------------------------------------------------------
+# Table: Produit
+#------------------------------------------------------------
+
+CREATE TABLE Produit(
+        ID_produit            int (11) Auto_increment  NOT NULL ,
+        Nom_produit           Varchar (50) NOT NULL ,
+        Type_produit          Int NOT NULL ,
+        Disponibilite_produit Bool ,
+        Note_produit          Int NOT NULL ,
+        Descrpition_produit   Text ,
+        Photo_produit         Varchar (500) NOT NULL ,
+        PRIMARY KEY (ID_produit ) ,
+        UNIQUE (Nom_produit ,Photo_produit )
+)ENGINE=InnoDB;
+
+
+#------------------------------------------------------------
+# Table: Alcool
+#------------------------------------------------------------
+
+CREATE TABLE Alcool(
+        ID_alcool             int (11) Auto_increment  NOT NULL ,
+        Type_alcool           Int NOT NULL ,
+        Degree_alcool         Double ,
+        Note_puissance_alcool Int ,
+        Note_alcool_alcool    Int ,
+        Note_amertume_alcool  Int ,
+        Volume                Float NOT NULL ,
+        ID_produit            Int NOT NULL ,
+        PRIMARY KEY (ID_alcool ,ID_produit )
+)ENGINE=InnoDB;
+
+
+#------------------------------------------------------------
+# Table: Tireuse
+#------------------------------------------------------------
+
+CREATE TABLE Tireuse(
+        ID_tireuse                    Int NOT NULL ,
+        Disponible_happy_hour_tireuse Bool NOT NULL ,
+        ID_biere                      Int NOT NULL ,
+        ID_produit                    Int NOT NULL ,
+        PRIMARY KEY (ID_tireuse ,ID_biere ,ID_produit )
+)ENGINE=InnoDB;
+
+
+#------------------------------------------------------------
+# Table: Couleur
+#------------------------------------------------------------
+
+CREATE TABLE Couleur(
+        ID_couleur  int (11) Auto_increment  NOT NULL ,
+        Nom_couleur Varchar (25) NOT NULL ,
+        PRIMARY KEY (ID_couleur ) ,
+        UNIQUE (Nom_couleur )
+)ENGINE=InnoDB;
+
+
+#------------------------------------------------------------
+# Table: Type-biere
+#------------------------------------------------------------
+
+CREATE TABLE Type_biere(
+        ID_type  int (11) Auto_increment  NOT NULL ,
+        Nom_type Varchar (25) NOT NULL ,
+        PRIMARY KEY (ID_type )
+)ENGINE=InnoDB;
+
+
+#------------------------------------------------------------
+# Table: Vin
+#------------------------------------------------------------
+
+CREATE TABLE Vin(
+        ID_vin             int (11) Auto_increment  NOT NULL ,
+        Degree_vin         Double ,
+        Note_puissance_vin Int ,
+        Note_alcool_vin    Int ,
+        Note_amertume_vin  Int ,
+        Volume             Float NOT NULL ,
+        ID_produit         Int NOT NULL ,
+        ID_vignoble        Int NOT NULL ,
+        PRIMARY KEY (ID_vin ,ID_produit )
+)ENGINE=InnoDB;
+
+
+#------------------------------------------------------------
+# Table: Brasserie
+#------------------------------------------------------------
+
+CREATE TABLE Brasserie(
+        ID_brasserie  int (11) Auto_increment  NOT NULL ,
+        Nom_brasserie Varchar (50) NOT NULL ,
+        PRIMARY KEY (ID_brasserie ) ,
+        UNIQUE (Nom_brasserie )
+)ENGINE=InnoDB;
+
+
+#------------------------------------------------------------
+# Table: Vignoble
+#------------------------------------------------------------
+
+CREATE TABLE Vignoble(
+        ID_vignoble  int (11) Auto_increment  NOT NULL ,
+        Nom_vignoble Varchar (50) NOT NULL ,
+        PRIMARY KEY (ID_vignoble ) ,
+        UNIQUE (Nom_vignoble )
+)ENGINE=InnoDB;
+
+
+#------------------------------------------------------------
+# Table: Pays-fabrication
+#------------------------------------------------------------
+
+CREATE TABLE Pays_fabrication(
+        ID_pays  int (11) Auto_increment  NOT NULL ,
+        Nom_pays Varchar (50) ,
+        PRIMARY KEY (ID_pays ) ,
+        UNIQUE (Nom_pays )
+)ENGINE=InnoDB;
+
+
+#------------------------------------------------------------
+# Table: Region-fabrication
+#------------------------------------------------------------
+
+CREATE TABLE Region_fabrication(
+        ID_region  int (11) Auto_increment  NOT NULL ,
+        Nom_region Varchar (50) NOT NULL ,
+        ID_pays    Int NOT NULL ,
+        PRIMARY KEY (ID_region ) ,
+        UNIQUE (Nom_region )
+)ENGINE=InnoDB;
+
+
+#------------------------------------------------------------
+# Table: Divers
+#------------------------------------------------------------
+
+CREATE TABLE Divers(
+        ID_divers  int (11) Auto_increment  NOT NULL ,
+        ID_produit Int NOT NULL ,
+        PRIMARY KEY (ID_divers ,ID_produit )
+)ENGINE=InnoDB;
+
+
+#------------------------------------------------------------
+# Table: Type-conteneur
+#------------------------------------------------------------
+
+CREATE TABLE Type_conteneur(
+        ID_type_conteneur  int (11) Auto_increment  NOT NULL ,
+        Nom_type_conteneur Varchar (50) NOT NULL ,
+        PRIMARY KEY (ID_type_conteneur ) ,
+        UNIQUE (Nom_type_conteneur )
+)ENGINE=InnoDB;
+
+
+#------------------------------------------------------------
+# Table: suggestion
+#------------------------------------------------------------
+
+CREATE TABLE suggestion(
+        ID_suggestion  int (11) Auto_increment  NOT NULL ,
+        Nom_suggestion Varchar (50) ,
+        Nom_fabriquant Varchar (50) ,
+        PRIMARY KEY (ID_suggestion )
+)ENGINE=InnoDB;
+
+
+#------------------------------------------------------------
+# Table: Favorie
+#------------------------------------------------------------
+
+CREATE TABLE Favorie(
+        Date_favorie   Date NOT NULL ,
+        ID_utilisateur Int NOT NULL ,
+        ID_produit     Int NOT NULL ,
+        PRIMARY KEY (ID_utilisateur ,ID_produit )
+)ENGINE=InnoDB;
+
+
+#------------------------------------------------------------
+# Table: Commentaire
+#------------------------------------------------------------
+
+CREATE TABLE Commentaire(
+        Contenu_commentaire Text ,
+        ID_utilisateur      Int NOT NULL ,
+        ID_produit          Int NOT NULL ,
+        PRIMARY KEY (ID_utilisateur ,ID_produit )
+)ENGINE=InnoDB;
+
+
+#------------------------------------------------------------
+# Table: Est
+#------------------------------------------------------------
+
+CREATE TABLE Est(
+        ID_couleur         Int NOT NULL ,
+        ID_biere           Int NOT NULL ,
+        ID_produit         Int NOT NULL ,
+        ID_vin             Int NOT NULL ,
+        ID_produit_Produit Int NOT NULL ,
+        PRIMARY KEY (ID_couleur ,ID_biere ,ID_produit ,ID_vin ,ID_produit_Produit )
+)ENGINE=InnoDB;
+
+
+#------------------------------------------------------------
+# Table: Viens
+#------------------------------------------------------------
+
+CREATE TABLE Viens(
+        ID_brasserie Int NOT NULL ,
+        ID_alcool    Int NOT NULL ,
+        ID_produit   Int NOT NULL ,
+        ID_vignoble  Int NOT NULL ,
+        ID_pays      Int NOT NULL ,
+        PRIMARY KEY (ID_brasserie ,ID_alcool ,ID_produit ,ID_vignoble ,ID_pays )
+)ENGINE=InnoDB;
+
+
+#------------------------------------------------------------
+# Table: Note
+#------------------------------------------------------------
+
+CREATE TABLE Note(
+        Note_client    Int NOT NULL ,
+        ID_utilisateur Int NOT NULL ,
+        ID_produit     Int NOT NULL ,
+        PRIMARY KEY (ID_utilisateur ,ID_produit )
+)ENGINE=InnoDB;
+
+
+#------------------------------------------------------------
+# Table: contenu dans
+#------------------------------------------------------------
+
+CREATE TABLE contenu_dans(
+        ID_type_conteneur Int NOT NULL ,
+        ID_biere          Int NOT NULL ,
+        ID_produit        Int NOT NULL ,
+        PRIMARY KEY (ID_type_conteneur ,ID_biere ,ID_produit )
+)ENGINE=InnoDB;
+
+
+#------------------------------------------------------------
+# Table: suggere
+#------------------------------------------------------------
+
+CREATE TABLE suggere(
+        Date_suggestion Date ,
+        ID_utilisateur  Int NOT NULL ,
+        ID_suggestion   Int NOT NULL ,
+        PRIMARY KEY (ID_utilisateur ,ID_suggestion )
+)ENGINE=InnoDB;
+
+ALTER TABLE Biere ADD CONSTRAINT FK_Biere_ID_produit FOREIGN KEY (ID_produit) REFERENCES Produit(ID_produit);
+ALTER TABLE Biere ADD CONSTRAINT FK_Biere_ID_type FOREIGN KEY (ID_type) REFERENCES Type_biere(ID_type);
+ALTER TABLE Biere ADD CONSTRAINT FK_Biere_ID_brasserie FOREIGN KEY (ID_brasserie) REFERENCES Brasserie(ID_brasserie);
+ALTER TABLE Alcool ADD CONSTRAINT FK_Alcool_ID_produit FOREIGN KEY (ID_produit) REFERENCES Produit(ID_produit);
+ALTER TABLE Tireuse ADD CONSTRAINT FK_Tireuse_ID_biere FOREIGN KEY (ID_biere) REFERENCES Biere(ID_biere);
+ALTER TABLE Tireuse ADD CONSTRAINT FK_Tireuse_ID_produit FOREIGN KEY (ID_produit) REFERENCES Produit(ID_produit);
+ALTER TABLE Vin ADD CONSTRAINT FK_Vin_ID_produit FOREIGN KEY (ID_produit) REFERENCES Produit(ID_produit);
+ALTER TABLE Vin ADD CONSTRAINT FK_Vin_ID_vignoble FOREIGN KEY (ID_vignoble) REFERENCES Vignoble(ID_vignoble);
+ALTER TABLE Region_fabrication ADD CONSTRAINT FK_Region_fabrication_ID_pays FOREIGN KEY (ID_pays) REFERENCES Pays_fabrication(ID_pays);
+ALTER TABLE Divers ADD CONSTRAINT FK_Divers_ID_produit FOREIGN KEY (ID_produit) REFERENCES Produit(ID_produit);
+ALTER TABLE Favorie ADD CONSTRAINT FK_Favorie_ID_utilisateur FOREIGN KEY (ID_utilisateur) REFERENCES Compte_utilisateur(ID_utilisateur);
+ALTER TABLE Favorie ADD CONSTRAINT FK_Favorie_ID_produit FOREIGN KEY (ID_produit) REFERENCES Produit(ID_produit);
+ALTER TABLE Commentaire ADD CONSTRAINT FK_Commentaire_ID_utilisateur FOREIGN KEY (ID_utilisateur) REFERENCES Compte_utilisateur(ID_utilisateur);
+ALTER TABLE Commentaire ADD CONSTRAINT FK_Commentaire_ID_produit FOREIGN KEY (ID_produit) REFERENCES Produit(ID_produit);
+ALTER TABLE Est ADD CONSTRAINT FK_Est_ID_couleur FOREIGN KEY (ID_couleur) REFERENCES Couleur(ID_couleur);
+ALTER TABLE Est ADD CONSTRAINT FK_Est_ID_biere FOREIGN KEY (ID_biere) REFERENCES Biere(ID_biere);
+ALTER TABLE Est ADD CONSTRAINT FK_Est_ID_produit FOREIGN KEY (ID_produit) REFERENCES Produit(ID_produit);
+ALTER TABLE Est ADD CONSTRAINT FK_Est_ID_vin FOREIGN KEY (ID_vin) REFERENCES Vin(ID_vin);
+ALTER TABLE Est ADD CONSTRAINT FK_Est_ID_produit_Produit FOREIGN KEY (ID_produit_Produit) REFERENCES Produit(ID_produit);
+ALTER TABLE Viens ADD CONSTRAINT FK_Viens_ID_brasserie FOREIGN KEY (ID_brasserie) REFERENCES Brasserie(ID_brasserie);
+ALTER TABLE Viens ADD CONSTRAINT FK_Viens_ID_alcool FOREIGN KEY (ID_alcool) REFERENCES Alcool(ID_alcool);
+ALTER TABLE Viens ADD CONSTRAINT FK_Viens_ID_produit FOREIGN KEY (ID_produit) REFERENCES Produit(ID_produit);
+ALTER TABLE Viens ADD CONSTRAINT FK_Viens_ID_vignoble FOREIGN KEY (ID_vignoble) REFERENCES Vignoble(ID_vignoble);
+ALTER TABLE Viens ADD CONSTRAINT FK_Viens_ID_pays FOREIGN KEY (ID_pays) REFERENCES Pays_fabrication(ID_pays);
+ALTER TABLE Note ADD CONSTRAINT FK_Note_ID_utilisateur FOREIGN KEY (ID_utilisateur) REFERENCES Compte_utilisateur(ID_utilisateur);
+ALTER TABLE Note ADD CONSTRAINT FK_Note_ID_produit FOREIGN KEY (ID_produit) REFERENCES Produit(ID_produit);
+ALTER TABLE contenu_dans ADD CONSTRAINT FK_contenu_dans_ID_type_conteneur FOREIGN KEY (ID_type_conteneur) REFERENCES Type_conteneur(ID_type_conteneur);
+ALTER TABLE contenu_dans ADD CONSTRAINT FK_contenu_dans_ID_biere FOREIGN KEY (ID_biere) REFERENCES Biere(ID_biere);
+ALTER TABLE contenu_dans ADD CONSTRAINT FK_contenu_dans_ID_produit FOREIGN KEY (ID_produit) REFERENCES Produit(ID_produit);
+ALTER TABLE suggere ADD CONSTRAINT FK_suggere_ID_utilisateur FOREIGN KEY (ID_utilisateur) REFERENCES Compte_utilisateur(ID_utilisateur);
+ALTER TABLE suggere ADD CONSTRAINT FK_suggere_ID_suggestion FOREIGN KEY (ID_suggestion) REFERENCES suggestion(ID_suggestion);
