@@ -6,7 +6,6 @@
             <th>Type_produit</th>
             <th>disponilbilite_produit</th>
             <th>Note_produit</th>
-            <th>photo_produit</th>
             <th>description_produit</th>
         </tr>
         {% for product in products %}
@@ -15,7 +14,6 @@
                 <td>{{ product.Type_produit }}</td>
                 <td>{{ product.Disponibilite_produit }}</td>
                 <td>{{ product.Note_produit }}</td>
-                <td>{{ product.Photo_produit }}</td>
                 <td>{{ product.Description_produit }}</td>
             </tr>
         {% else %}

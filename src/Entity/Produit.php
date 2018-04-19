@@ -40,11 +40,26 @@ class Produit
     private $Description_produit;
 	
 	/**
-	* @ORM\OneToOne(targetEntity="PhotoProduit", cascade={"persist"})
-	* @ORM\JoinColumn(name="ID_photo", referencedColumnName="ID_photo", nullable=false)
+	* @ORM\OneToOne(targetEntity="PhotoProduit", cascade={"persist","remove"})
+	* @ORM\JoinColumn(name="id_photo", referencedColumnName="id_photo", nullable=false)
 	*/
-	private $image;
-
+	private $image;	
+	
+	/**
+	* @ORM\OneToMany(targetEntity="Commentaire", mappedBy="produit")
+	* @ORM\JoinColumn(name="id_commentaire", referencedColumnName="id_commentaire")
+	*/
+	private $commentaires;
+	
+	/**
+	* @ORM\Column(type="datetime")
+	*/
+	private $Date_creation_produit;
+	
+	public function __construct()
+	{
+		$this->commentaires = new ArrayCollection();
+	}
 
     public function getID_produit()
     {
@@ -99,7 +114,7 @@ class Produit
         return $this;
     }
 	
-	public function setImage(Image $image = null)
+	public function setImage(PhotoProduit $image = null)
 	{
 		$this->image = $image;
 	}
@@ -107,6 +122,33 @@ class Produit
 	public function getImage()
 	{
 		return $this->image;
+	}	
+	
+	public function addCommentaire(Commentaire $commentaire)
+	{
+	$this->commentaires[] = $commentaire;
+
+	return $this;
 	}
 
+	public function removeCommentaire(Commentaire $commentaire)
+	{
+	$this->commentaires->removeElement($commentaire);
+	}
+
+	public function getCommentaires()
+	{
+	return $this->commentaires;
+	}
+	
+	public function getDate_Creation_Produit()
+	{
+	 return $this->Date_creation_produit;
+	}
+
+	public function setDate_Creation_Produit($Date_creation_produit)
+	{
+	 $this->Date_creation_produit = $Date_creation_produit;
+	 return $this;
+	}
 }
