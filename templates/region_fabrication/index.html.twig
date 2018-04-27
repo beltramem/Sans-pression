@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}RegionFabrication index{% endblock %}
+
+{% block body %}
+    <h1>RegionFabrication index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id_region_fabrication</th>
+                <th>Nom_region</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for region_fabrication in region_fabrications %}
+            <tr>
+                <td>{{ region_fabrication.id_region_fabrication }}</td>
+                <td>{{ region_fabrication.nom_region }}</td>
+                <td>
+                    <a href="{{ path('region_fabrication_show', {'id_region_fabrication': region_fabrication.id_region_fabrication}) }}">show</a>
+                    <a href="{{ path('region_fabrication_edit', {'id_region_fabrication': region_fabrication.id_region_fabrication}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('region_fabrication_new') }}">Create new</a>
+{% endblock %}

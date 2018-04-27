@@ -3,18 +3,16 @@
     <table class="table">
         <tr>
             <th>Nom</th>
-            <th>Type_produit</th>
             <th>disponilbilite_produit</th>
             <th>Note_produit</th>
             <th>description_produit</th>
         </tr>
         {% for product in products %}
             <tr>
-                <td>{{ product.Nom_produit }}</td>
-                <td>{{ product.Type_produit }}</td>
-                <td>{{ product.Disponibilite_produit }}</td>
-                <td>{{ product.Note_produit }}</td>
-                <td>{{ product.Description_produit }}</td>
+                <td>{{ product.NomProduit }}</td>
+                <td>{{ product.DisponibiliteProduit }}</td>
+                <td>{{ product.NoteProduit }}</td>
+                <td>{{ product.DescriptionProduit }}</td>
             </tr>
         {% else %}
             <tr>

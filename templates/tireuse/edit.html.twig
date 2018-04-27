@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Tireuse{% endblock %}
+
+{% block body %}
+    <h1>Edit Tireuse</h1>
+
+    {{ include('tireuse/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('tireuse_index') }}">back to list</a>
+
+    {{ include('tireuse/_delete_form.html.twig') }}
+{% endblock %}

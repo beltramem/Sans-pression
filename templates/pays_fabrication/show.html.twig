@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}PaysFabrication{% endblock %}
+
+{% block body %}
+    <h1>PaysFabrication</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id_pays_fabrication</th>
+                <td>{{ pays_fabrication.id_pays_fabrication }}</td>
+            </tr>
+            <tr>
+                <th>Nom_pays</th>
+                <td>{{ pays_fabrication.nom_pays }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('pays_fabrication_index') }}">back to list</a>
+
+    <a href="{{ path('pays_fabrication_edit', {'id_pays_fabrication': pays_fabrication.id_pays_fabrication}) }}">edit</a>
+
+    {{ include('pays_fabrication/_delete_form.html.twig') }}
+{% endblock %}

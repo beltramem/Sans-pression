@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Couleur index{% endblock %}
+
+{% block body %}
+    <h1>Couleur index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id_couleur</th>
+                <th>Nom_couleur</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for couleur in couleurs %}
+            <tr>
+                <td>{{ couleur.id_couleur }}</td>
+                <td>{{ couleur.nom_couleur }}</td>
+                <td>
+                    <a href="{{ path('couleur_show', {'id_couleur': couleur.id_couleur}) }}">show</a>
+                    <a href="{{ path('couleur_edit', {'id_couleur': couleur.id_couleur}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('couleur_new') }}">Create new</a>
+{% endblock %}

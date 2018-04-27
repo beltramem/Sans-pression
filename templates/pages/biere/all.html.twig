@@ -1,0 +1,26 @@
+{% extends "base.html.twig" %}
+{% block body %}
+	<div class="col-md-3"><a href=""><button type="button">Creer un produit</button></a></div><div class="col-md-8"><input class='rechercher' type="text" placeholder="Rechercher"></input></div><div col-md-1><button>rechercher</button></div>
+    <table class="table">
+        <tr>
+            <th>Nom</th>
+            <th>Brasserie</th>
+            <th>Type de conteneur</th>
+			<th>Volume</th>
+			<th>Gestion</th>
+        </tr>
+        {% for biere in bieres %}
+            <tr>
+                <td>{{ biere.NomProduit }}</td>
+                <td>{{ biere.brasserie.nom_brasserie }}</td>
+                <td>{{ biere.Type_conteneur.Nom_type_conteneur }}</td>
+                <td>{{ biere.Volume }}</td>
+				<td><p><a href="../produit/all">Modifier</a>&nbsp<a href="#">Supprimer</a></p></td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">No content available</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

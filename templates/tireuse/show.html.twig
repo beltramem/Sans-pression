@@ -1,0 +1,70 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Tireuse{% endblock %}
+
+{% block body %}
+    <h1>Tireuse</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>IdProduit</th>
+                <td>{{ tireuse.IdProduit }}</td>
+            </tr>
+            <tr>
+                <th>NomProduit</th>
+                <td>{{ tireuse.NomProduit }}</td>
+            </tr>
+            <tr>
+                <th>DisponibiliteProduit</th>
+                <td>{{ tireuse.DisponibiliteProduit }}</td>
+            </tr>
+            <tr>
+                <th>NoteProduit</th>
+                <td>{{ tireuse.NoteProduit }}</td>
+            </tr>
+            <tr>
+                <th>DescriptionProduit</th>
+                <td>{{ tireuse.DescriptionProduit }}</td>
+            </tr>
+            <tr>
+                <th>DateCreationProduit</th>
+                <td>{{ tireuse.DateCreationProduit ? tireuse.DateCreationProduit|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>AltPhoto</th>
+                <td>{{ tireuse.AltPhoto }}</td>
+            </tr>
+            <tr>
+                <th>Degree_biere</th>
+                <td>{{ tireuse.Degree_biere }}</td>
+            </tr>
+            <tr>
+                <th>Note_amertume_biere</th>
+                <td>{{ tireuse.Note_amertume_biere }}</td>
+            </tr>
+            <tr>
+                <th>Note_alcool_biere</th>
+                <td>{{ tireuse.Note_alcool_biere }}</td>
+            </tr>
+            <tr>
+                <th>Note_puissance_biere</th>
+                <td>{{ tireuse.Note_puissance_biere }}</td>
+            </tr>
+            <tr>
+                <th>Volume</th>
+                <td>{{ tireuse.Volume }}</td>
+            </tr>
+            <tr>
+                <th>Disponible_happy_hour_tireuse</th>
+                <td>{{ tireuse.Disponible_happy_hour_tireuse ? 'Yes' : 'No' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('tireuse_index') }}">back to list</a>
+
+    <a href="{{ path('tireuse_edit', {'IdProduit': tireuse.IdProduit}) }}">edit</a>
+
+    {{ include('tireuse/_delete_form.html.twig') }}
+{% endblock %}

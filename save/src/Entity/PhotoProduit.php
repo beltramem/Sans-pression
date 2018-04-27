@@ -3,6 +3,9 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Symfony\Component\Filesystem\Filesystem;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\PhotoProduitRepository")
@@ -17,40 +20,40 @@ class PhotoProduit
     private $ID_photo;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     *  @Assert\UploadedFile
      */
-    private $Url_image;
+    private $Photo;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $Alt_photo;
+    private $AltPhoto;
 
     public function getID_photo()
     {
         return $this->ID_photo;
     }
 
-    public function getUrl_Image(): ?string
+    public function getPhoto()
     {
-        return $this->Url_image;
+        return $this->Photo;
     }
 
-    public function setUrl_Image(string $Url_image): self
+    public function setPhoto($Photo)
     {
-        $this->Url_image = $Url_image;
+        $this->Photo = $Photo;
 
         return $this;
     }
 
-    public function getAlt_Photo(): ?string
+    public function getAltPhoto(): ?string
     {
-        return $this->Alt_photo;
+        return $this->AltPhoto;
     }
 
-    public function setAlt_Photo(string $Alt_photo): self
+    public function setAltPhoto(string $AltPhoto): self
     {
-        $this->Alt_photo = $Alt_photo;
+        $this->AltPhoto = $AltPhoto;
 
         return $this;
     }

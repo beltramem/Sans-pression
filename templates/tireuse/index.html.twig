@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Tireuse index{% endblock %}
+
+{% block body %}
+    <h1>Tireuse index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>IdProduit</th>
+                <th>NomProduit</th>
+                <th>DisponibiliteProduit</th>
+                <th>NoteProduit</th>
+                <th>DescriptionProduit</th>
+                <th>DateCreationProduit</th>
+                <th>AltPhoto</th>
+                <th>Degree_biere</th>
+                <th>Note_amertume_biere</th>
+                <th>Note_alcool_biere</th>
+                <th>Note_puissance_biere</th>
+                <th>Volume</th>
+                <th>Disponible_happy_hour_tireuse</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for tireuse in tireuses %}
+            <tr>
+                <td>{{ tireuse.IdProduit }}</td>
+                <td>{{ tireuse.NomProduit }}</td>
+                <td>{{ tireuse.DisponibiliteProduit }}</td>
+                <td>{{ tireuse.NoteProduit }}</td>
+                <td>{{ tireuse.DescriptionProduit }}</td>
+                <td>{{ tireuse.DateCreationProduit ? tireuse.DateCreationProduit|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ tireuse.AltPhoto }}</td>
+                <td>{{ tireuse.Degree_biere }}</td>
+                <td>{{ tireuse.Note_amertume_biere }}</td>
+                <td>{{ tireuse.Note_alcool_biere }}</td>
+                <td>{{ tireuse.Note_puissance_biere }}</td>
+                <td>{{ tireuse.Volume }}</td>
+                <td>{{ tireuse.Disponible_happy_hour_tireuse ? 'Yes' : 'No' }}</td>
+                <td>
+                    <a href="{{ path('tireuse_show', {'IdProduit': tireuse.IdProduit}) }}">show</a>
+                    <a href="{{ path('tireuse_edit', {'IdProduit': tireuse.IdProduit}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="14">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('tireuse_new') }}">Create new</a>
+{% endblock %}

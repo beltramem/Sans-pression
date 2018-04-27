@@ -1,0 +1,66 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Biere{% endblock %}
+
+{% block body %}
+    <h1>Biere</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>IdProduit</th>
+                <td>{{ biere.IdProduit }}</td>
+            </tr>
+            <tr>
+                <th>NomProduit</th>
+                <td>{{ biere.NomProduit }}</td>
+            </tr>
+            <tr>
+                <th>DisponibiliteProduit</th>
+                <td>{{ biere.DisponibiliteProduit }}</td>
+            </tr>
+            <tr>
+                <th>NoteProduit</th>
+                <td>{{ biere.NoteProduit }}</td>
+            </tr>
+            <tr>
+                <th>DescriptionProduit</th>
+                <td>{{ biere.DescriptionProduit }}</td>
+            </tr>
+            <tr>
+                <th>DateCreationProduit</th>
+                <td>{{ biere.DateCreationProduit ? biere.DateCreationProduit|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>AltPhoto</th>
+                <td>{{ biere.AltPhoto }}</td>
+            </tr>
+            <tr>
+                <th>Degree_biere</th>
+                <td>{{ biere.Degree_biere }}</td>
+            </tr>
+            <tr>
+                <th>Note_amertume_biere</th>
+                <td>{{ biere.Note_amertume_biere }}</td>
+            </tr>
+            <tr>
+                <th>Note_alcool_biere</th>
+                <td>{{ biere.Note_alcool_biere }}</td>
+            </tr>
+            <tr>
+                <th>Note_puissance_biere</th>
+                <td>{{ biere.Note_puissance_biere }}</td>
+            </tr>
+            <tr>
+                <th>Volume</th>
+                <td>{{ biere.Volume }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('biere_index') }}">back to list</a>
+
+    <a href="{{ path('biere_edit', {'IdProduit': biere.IdProduit}) }}">edit</a>
+
+    {{ include('biere/_delete_form.html.twig') }}
+{% endblock %}

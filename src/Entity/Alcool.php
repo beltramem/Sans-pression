@@ -36,9 +36,15 @@ class Alcool extends Produit
     private $Note_amertume_alcool;
 
     /**
-     * @ORM\Column(type="float")
+     * @ORM\Column(type="string", length=5)
      */
     private $Volume;
+	
+	/**
+	* @ORM\ManyToOne(targetEntity="PaysFabrication")
+	* @ORM\JoinColumn(name="idPaysFabrication", referencedColumnName="idPaysFabrication", nullable=false)
+	*/
+	private $paysFabrication;
 
     public function getID_alcool()
     {
@@ -105,14 +111,27 @@ class Alcool extends Produit
         return $this;
     }
 
-    public function getVolume(): ?float
+    public function getVolume()
     {
         return $this->Volume;
     }
 
-    public function setVolume(float $Volume): self
+    public function setVolume(string $Volume)
     {
         $this->Volume = $Volume;
+
+        return $this;
+    }
+
+	
+	public function getPays_fabrication()
+    {
+        return $this->pays_fabrication;
+    }
+
+    public function setPays_fabrication(PaysFabrication $pays_fabrication)
+    {
+        $this->pays_fabrication = $pays_fabrication;
 
         return $this;
     }

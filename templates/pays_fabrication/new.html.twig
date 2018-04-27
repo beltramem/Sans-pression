@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New PaysFabrication{% endblock %}
+
+{% block body %}
+    <h1>Create new PaysFabrication</h1>
+
+    {{ include('pays_fabrication/_form.html.twig') }}
+
+    <a href="{{ path('pays_fabrication_index') }}">back to list</a>
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}PaysFabrication index{% endblock %}
+
+{% block body %}
+    <h1>PaysFabrication index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>idPaysFabrication</th>
+                <th>nomPays</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for pays_fabrication in pays_fabrications %}
+            <tr>
+                <td>{{ pays_fabrication.idPaysFabrication }}</td>
+                <td>{{ pays_fabrication.nomPays }}</td>
+                <td>
+                    <a href="{{ path('pays_fabrication_show', {'idPaysFabrication': pays_fabrication.idPaysFabrication}) }}">show</a>
+                    <a href="{{ path('pays_fabrication_edit', {'idPaysFabrication': pays_fabrication.idPaysFabrication}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('pays_fabrication_new') }}">Create new</a>
+{% endblock %}

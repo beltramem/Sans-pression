@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}TypeBiere index{% endblock %}
+
+{% block body %}
+    <h1>TypeBiere index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id_type_biere</th>
+                <th>Nom_type_biere</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for type_biere in type_bieres %}
+            <tr>
+                <td>{{ type_biere.id_type_biere }}</td>
+                <td>{{ type_biere.Nom_type_biere }}</td>
+                <td>
+                    <a href="{{ path('type_biere_show', {'id_type_biere': type_biere.id_type_biere}) }}">show</a>
+                    <a href="{{ path('type_biere_edit', {'id_type_biere': type_biere.id_type_biere}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('type_biere_new') }}">Create new</a>
+{% endblock %}

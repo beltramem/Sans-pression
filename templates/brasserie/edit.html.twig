@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Brasserie{% endblock %}
+
+{% block body %}
+    <h1>Edit Brasserie</h1>
+
+    {{ include('brasserie/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('brasserie_index') }}">back to list</a>
+
+    {{ include('brasserie/_delete_form.html.twig') }}
+{% endblock %}

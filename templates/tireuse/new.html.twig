@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Tireuse{% endblock %}
+
+{% block body %}
+    <h1>Create new Tireuse</h1>
+
+    {{ include('tireuse/_form.html.twig') }}
+
+    <a href="{{ path('tireuse_index') }}">back to list</a>
+{% endblock %}
