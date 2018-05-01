@@ -8,19 +8,19 @@
     <table class="table">
         <thead>
             <tr>
-                <th>Id_type_conteneur</th>
-                <th>Nom_type_conteneur</th>
+                <th>idTypeConteneur</th>
+                <th>nomTypeConteneur</th>
                 <th>actions</th>
             </tr>
         </thead>
         <tbody>
         {% for type_conteneur in type_conteneurs %}
             <tr>
-                <td>{{ type_conteneur.id_type_conteneur }}</td>
-                <td>{{ type_conteneur.Nom_type_conteneur }}</td>
+                <td>{{ type_conteneur.idTypeConteneur }}</td>
+                <td>{{ type_conteneur.nomTypeConteneur }}</td>
                 <td>
-                    <a href="{{ path('type_conteneur_show', {'id_type_conteneur': type_conteneur.id_type_conteneur}) }}">show</a>
-                    <a href="{{ path('type_conteneur_edit', {'id_type_conteneur': type_conteneur.id_type_conteneur}) }}">edit</a>
+                    <a href="{{ path('type_conteneur_show', {'idTypeConteneur': type_conteneur.idTypeConteneur}) }}">show</a>
+                    <a href="{{ path('type_conteneur_edit', {'idTypeConteneur': type_conteneur.idTypeConteneur}) }}">edit</a>
                 </td>
             </tr>
         {% else %}

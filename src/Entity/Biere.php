@@ -17,22 +17,22 @@ class Biere extends Produit
     /**
      * @ORM\Column(type="float")
      */
-    private $Degree_biere;
+    private $DegreeBiere;
 
     /**
      * @ORM\Column(type="integer")
      */
-    private $Note_amertume_biere;
+    private $NoteAmertumeBiere;
 
     /**
      * @ORM\Column(type="integer")
      */
-    private $Note_alcool_biere;
+    private $NoteAlcoolBiere;
 
     /**
      * @ORM\Column(type="integer")
      */
-    private $Note_puissance_biere;
+    private $NotePuissanceBiere;
 
     /**
      * @ORM\Column(type="string", length=5)
@@ -43,7 +43,7 @@ class Biere extends Produit
 	* @ORM\ManyToOne(targetEntity="TypeConteneur")
 	* @ORM\JoinColumn(name="id_type_conteneur", referencedColumnName="id_type_conteneur", nullable=false)
 	*/
-	private $type_conteneur;	
+	private $typeConteneur;	
 	
 	/**
 	* @ORM\ManyToOne(targetEntity="TypeBiere")
@@ -101,60 +101,60 @@ class Biere extends Produit
 	
 	public function getTypeConteneur()
     {
-        return $this->type_conteneur;
+        return $this->typeConteneur;
     }
 
-    public function setTypeConteneur(Typeconteneur $type_conteneur)
+    public function setTypeConteneur(Typeconteneur $typeConteneur)
     {
-        $this->type_conteneur = $type_conteneur;
+        $this->typeConteneur = $typeConteneur;
 
         return $this;
     }
 	
     public function getDegreeBiere(): ?float
     {
-        return $this->Degree_biere;
+        return $this->DegreeBiere;
     }
 
-    public function setDegreeBiere(float $Degree_biere): self
+    public function setDegreeBiere(float $DegreeBiere): self
     {
-        $this->Degree_biere = $Degree_biere;
+        $this->DegreeBiere = $DegreeBiere;
 
         return $this;
     }
 
     public function getNoteAmertumeBiere(): ?int
     {
-        return $this->Note_amertume_biere;
+        return $this->NoteAmertumeBiere;
     }
 
-    public function setNoteAmertumeBiere(int $Note_amertume_biere): self
+    public function setNoteAmertumeBiere(int $NoteAmertumeBiere): self
     {
-        $this->Note_amertume_biere = $Note_amertume_biere;
+        $this->NoteAmertumeBiere = $NoteAmertumeBiere;
 
         return $this;
     }
 
     public function getNoteAlcoolBiere(): ?int
     {
-        return $this->Note_alcool_biere;
+        return $this->NoteAlcoolBiere;
     }
 
-    public function setNoteAlcoolBiere(int $Note_alcool_biere): self
+    public function setNoteAlcoolBiere(int $NoteAlcoolBiere): self
     {
-        $this->Note_alcool_biere = $Note_alcool_biere;
+        $this->NoteAlcoolBiere = $NoteAlcoolBiere;
 
         return $this;
     }
 
     public function getNotePuissanceBiere(): ?int
     {
-        return $this->Note_puissance_biere;
+        return $this->NotePuissanceBiere;
     }
 
-    public function setNotePuissanceBiere(int $Note_puissance_biere): self
+    public function setNotePuissanceBiere(int $NotePuissanceBiere): self
     {
-        $this->Note_puissance_biere = $Note_puissance_biere;
+        $this->NotePuissanceBiere = $NotePuissanceBiere;
 
         return $this;
     }

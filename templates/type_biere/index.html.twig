@@ -8,7 +8,7 @@
     <table class="table">
         <thead>
             <tr>
-                <th>Id_type_biere</th>
+                <th>idTypeBiere</th>
                 <th>Nom_type_biere</th>
                 <th>actions</th>
             </tr>
@@ -16,11 +16,11 @@
         <tbody>
         {% for type_biere in type_bieres %}
             <tr>
-                <td>{{ type_biere.id_type_biere }}</td>
-                <td>{{ type_biere.Nom_type_biere }}</td>
+                <td>{{ type_biere.idTypeBiere }}</td>
+                <td>{{ type_biere.NomTypeBiere }}</td>
                 <td>
-                    <a href="{{ path('type_biere_show', {'id_type_biere': type_biere.id_type_biere}) }}">show</a>
-                    <a href="{{ path('type_biere_edit', {'id_type_biere': type_biere.id_type_biere}) }}">edit</a>
+                    <a href="{{ path('type_biere_show', {'idTypeBiere': type_biere.idTypeBiere}) }}">show</a>
+                    <a href="{{ path('type_biere_edit', {'idTypeBiere': type_biere.idTypeBiere}) }}">edit</a>
                 </td>
             </tr>
         {% else %}

@@ -47,7 +47,7 @@ class TypeBiereController extends Controller
     }
 
     /**
-     * @Route("/{id_type_biere}", name="type_biere_show", methods="GET")
+     * @Route("/{idTypeBiere}", name="type_biere_show", methods="GET")
      */
     public function show(TypeBiere $typeBiere): Response
     {
@@ -55,7 +55,7 @@ class TypeBiereController extends Controller
     }
 
     /**
-     * @Route("/{id_type_biere}/edit", name="type_biere_edit", methods="GET|POST")
+     * @Route("/{idTypeBiere}/edit", name="type_biere_edit", methods="GET|POST")
      */
     public function edit(Request $request, TypeBiere $typeBiere): Response
     {
@@ -75,7 +75,7 @@ class TypeBiereController extends Controller
     }
 
     /**
-     * @Route("/{id_type_biere}", name="type_biere_delete", methods="DELETE")
+     * @Route("/{idTypeBiere}", name="type_biere_delete", methods="DELETE")
      */
     public function delete(Request $request, TypeBiere $typeBiere): Response
     {

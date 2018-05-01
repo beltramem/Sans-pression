@@ -47,7 +47,7 @@ class TypeConteneurController extends Controller
     }
 
     /**
-     * @Route("/{id_type_conteneur}", name="type_conteneur_show", methods="GET")
+     * @Route("/{idTypeConteneur}", name="type_conteneur_show", methods="GET")
      */
     public function show(TypeConteneur $typeConteneur): Response
     {
@@ -55,7 +55,7 @@ class TypeConteneurController extends Controller
     }
 
     /**
-     * @Route("/{id_type_conteneur}/edit", name="type_conteneur_edit", methods="GET|POST")
+     * @Route("/{idTypeConteneur}/edit", name="type_conteneur_edit", methods="GET|POST")
      */
     public function edit(Request $request, TypeConteneur $typeConteneur): Response
     {
@@ -75,7 +75,7 @@ class TypeConteneurController extends Controller
     }
 
     /**
-     * @Route("/{id_type_conteneur}", name="type_conteneur_delete", methods="DELETE")
+     * @Route("/{idTypeConteneur}", name="type_conteneur_delete", methods="DELETE")
      */
     public function delete(Request $request, TypeConteneur $typeConteneur): Response
     {

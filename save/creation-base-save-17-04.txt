@@ -190,9 +190,9 @@ CREATE TABLE Divers(
 
 CREATE TABLE Type_conteneur(
         ID_type_conteneur  int (11) Auto_increment  NOT NULL ,
-        Nom_type_conteneur Varchar (50) NOT NULL ,
+        nomTypeConteneur Varchar (50) NOT NULL ,
         PRIMARY KEY (ID_type_conteneur ) ,
-        UNIQUE (Nom_type_conteneur )
+        UNIQUE (nomTypeConteneur )
 )ENGINE=InnoDB;
 
 

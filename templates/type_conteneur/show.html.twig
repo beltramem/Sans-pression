@@ -8,19 +8,19 @@
     <table class="table">
         <tbody>
             <tr>
-                <th>Id_type_conteneur</th>
-                <td>{{ type_conteneur.id_type_conteneur }}</td>
+                <th>idTypeConteneur</th>
+                <td>{{ type_conteneur.idTypeConteneur }}</td>
             </tr>
             <tr>
-                <th>Nom_type_conteneur</th>
-                <td>{{ type_conteneur.Nom_type_conteneur }}</td>
+                <th>nomTypeConteneur</th>
+                <td>{{ type_conteneur.nomTypeConteneur }}</td>
             </tr>
         </tbody>
     </table>
 
     <a href="{{ path('type_conteneur_index') }}">back to list</a>
 
-    <a href="{{ path('type_conteneur_edit', {'id_type_conteneur': type_conteneur.id_type_conteneur}) }}">edit</a>
+    <a href="{{ path('type_conteneur_edit', {'idTypeConteneur': type_conteneur.idTypeConteneur}) }}">edit</a>
 
     {{ include('type_conteneur/_delete_form.html.twig') }}
 {% endblock %}

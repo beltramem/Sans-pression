@@ -12,8 +12,8 @@
         {% for biere in bieres %}
             <tr>
                 <td>{{ biere.NomProduit }}</td>
-                <td>{{ biere.brasserie.nom_brasserie }}</td>
-                <td>{{ biere.Type_conteneur.Nom_type_conteneur }}</td>
+                <td>{{ biere.brasserie.nomBrasserie }}</td>
+                <td>{{ biere.Type_conteneur.nomTypeConteneur }}</td>
                 <td>{{ biere.Volume }}</td>
 				<td><p><a href="../produit/all">Modifier</a>&nbsp<a href="#">Supprimer</a></p></td>
             </tr>

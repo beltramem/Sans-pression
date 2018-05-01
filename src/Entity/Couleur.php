@@ -14,26 +14,26 @@ class Couleur
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
      */
-    private $id_couleur;
+    private $idCouleur;
 
     /**
      * @ORM\Column(type="string", length=100)
      */
-    private $nom_couleur;
+    private $nomCouleur;
 	
-    public function getId_couleur()
+    public function getidCouleur()
     {
-        return $this->id_couleur;
+        return $this->idCouleur;
     }
 
     public function getNomCouleur(): ?string
     {
-        return $this->nom_couleur;
+        return $this->nomCouleur;
     }
 
-    public function setNomCouleur(string $nom_couleur): self
+    public function setNomCouleur(string $nomCouleur): self
     {
-        $this->nom_couleur = $nom_couleur;
+        $this->nomCouleur = $nomCouleur;
 
         return $this;
     }

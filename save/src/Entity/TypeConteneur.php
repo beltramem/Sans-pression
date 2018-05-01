@@ -19,21 +19,21 @@ class TypeConteneur
     /**
      * @ORM\Column(type="string", length=100)
      */
-    private $Nom_type_conteneur;
+    private $nomTypeConteneur;
 
     public function getId_type_conteneur()
     {
         return $this->id_type_conteneur;
     }
 
-    public function getNom_type_conteneur(): ?string
+    public function getnomTypeConteneur(): ?string
     {
-        return $this->Nom_type_conteneur;
+        return $this->nomTypeConteneur;
     }
 
-    public function setNom_type_conteneur(string $Nom_type_conteneur): self
+    public function setnomTypeConteneur(string $nomTypeConteneur): self
     {
-        $this->Nom_type_conteneur = $Nom_type_conteneur;
+        $this->nomTypeConteneur = $nomTypeConteneur;
 
         return $this;
     }

@@ -8,7 +8,6 @@
     <table class="table">
         <thead>
             <tr>
-                <th>IdProduit</th>
                 <th>NomProduit</th>
                 <th>DisponibiliteProduit</th>
                 <th>NoteProduit</th>
@@ -26,21 +25,19 @@
         <tbody>
         {% for biere in bieres %}
             <tr>
-                <td>{{ biere.IdProduit }}</td>
                 <td>{{ biere.NomProduit }}</td>
                 <td>{{ biere.DisponibiliteProduit }}</td>
                 <td>{{ biere.NoteProduit }}</td>
                 <td>{{ biere.DescriptionProduit }}</td>
                 <td>{{ biere.DateCreationProduit ? biere.DateCreationProduit|date('Y-m-d H:i:s') : '' }}</td>
                 <td>{{ biere.AltPhoto }}</td>
-                <td>{{ biere.Degree_biere }}</td>
-                <td>{{ biere.Note_amertume_biere }}</td>
-                <td>{{ biere.Note_alcool_biere }}</td>
-                <td>{{ biere.Note_puissance_biere }}</td>
+                <td>{{ biere.DegreeBiere }}</td>
+                <td>{{ biere.NoteAmertumeBiere }}</td>
+                <td>{{ biere.NoteAlcoolBiere }}</td>
+                <td>{{ biere.NotePuissanceBiere }}</td>
                 <td>{{ biere.Volume }}</td>
                 <td>
-                    <a href="{{ path('biere_show', {'IdProduit': biere.IdProduit}) }}">show</a>
-                    <a href="{{ path('biere_edit', {'IdProduit': biere.IdProduit}) }}">edit</a>
+  
                 </td>
             </tr>
         {% else %}

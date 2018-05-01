@@ -14,16 +14,16 @@ class TypeBiere
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
      */
-    private $id_type_biere;
+    private $idTypeBiere;
 
     /**
      * @ORM\Column(type="string", length=100)
      */
     private $Nom_type_biere;
 
-    public function getId_type_biere()
+    public function getidTypeBiere()
     {
-        return $this->id_type_biere;
+        return $this->idTypeBiere;
     }
 
     public function getNom_Type_Biere(): ?string

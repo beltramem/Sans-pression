@@ -3,7 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Biere;
-use App\Form\Biere1Type;
+use App\Form\BiereType;
 use App\Repository\BiereRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
@@ -29,7 +29,7 @@ class BiereController extends Controller
     public function new(Request $request): Response
     {
         $biere = new Biere();
-        $form = $this->createForm(Biere1Type::class, $biere);
+        $form = $this->createForm(BiereType::class, $biere);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {

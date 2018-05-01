@@ -1,5 +1,5 @@
-<form method="post" action="{{ path('type_conteneur_delete', {'id_type_conteneur': type_conteneur.id_type_conteneur}) }}" onsubmit="return confirm('Are you sure you want to delete this item?');">
+<form method="post" action="{{ path('type_conteneur_delete', {'idTypeConteneur': type_conteneur.idTypeConteneur}) }}" onsubmit="return confirm('Are you sure you want to delete this item?');">
     <input type="hidden" name="_method" value="DELETE">
-    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ type_conteneur.id_type_conteneur) }}">
+    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ type_conteneur.idTypeConteneur) }}">
     <button class="btn">Delete</button>
 </form>

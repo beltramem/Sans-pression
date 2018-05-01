@@ -47,7 +47,7 @@ class Biere extends Produit
 	
 	/**
 	* @ORM\ManyToOne(targetEntity="TypeBiere")
-	* @ORM\JoinColumn(name="id_type_biere", referencedColumnName="id_type_biere", nullable=false)
+	* @ORM\JoinColumn(name="idTypeBiere", referencedColumnName="idTypeBiere", nullable=false)
 	*/
 	private $type_biere;	
 	

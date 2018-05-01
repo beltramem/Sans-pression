@@ -55,7 +55,7 @@ abstract class Produit
 	*/
 	private $DateCreationProduit;
 	
-	 /**
+    /**
      *  @Assert\File
      */
     private $Photo;

@@ -47,7 +47,7 @@ class CouleurController extends Controller
     }
 
     /**
-     * @Route("/{id_couleur}", name="couleur_show", methods="GET")
+     * @Route("/{idCouleur}", name="couleur_show", methods="GET")
      */
     public function show(Couleur $couleur): Response
     {
@@ -55,7 +55,7 @@ class CouleurController extends Controller
     }
 
     /**
-     * @Route("/{id_couleur}/edit", name="couleur_edit", methods="GET|POST")
+     * @Route("/{idCouleur}/edit", name="couleur_edit", methods="GET|POST")
      */
     public function edit(Request $request, Couleur $couleur): Response
     {
@@ -65,7 +65,7 @@ class CouleurController extends Controller
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('couleur_edit', ['id_couleur' => $couleur->getId_couleur()]);
+            return $this->redirectToRoute('couleur_edit', ['idCouleur' => $couleur->getidCouleur()]);
         }
 
         return $this->render('couleur/edit.html.twig', [
@@ -75,11 +75,11 @@ class CouleurController extends Controller
     }
 
     /**
-     * @Route("/{id_couleur}", name="couleur_delete", methods="DELETE")
+     * @Route("/{idCouleur}", name="couleur_delete", methods="DELETE")
      */
     public function delete(Request $request, Couleur $couleur): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$couleur->getId_couleur(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete'.$couleur->getidCouleur(), $request->request->get('_token'))) {
             $em = $this->getDoctrine()->getManager();
             $em->remove($couleur);
             $em->flush();

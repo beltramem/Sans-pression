@@ -8,19 +8,19 @@
     <table class="table">
         <thead>
             <tr>
-                <th>Id_couleur</th>
-                <th>Nom_couleur</th>
+                <th>idCouleur</th>
+                <th>nomCouleur</th>
                 <th>actions</th>
             </tr>
         </thead>
         <tbody>
         {% for couleur in couleurs %}
             <tr>
-                <td>{{ couleur.id_couleur }}</td>
-                <td>{{ couleur.nom_couleur }}</td>
+                <td>{{ couleur.idCouleur }}</td>
+                <td>{{ couleur.nomCouleur }}</td>
                 <td>
-                    <a href="{{ path('couleur_show', {'id_couleur': couleur.id_couleur}) }}">show</a>
-                    <a href="{{ path('couleur_edit', {'id_couleur': couleur.id_couleur}) }}">edit</a>
+                    <a href="{{ path('couleur_show', {'idCouleur': couleur.idCouleur}) }}">show</a>
+                    <a href="{{ path('couleur_edit', {'idCouleur': couleur.idCouleur}) }}">edit</a>
                 </td>
             </tr>
         {% else %}

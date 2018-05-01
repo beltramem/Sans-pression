@@ -8,19 +8,19 @@
     <table class="table">
         <tbody>
             <tr>
-                <th>Id_couleur</th>
-                <td>{{ couleur.id_couleur }}</td>
+                <th>idCouleur</th>
+                <td>{{ couleur.idCouleur }}</td>
             </tr>
             <tr>
-                <th>Nom_couleur</th>
-                <td>{{ couleur.nom_couleur }}</td>
+                <th>nomCouleur</th>
+                <td>{{ couleur.nomCouleur }}</td>
             </tr>
         </tbody>
     </table>
 
     <a href="{{ path('couleur_index') }}">back to list</a>
 
-    <a href="{{ path('couleur_edit', {'id_couleur': couleur.id_couleur}) }}">edit</a>
+    <a href="{{ path('couleur_edit', {'idCouleur': couleur.idCouleur}) }}">edit</a>
 
     {{ include('couleur/_delete_form.html.twig') }}
 {% endblock %}

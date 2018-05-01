@@ -8,8 +8,8 @@
     <table class="table">
         <tbody>
             <tr>
-                <th>Id_pays_fabrication</th>
-                <td>{{ pays_fabrication.id_pays_fabrication }}</td>
+                <th>idPaysFabrication</th>
+                <td>{{ pays_fabrication.idPaysFabrication }}</td>
             </tr>
             <tr>
                 <th>Nom_pays</th>
@@ -20,7 +20,7 @@
 
     <a href="{{ path('pays_fabrication_index') }}">back to list</a>
 
-    <a href="{{ path('pays_fabrication_edit', {'id_pays_fabrication': pays_fabrication.id_pays_fabrication}) }}">edit</a>
+    <a href="{{ path('pays_fabrication_edit', {'idPaysFabrication': pays_fabrication.idPaysFabrication}) }}">edit</a>
 
     {{ include('pays_fabrication/_delete_form.html.twig') }}
 {% endblock %}

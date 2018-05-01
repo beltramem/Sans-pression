@@ -14,26 +14,26 @@ class TypeConteneur
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
      */
-    private $id_type_conteneur;
+    private $idTypeConteneur;
 
     /**
      * @ORM\Column(type="string", length=100)
      */
-    private $nom_type_conteneur;
+    private $nomTypeConteneur;
 
-    public function getId_type_conteneur()
+    public function getidTypeConteneur()
     {
-        return $this->id_type_conteneur;
+        return $this->idTypeConteneur;
     }
 
     public function getNomTypeConteneur()
     {
-        return $this->nom_type_conteneur;
+        return $this->nomTypeConteneur;
     }
 
-    public function setNom_type_conteneur(string $Nom_type_conteneur)
+    public function setNomTypeConteneur(string $nomTypeConteneur)
     {
-        $this->nom_type_conteneur = $Nom_type_conteneur;
+        $this->nomTypeConteneur = $nomTypeConteneur;
 
         return $this;
     }
