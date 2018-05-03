@@ -9,6 +9,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use App\Service\FileUploader;
+
 
 /**
  * @Route("/biere")
@@ -26,7 +28,7 @@ class BiereController extends Controller
     /**
      * @Route("/new", name="biere_new", methods="GET|POST")
      */
-    public function new(Request $request): Response
+    public function new(Request $request, FileUploader $fileUploader)
     {
         $biere = new Biere();
         $form = $this->createForm(BiereType::class, $biere);
@@ -34,6 +36,14 @@ class BiereController extends Controller
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
+			$file = $biere->getPhoto();
+			$fileName = $fileUploader->upload($file);
+			$biere->setPhoto($fileName);
+			$biere->setNomPhoto($fileName);
+			$altPhoto = "Photo ".$biere->getNomProduit();
+			$biere->setAltPhoto($altPhoto);
+			$today= new \DateTime(date("Y-m-d H:i:s"));
+			$biere->setDateCreationProduit($today);
             $em->persist($biere);
             $em->flush();
 
@@ -57,14 +67,17 @@ class BiereController extends Controller
     /**
      * @Route("/{IdProduit}/edit", name="biere_edit", methods="GET|POST")
      */
-    public function edit(Request $request, Biere $biere): Response
+    public function edit(Request $request, Biere $biere, FileUploader $fileUploader): Response
     {
-        $form = $this->createForm(Biere1Type::class, $biere);
+        $form = $this->createForm(BiereType::class, $biere);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $this->getDoctrine()->getManager()->flush();
-
+			$em = $this->getDoctrine()->getManager();
+			$file = $biere->getPhoto();
+			$fileName = $biere->getNomPhoto();
+			$fileUploader->updateUpload($file,$fileName);
+			$em->flush();
             return $this->redirectToRoute('biere_edit', ['IdProduit' => $biere->getIdProduit()]);
         }
 

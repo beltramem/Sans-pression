@@ -20,6 +20,11 @@ class FileUploader
 
         return $fileName;
     }
+	
+	public function updateUpload(UploadedFile $file, string $fileName)
+	{
+		$file->move($this->getTargetDirectory(), $fileName);
+	}
 
     public function getTargetDirectory()
     {

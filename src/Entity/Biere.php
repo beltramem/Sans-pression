@@ -13,7 +13,6 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Biere extends Produit
 {
-
     /**
      * @ORM\Column(type="float")
      */
@@ -49,7 +48,7 @@ class Biere extends Produit
 	* @ORM\ManyToOne(targetEntity="TypeBiere")
 	* @ORM\JoinColumn(name="id_type_biere", referencedColumnName="id_type_biere", nullable=false)
 	*/
-	private $type_biere;	
+	private $typeBiere;	
 	
 	/**
 	* @ORM\ManyToOne(targetEntity="Brasserie")
@@ -89,12 +88,12 @@ class Biere extends Produit
 	
 	public function getTypeBiere()
     {
-        return $this->type_biere;
+        return $this->typeBiere;
     }
 
-    public function setTypeBiere(Typebiere $type_biere)
+    public function setTypeBiere(Typebiere $typeBiere)
     {
-        $this->type_biere = $type_biere;
+        $this->typeBiere = $typeBiere;
 
         return $this;
     }
@@ -171,15 +170,4 @@ class Biere extends Produit
         return $this;
     }
 
-    public function getIdProduit()
-    {
-        return $this->Idproduit;
-    }
-
-    public function setIdProduit($produit)
-    {
-        $this->Idproduit = $produit;
-
-        return $this;
-    }
 }

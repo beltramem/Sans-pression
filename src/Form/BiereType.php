@@ -12,6 +12,7 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 
 class BiereType extends AbstractType
 {
@@ -19,11 +20,17 @@ class BiereType extends AbstractType
     {
         $builder
             ->add('NomProduit')
-            ->add('DisponibiliteProduit')
+			->add('DisponibiliteProduit', ChoiceType::class, array(
+			'choices' => array(
+				'En stock' => 'En stock',
+				'Sur commande' => 'Sur commande',
+				'Indisponible' => 'Indisponible'
+			),
+			'expanded' => true,
+			'required' => true
+			))
             ->add('Photo', FileType::class, array('label' => 'photo produit'))
             ->add('DescriptionProduit')
-            ->add('DateCreationProduit')
-            ->add('AltPhoto')
             ->add('Degree_biere')
             ->add('Note_amertume_biere')
             ->add('Note_alcool_biere')

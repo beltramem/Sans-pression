@@ -30,7 +30,7 @@ abstract class Produit
     private $NomProduit;
 
     /**
-     * @ORM\Column(type="integer", length=11)
+     * @ORM\Column(type="string", length=12)
      */
     private $DisponibiliteProduit;
 
@@ -63,7 +63,12 @@ abstract class Produit
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $AltPhoto;
+    private $AltPhoto;    
+	
+	/**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $NomPhoto;
 	
 	public function __construct()
 	{
@@ -87,12 +92,12 @@ abstract class Produit
         return $this;
     }
 	
-    public function getDisponibiliteProduit(): ?int
+    public function getDisponibiliteProduit()
     {
         return $this->DisponibiliteProduit;
     }
 
-    public function setDisponibiliteProduit(int $DisponibiliteProduit): self
+    public function setDisponibiliteProduit(string $DisponibiliteProduit): self
     {
         $this->DisponibiliteProduit = $DisponibiliteProduit;
 
@@ -172,6 +177,17 @@ abstract class Produit
     public function setAltPhoto(string $AltPhoto)
     {
         $this->AltPhoto = $AltPhoto;
+
+        return $this;
+    }    
+	public function getNomPhoto()
+    {
+        return $this->NomPhoto;
+    }
+
+    public function setNomPhoto(string $NomPhoto)
+    {
+        $this->NomPhoto = $NomPhoto;
 
         return $this;
     }
