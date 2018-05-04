@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Divers index{% endblock %}
+
+{% block body %}
+    <h1>Divers index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>NomProduit</th>
+                <th>DescriptionProduit</th>
+                <th>DateCreationProduit</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for diver in divers %}
+            <tr>
+                <td>{{ diver.NomProduit }}</td>
+                <td>{{ diver.DescriptionProduit }}</td>
+                <td>{{ diver.DateCreationProduit ? diver.DateCreationProduit|date('Y-m-d H:i:s') : '' }}</td>
+                <td>
+                    <a href="{{ path('divers_show', {'IdProduit': diver.IdProduit}) }}">show</a>
+                    <a href="{{ path('divers_edit', {'IdProduit': diver.IdProduit}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="9">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('divers_new') }}">Create new</a>
+{% endblock %}

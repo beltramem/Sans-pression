@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Divers{% endblock %}
+
+{% block body %}
+    <h1>Divers</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>IdProduit</th>
+                <td>{{ diver.IdProduit }}</td>
+            </tr>
+            <tr>
+                <th>NomProduit</th>
+                <td>{{ diver.NomProduit }}</td>
+            </tr>
+            <tr>
+                <th>DisponibiliteProduit</th>
+                <td>{{ diver.DisponibiliteProduit }}</td>
+            </tr>
+            <tr>
+                <th>NoteProduit</th>
+                <td>{{ diver.NoteProduit }}</td>
+            </tr>
+            <tr>
+                <th>DescriptionProduit</th>
+                <td>{{ diver.DescriptionProduit }}</td>
+            </tr>
+            <tr>
+                <th>DateCreationProduit</th>
+                <td>{{ diver.DateCreationProduit ? diver.DateCreationProduit|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>AltPhoto</th>
+                <td>{{ diver.AltPhoto }}</td>
+            </tr>
+            <tr>
+                <th>NomPhoto</th>
+                <td>{{ diver.NomPhoto }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('divers_index') }}">back to list</a>
+
+    <a href="{{ path('divers_edit', {'IdProduit': diver.IdProduit}) }}">edit</a>
+
+    {{ include('divers/_delete_form.html.twig') }}
+{% endblock %}

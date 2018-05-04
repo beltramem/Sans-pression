@@ -94,6 +94,8 @@ class BiereController extends Controller
     {
         if ($this->isCsrfTokenValid('delete'.$biere->getIdProduit(), $request->request->get('_token'))) {
             $em = $this->getDoctrine()->getManager();
+			$fileName = $alcool->getNomPhoto();
+			$fileUploader->updateUpload($file,$fileName);
             $em->remove($biere);
             $em->flush();
         }

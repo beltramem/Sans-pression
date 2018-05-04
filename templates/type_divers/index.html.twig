@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}TypeDivers index{% endblock %}
+
+{% block body %}
+    <h1>TypeDivers index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>IdTypeDivers</th>
+                <th>NomTypeDivers</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for type_diver in type_divers %}
+            <tr>
+                <td>{{ type_diver.idTypeDivers }}</td>
+                <td>{{ type_diver.NomTypeDivers }}</td>
+                <td>
+                    <a href="{{ path('type_divers_show', {'idTypeDivers': type_diver.idTypeDivers}) }}">show</a>
+                    <a href="{{ path('type_divers_edit', {'idTypeDivers': type_diver.idTypeDivers}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('type_divers_new') }}">Create new</a>
+{% endblock %}

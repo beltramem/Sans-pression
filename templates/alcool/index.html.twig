@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Alcool index{% endblock %}
+
+{% block body %}
+    <h1>Alcool index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>NomProduit</th>
+                <th>TypeAlcool</th>
+                <th>Couleur</th>
+				<th>CategorieVieillissement</th>
+				<th>Pays</th>
+                <th>Volume</th>
+				<th>DateCreationProduit</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for alcool in alcools %}
+            <tr>
+                <td>{{ alcool.NomProduit }}</td>
+                <td>{{ alcool.TypeAlcool.NomTypeAlcool }}</td>
+				<td>{{ alcool.Couleur.NomCouleur }}</td>
+				<th>{{ alcool.CategorieVieillissement.NomCategorieVieillissement }}</th>
+                <td>{{ alcool.PaysFabrication.NomPays }}</td>
+                <td>{{ alcool.Volume }}</td>
+				<td>{{ alcool.DateCreationProduit ? alcool.DateCreationProduit|date('Y-m-d H:i:s') : '' }}</td>
+                <td>
+                    <a href="{{ path('alcool_show', {'IdProduit': alcool.IdProduit}) }}">show</a>
+                    <a href="{{ path('alcool_edit', {'IdProduit': alcool.IdProduit}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="14">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('alcool_new') }}">Create new</a>
+{% endblock %}

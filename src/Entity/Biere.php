@@ -6,10 +6,6 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\BiereRepository")
- * @ORM\MappedSuperclass
- * @ORM\Table(name = "biere")
- * @ORM\DiscriminatorColumn(name="Tireuse", type="integer")
- * @ORM\DiscriminatorMap({"1" = "Biere", "2" = "Tireuse"})
  */
 class Biere extends Produit
 {

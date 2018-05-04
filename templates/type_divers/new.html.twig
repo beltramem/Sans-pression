@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New TypeDivers{% endblock %}
+
+{% block body %}
+    <h1>Create new TypeDivers</h1>
+
+    {{ include('type_divers/_form.html.twig') }}
+
+    <a href="{{ path('type_divers_index') }}">back to list</a>
+{% endblock %}

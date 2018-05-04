@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Divers{% endblock %}
+
+{% block body %}
+    <h1>Edit Divers</h1>
+
+    {{ include('divers/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('divers_index') }}">back to list</a>
+
+    {{ include('divers/_delete_form.html.twig') }}
+{% endblock %}

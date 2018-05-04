@@ -2,6 +2,7 @@
 namespace App\Service;
 
 use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Symfony\Component\Filesystem\Filesystem;
 
 class FileUploader
 {
@@ -24,6 +25,11 @@ class FileUploader
 	public function updateUpload(UploadedFile $file, string $fileName)
 	{
 		$file->move($this->getTargetDirectory(), $fileName);
+	}	
+	public function removeUpload(string $fileName)
+	{
+		$file = new Filesystem();
+		$file->remove($this->getTargetDirectory(), $fileName);
 	}
 
     public function getTargetDirectory()

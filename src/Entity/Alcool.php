@@ -10,30 +10,37 @@ use Doctrine\ORM\Mapping as ORM;
 class Alcool extends Produit
 {
 
-    /**
-     * @ORM\Column(type="integer")
-     */
-    private $Type_alcool;
+	/**
+	* @ORM\ManyToOne(targetEntity="TypeAlcool")
+	* @ORM\JoinColumn(name="id_type_alcool", referencedColumnName="id_type_alcool", nullable=false)
+	*/
+    private $TypeAlcool;
+	
+	/**
+	* @ORM\ManyToOne(targetEntity="CategorieVieillissement")
+	* @ORM\JoinColumn(name="id_categorie_vieillissement", referencedColumnName="id_categorie_vieillissement", nullable=true)
+	*/
+    private $CategorieVieillissement;
 
     /**
      * @ORM\Column(type="float")
      */
-    private $Degree_alcool;
+    private $DegreeAlcool;
 
     /**
      * @ORM\Column(type="integer")
      */
-    private $Note_puissance_alcool;
+    private $NotePuissanceAlcool;
 
     /**
      * @ORM\Column(type="integer")
      */
-    private $Note_alcool_alcool;
+    private $NoteAlcoolAlcool;
 
     /**
      * @ORM\Column(type="integer")
      */
-    private $Note_amertume_alcool;
+    private $NoteAmertumeAlcool;
 
     /**
      * @ORM\Column(type="string", length=5)
@@ -44,69 +51,93 @@ class Alcool extends Produit
 	* @ORM\ManyToOne(targetEntity="PaysFabrication")
 	* @ORM\JoinColumn(name="idPaysFabrication", referencedColumnName="idPaysFabrication", nullable=false)
 	*/
-	private $paysFabrication;
-
-    public function getID_alcool()
+	private $PaysFabrication;
+	
+	/**
+	* @ORM\ManyToOne(targetEntity="Couleur")
+	* @ORM\JoinColumn(name="id_couleur", referencedColumnName="id_couleur", nullable=true)
+	*/
+	private $couleur;
+	
+	public function getCouleur()
     {
-        return $this->ID_alcool;
+        return $this->couleur;
+    }
+
+    public function setCouleur(Couleur $couleur)
+    {
+        $this->couleur = $couleur;
+
+        return $this;
     }
 	
-    public function getType_Alcool(): ?int
+    public function getTypeAlcool()
     {
-        return $this->Type_alcool;
+        return $this->TypeAlcool;
     }
 
-    public function setType_Alcool(int $Type_alcool): self
+    public function setTypeAlcool(TypeAlcool $TypeAlcool): self
     {
-        $this->Type_alcool = $Type_alcool;
+        $this->TypeAlcool = $TypeAlcool;
+
+        return $this;
+    }    
+	public function getCategorieVieillissement()
+    {
+        return $this->CategorieVieillissement;
+    }
+
+    public function setCategorieVieillissement(CategorieVieillissement $CategorieVieillissement): self
+    {
+        $this->CategorieVieillissement = $CategorieVieillissement;
 
         return $this;
     }
 
-    public function getDegree_Alcool(): ?int
+    public function getDegreeAlcool()
     {
-        return $this->Degree_alcool;
+        return $this->DegreeAlcool;
     }
 
-    public function setDegree_Alcool(int $Degree_alcool): self
+    public function setDegreeAlcool(float $DegreeAlcool): self
     {
-        $this->Degree_alcool = $Degree_alcool;
+        $this->DegreeAlcool = $DegreeAlcool;
 
         return $this;
     }
 
-    public function getNote_Puissance_Alcool(): ?int
+    public function getNotePuissanceAlcool(): ?int
     {
-        return $this->Note_puissance_alcool;
+        return $this->NotePuissanceAlcool;
     }
 
-    public function setNote_Puissance_Alcool(int $Note_puissance_alcool): self
+    public function setNotePuissanceAlcool(int $NotePuissanceAlcool): self
     {
-        $this->Note_puissance_alcool = $Note_puissance_alcool;
+        $this->NotePuissanceAlcool = $NotePuissanceAlcool;
 
         return $this;
     }
 
-    public function getNote_Alcool_Alcool(): ?int
+    public function getNoteAlcoolAlcool(): ?int
     {
-        return $this->Note_alcool_alcool;
+        return $this->NoteAlcoolAlcool;
     }
 
-    public function setNote_Alcool_Alcool(int $Note_alcool_alcool): self
+    public function setNoteAlcoolAlcool(int $NoteAlcoolAlcool): self
     {
-        $this->Note_alcool_alcool = $Note_alcool_alcool;
+        $this->NoteAlcoolAlcool = $NoteAlcoolAlcool;
 
         return $this;
     }
 
-    public function getNote_Amertume_Alcool(): ?int
+    public function getNoteAmertumeAlcool(): ?int
     {
-        return $this->Note_amertume_alcool;
+        return $this->NoteAmertumeAlcool;
     }
 
-    public function setNote_Amertume_Alcool(int $Note_amertume_alcool): self
+    public function setNoteAmertumeAlcool(int $NoteAmertumeAlcool): self
     {
-        $this->Note_amertume_alcool = $Note_amertume_alcool;
+        $this->NoteAmertumeAlcool = $NoteAmertumeAlcool;
 
         return $this;
     }
@@ -124,14 +155,14 @@ class Alcool extends Produit
     }
 
 	
-	public function getPays_fabrication()
+	public function getPaysFabrication()
     {
-        return $this->pays_fabrication;
+        return $this->PaysFabrication;
     }
 
-    public function setPays_fabrication(PaysFabrication $pays_fabrication)
+    public function setPaysFabrication(PaysFabrication $PaysFabrication)
     {
-        $this->pays_fabrication = $pays_fabrication;
+        $this->PaysFabrication = $PaysFabrication;
 
         return $this;
     }

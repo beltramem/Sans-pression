@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}TypeAlcool index{% endblock %}
+
+{% block body %}
+    <h1>TypeAlcool index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>IdTypeAlcool</th>
+                <th>NomTypeAlcool</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for type_alcool in type_alcools %}
+            <tr>
+                <td>{{ type_alcool.idTypeAlcool }}</td>
+                <td>{{ type_alcool.NomTypeAlcool }}</td>
+                <td>
+                    <a href="{{ path('type_alcool_show', {'idTypeAlcool': type_alcool.idTypeAlcool}) }}">show</a>
+                    <a href="{{ path('type_alcool_edit', {'idTypeAlcool': type_alcool.idTypeAlcool}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('type_alcool_new') }}">Create new</a>
+{% endblock %}

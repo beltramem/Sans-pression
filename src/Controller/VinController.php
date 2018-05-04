@@ -94,6 +94,8 @@ class VinController extends Controller
     {
         if ($this->isCsrfTokenValid('delete'.$vin->getIdProduit(), $request->request->get('_token'))) {
             $em = $this->getDoctrine()->getManager();
+			$fileName = $alcool->getNomPhoto();
+			$fileUploader->updateUpload($file,$fileName);
             $em->remove($vin);
             $em->flush();
         }

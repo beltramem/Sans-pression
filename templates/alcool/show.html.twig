@@ -1,0 +1,70 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Alcool{% endblock %}
+
+{% block body %}
+    <h1>Alcool</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>IdProduit</th>
+                <td>{{ alcool.IdProduit }}</td>
+            </tr>
+            <tr>
+                <th>NomProduit</th>
+                <td>{{ alcool.NomProduit }}</td>
+            </tr>
+            <tr>
+                <th>DisponibiliteProduit</th>
+                <td>{{ alcool.DisponibiliteProduit }}</td>
+            </tr>
+            <tr>
+                <th>NoteProduit</th>
+                <td>{{ alcool.NoteProduit }}</td>
+            </tr>
+            <tr>
+                <th>DescriptionProduit</th>
+                <td>{{ alcool.DescriptionProduit }}</td>
+            </tr>
+            <tr>
+                <th>DateCreationProduit</th>
+                <td>{{ alcool.DateCreationProduit ? alcool.DateCreationProduit|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>AltPhoto</th>
+                <td>{{ alcool.AltPhoto }}</td>
+            </tr>
+            <tr>
+                <th>NomPhoto</th>
+                <td>{{ alcool.NomPhoto }}</td>
+            </tr>
+            <tr>
+                <th>DegreeAlcool</th>
+                <td>{{ alcool.DegreeAlcool }}</td>
+            </tr>
+            <tr>
+                <th>NotePuissanceAlcool</th>
+                <td>{{ alcool.NotePuissanceAlcool }}</td>
+            </tr>
+            <tr>
+                <th>NoteAlcoolAlcool</th>
+                <td>{{ alcool.NoteAlcoolAlcool }}</td>
+            </tr>
+            <tr>
+                <th>NoteAmertumeAlcool</th>
+                <td>{{ alcool.NoteAmertumeAlcool }}</td>
+            </tr>
+            <tr>
+                <th>Volume</th>
+                <td>{{ alcool.Volume }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('alcool_index') }}">back to list</a>
+
+    <a href="{{ path('alcool_edit', {'IdProduit': alcool.IdProduit}) }}">edit</a>
+
+    {{ include('alcool/_delete_form.html.twig') }}
+{% endblock %}

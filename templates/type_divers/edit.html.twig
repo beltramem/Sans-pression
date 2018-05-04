@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit TypeDivers{% endblock %}
+
+{% block body %}
+    <h1>Edit TypeDivers</h1>
+
+    {{ include('type_divers/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('type_divers_index') }}">back to list</a>
+
+    {{ include('type_divers/_delete_form.html.twig') }}
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}CategorieVieillissement{% endblock %}
+
+{% block body %}
+    <h1>CategorieVieillissement</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>IdCategorieVieillissement</th>
+                <td>{{ categorie_vieillissement.idCategorieVieillissement }}</td>
+            </tr>
+            <tr>
+                <th>NomCategorieVieillissement</th>
+                <td>{{ categorie_vieillissement.NomCategorieVieillissement }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('categorie_vieillissement_index') }}">back to list</a>
+
+    <a href="{{ path('categorie_vieillissement_edit', {'idCategorieVieillissement': categorie_vieillissement.idCategorieVieillissement}) }}">edit</a>
+
+    {{ include('categorie_vieillissement/_delete_form.html.twig') }}
+{% endblock %}

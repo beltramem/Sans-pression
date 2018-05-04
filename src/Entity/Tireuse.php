@@ -12,24 +12,36 @@ class Tireuse extends Biere
     /**
      * @ORM\Column(type="boolean")
      */
-    private $Disponible_happy_hour_tireuse;
+    private $DisponibleHappyHourTireuse;
+	
+	/**
+	* @ORM\OneToOne(targetEntity="Biere")
+	* @ORM\JoinColumn(name="id_produit", referencedColumnName="id_produit", nullable=false)
+	*/
+	private $Biere;
 
 
-    public function getDisponible_Happy_Hour_Tireuse(): ?bool
+    public function getDisponibleHappyHourTireuse(): ?bool
     {
-        return $this->Disponible_happy_hour_tireuse;
+        return $this->DisponibleHappyHourTireuse;
     }
 
-    public function setDisponible_Happy_Hour_Tireuse(bool $Disponible_happy_hour_tireuse): self
+    public function setDisponibleHappyHourTireuse(bool $DisponibleHappyHourTireuse): self
     {
-        $this->Disponible_happy_hour_tireuse = $Disponible_happy_hour_tireuse;
+        $this->DisponibleHappyHourTireuse = $DisponibleHappyHourTireuse;
 
         return $this;
     }
-
-    public function getID_Produit(): ?int
+	
+	public function getBiere()
     {
-        return $this->ID_produit;
+        return $this->Biere;
     }
 
+    public function setBiere(Biere $Biere)
+    {
+        $this->Biere = $Biere;
+
+        return $this;
+    }
 }
