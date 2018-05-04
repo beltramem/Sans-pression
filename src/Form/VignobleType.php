@@ -2,24 +2,24 @@
 
 namespace App\Form;
 
+use App\Entity\Vignoble;
 use App\Entity\RegionFabrication;
-use App\Entity\PaysFabrication;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 
-class RegionFabricationType extends AbstractType
+class VignobleType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('NomRegion')
-            ->add('PaysFabrication', EntityType::class, array(
+            ->add('NomVignoble')
+            ->add('RegionFabrication', EntityType::class, array(
 			'required'   => true,
-			'label' => 'PaysFabrication :',
-   			'class' => PaysFabrication::class,
-			'choice_label' => 'NomPays'
+			'label' => 'RegionFabrication :',
+   			'class' => RegionFabrication::class,
+			'choice_label' => 'NomRegion'
 			))
         ;
     }
@@ -27,7 +27,7 @@ class RegionFabricationType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
-            'data_class' => RegionFabrication::class,
+            'data_class' => Vignoble::class,
         ]);
     }
 }

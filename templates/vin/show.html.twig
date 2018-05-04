@@ -1,0 +1,70 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Vin{% endblock %}
+
+{% block body %}
+    <h1>Vin</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>IdProduit</th>
+                <td>{{ vin.IdProduit }}</td>
+            </tr>
+            <tr>
+                <th>NomProduit</th>
+                <td>{{ vin.NomProduit }}</td>
+            </tr>
+            <tr>
+                <th>DisponibiliteProduit</th>
+                <td>{{ vin.DisponibiliteProduit }}</td>
+            </tr>
+            <tr>
+                <th>NoteProduit</th>
+                <td>{{ vin.NoteProduit }}</td>
+            </tr>
+            <tr>
+                <th>DescriptionProduit</th>
+                <td>{{ vin.DescriptionProduit }}</td>
+            </tr>
+            <tr>
+                <th>DateCreationProduit</th>
+                <td>{{ vin.DateCreationProduit ? vin.DateCreationProduit|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>AltPhoto</th>
+                <td>{{ vin.AltPhoto }}</td>
+            </tr>
+            <tr>
+                <th>NomPhoto</th>
+                <td>{{ vin.NomPhoto }}</td>
+            </tr>
+            <tr>
+                <th>DegreeVin</th>
+                <td>{{ vin.DegreeVin }}</td>
+            </tr>
+            <tr>
+                <th>NotePuissanceVin</th>
+                <td>{{ vin.NotePuissanceVin }}</td>
+            </tr>
+            <tr>
+                <th>NoteAlcoolVin</th>
+                <td>{{ vin.NoteAlcoolVin }}</td>
+            </tr>
+            <tr>
+                <th>NoteAmertumeVin</th>
+                <td>{{ vin.NoteAmertumeVin }}</td>
+            </tr>
+            <tr>
+                <th>Volume</th>
+                <td>{{ vin.Volume }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('vin_index') }}">back to list</a>
+
+    <a href="{{ path('vin_edit', {'IdProduit': vin.IdProduit}) }}">edit</a>
+
+    {{ include('vin/_delete_form.html.twig') }}
+{% endblock %}

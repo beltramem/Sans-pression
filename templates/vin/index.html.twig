@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Vin index{% endblock %}
+
+{% block body %}
+    <h1>Vin index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>NomProduit</th>
+                <th>Vignoble</th>
+				<th>Annee</th>
+                <th>Pays fabrication</th>
+				<th>Region fabrication</th>
+				<th>Couleur</th>
+				<th>Volume</th>
+				<th>DateCreationProduit</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for vin in vins %}
+            <tr>	
+                <td>{{ vin.NomProduit }}</td>
+                <td>{{ vin.Vignoble.NomVignoble }}</td>
+				<td>{{ vin.Annee }} </td>
+				<td>{{ vin.Vignoble.RegionFabrication.PaysFabrication.NomPays}}</td>
+				<td>{{ vin.Vignoble.RegionFabrication.NomRegion}}</td>
+				<td>{{ vin.Couleur.NomCouleur}}</td>
+				<td>{{ vin.Volume }}</td>
+				<td>{{ vin.DateCreationProduit ? vin.DateCreationProduit|date('Y-m-d H:i:s') : '' }}</td>
+                <td>
+                    <a href="{{ path('vin_show', {'IdProduit': vin.IdProduit}) }}">show</a>
+                    <a href="{{ path('vin_edit', {'IdProduit': vin.IdProduit}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="14">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('vin_new') }}">Create new</a>
+{% endblock %}

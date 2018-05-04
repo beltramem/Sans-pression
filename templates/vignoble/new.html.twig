@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Vignoble{% endblock %}
+
+{% block body %}
+    <h1>Create new Vignoble</h1>
+
+    {{ include('vignoble/_form.html.twig') }}
+
+    <a href="{{ path('vignoble_index') }}">back to list</a>
+{% endblock %}

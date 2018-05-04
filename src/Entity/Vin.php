@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\VinRepository")
@@ -13,113 +15,117 @@ class Vin extends Produit
     /**
      * @ORM\Column(type="float")
      */
-    private $Degree_vin;
+    private $DegreeVin;
 
     /**
      * @ORM\Column(type="integer")
      */
-    private $Note_puissance_vin;
+    private $NotePuissanceVin;
 
     /**
      * @ORM\Column(type="integer")
      */
-    private $Note_alcool_vin;
+    private $NoteAlcoolVin;
 
     /**
      * @ORM\Column(type="integer")
      */
-    private $Note_amertume_vin;
+    private $NoteAmertumeVin;
 
     /**
      * @ORM\Column(type="string", length=5)
      */
     private $Volume;
-
-    /**
-     * @ORM\Column(type="integer")
-     */
-    private $ID_vignoble;
 	
+	/**
+	* @ORM\Column(type="integer")
+	* @Assert\Length(
+	*      min = 4,
+	*      max = 4
+	*	)
+	*/
+	private $Annee;
+
 	/**
 	* @ORM\ManyToOne(targetEntity="Vignoble")
 	* @ORM\JoinColumn(name="id_vignoble", referencedColumnName="id_vignoble", nullable=false)
 	*/
-	private $vignoble;
+	private $Vignoble;
 	
 	/**
 	* @ORM\ManyToOne(targetEntity="Couleur")
 	* @ORM\JoinColumn(name="id_couleur", referencedColumnName="id_couleur", nullable=false)
 	*/
-	private $couleur;
+	private $Couleur;
 	
 	public function getCouleur()
     {
-        return $this->couleur;
+        return $this->Couleur;
     }
 
-    public function setCouleur(Couleur $couleur)
+    public function setCouleur(Couleur $Couleur)
     {
-        $this->couleur = $couleur;
+        $this->Couleur = $Couleur;
 
         return $this;
     }
 	
 	public function getVignoble()
     {
-        return $this->vignoble;
+        return $this->Vignoble;
     }
 
-    public function setBrasserie(Vignoble $vignoble)
+    public function setVignoble(Vignoble $vignoble)
     {
-        $this->vignoble = $vignoble;
+        $this->Vignoble = $vignoble;
 
         return $this;
     }
 
-    public function getDegree_Vin(): ?float
+    public function getDegreeVin(): ?float
     {
-        return $this->Degree_vin;
+        return $this->DegreeVin;
     }
 
-    public function setDegree_Vin(float $Degree_vin): self
+    public function setDegreeVin(float $DegreeVin): self
     {
-        $this->Degree_vin = $Degree_vin;
+        $this->DegreeVin = $DegreeVin;
 
         return $this;
     }
 
-    public function getNote_Puissance_Vin(): ?int
+    public function getNotePuissanceVin(): ?int
     {
-        return $this->Note_puissance_vin;
+        return $this->NotePuissanceVin;
     }
 
-    public function setNote_Puissance_Vin(int $Note_puissance_vin): self
+    public function setNotePuissanceVin(int $NotePuissanceVin): self
     {
-        $this->Note_puissance_vin = $Note_puissance_vin;
+        $this->NotePuissanceVin = $NotePuissanceVin;
 
         return $this;
     }
 
-    public function getNote_Alcool_Vin(): ?int
+    public function getNoteAlcoolVin(): ?int
     {
-        return $this->Note_alcool_vin;
+        return $this->NoteAlcoolVin;
     }
 
-    public function setNote_Alcool_Vin(int $Note_alcool_vin): self
+    public function setNoteAlcoolVin(int $NoteAlcoolVin): self
     {
-        $this->Note_alcool_vin = $Note_alcool_vin;
+        $this->NoteAlcoolVin = $NoteAlcoolVin;
 
         return $this;
     }
 
-    public function getNote_Amertume_Vin(): ?int
+    public function getNoteAmertumeVin(): ?int
     {
-        return $this->Note_amertume_vin;
+        return $this->NoteAmertumeVin;
     }
 
-    public function setNote_Amertume_Vin(int $Note_amertume_vin): self
+    public function setNoteAmertumeVin(int $NoteAmertumeVin): self
     {
-        $this->Note_amertume_vin = $Note_amertume_vin;
+        $this->NoteAmertumeVin = $NoteAmertumeVin;
 
         return $this;
     }
@@ -135,17 +141,16 @@ class Vin extends Produit
 
         return $this;
     }
+	
+	public function getAnnee()
+	{
+	 return $this->Annee;
+	}
 
+	public function setAnnee($Annee)
+	{
+	 $this->Annee = $Annee;
+	 return $this;
+	}
 
-    public function getID_Vignoble(): ?int
-    {
-        return $this->ID_vignoble;
-    }
-
-    public function setID_Vignoble(int $ID_vignoble): self
-    {
-        $this->ID_vignoble = $ID_vignoble;
-
-        return $this;
-    }
 }

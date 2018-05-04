@@ -14,44 +14,44 @@ class RegionFabrication
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
      */
-    private $id_region_fabrication;
+    private $IdRegionFabrication;
 
     /**
      * @ORM\Column(type="string", length=100)
      */
-    private $nom_region;
+    private $NomRegion;
 	
 	/**
 	* @ORM\ManyToOne(targetEntity="PaysFabrication")
 	* @ORM\JoinColumn(name="idPaysFabrication", referencedColumnName="idPaysFabrication", nullable=false)
 	*/
-	private $paysFabrication;
+	private $PaysFabrication;
 
-    public function getId()
+    public function getIdRegionFabrication()
     {
-        return $this->id;
+        return $this->IdRegionFabrication;
     }
 
-    public function getNom_Region(): ?string
+    public function getNomRegion(): ?string
     {
-        return $this->nom_region;
+        return $this->NomRegion;
     }
 
-    public function setNom_Region(string $nom_region): self
+    public function setNomRegion(string $NomRegion): self
     {
-        $this->nom_region = $nom_region;
+        $this->NomRegion = $NomRegion;
 
         return $this;
     }
 	
-	public function getPays_fabrication()
+	public function getPaysFabrication()
     {
-        return $this->pays_fabrication;
+        return $this->PaysFabrication;
     }
 
-    public function setPays_fabrication(PaysFabrication $pays_fabrication)
+    public function setPaysFabrication(PaysFabrication $PaysFabrication)
     {
-        $this->pays_fabrication = $pays_fabrication;
+        $this->PaysFabrication = $PaysFabrication;
 
         return $this;
     }

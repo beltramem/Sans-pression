@@ -14,44 +14,44 @@ class Vignoble
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
      */
-    private $id_vignoble;
+    private $IdVignoble;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $nom_vignoble;
+    private $NomVignoble;
 	
 	/**
-	* @ORM\ManyToOne(targetEntity="PaysFabrication")
-	* @ORM\JoinColumn(name="idPaysFabrication", referencedColumnName="idPaysFabrication", nullable=false)
+	* @ORM\ManyToOne(targetEntity="RegionFabrication")
+	* @ORM\JoinColumn(name="id_region_fabrication", referencedColumnName="id_region_fabrication", nullable=false)
 	*/
-	private $paysFabrication;
+	private $RegionFabrication;
 
-    public function getId()
+    public function getIdVignoble()
     {
-        return $this->id;
+        return $this->IdVignoble;
     }
 
-    public function getNom_Vignoble(): ?string
+    public function getNomVignoble(): ?string
     {
-        return $this->nom_vignoble;
+        return $this->NomVignoble;
     }
 
-    public function setNom_Vignoble(string $nom_vignoble): self
+    public function setNomVignoble(string $NomVignoble): self
     {
-        $this->nom_vignoble = $nom_vignoble;
+        $this->NomVignoble = $NomVignoble;
 
         return $this;
     }
 	
-	public function getPays_fabrication()
+	public function getRegionFabrication()
     {
-        return $this->pays_fabrication;
+        return $this->RegionFabrication;
     }
 
-    public function setPays_fabrication(PaysFabrication $pays_fabrication)
+    public function setRegionFabrication(RegionFabrication $RegionFabrication)
     {
-        $this->pays_fabrication = $pays_fabrication;
+        $this->RegionFabrication = $RegionFabrication;
 
         return $this;
     }

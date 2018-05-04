@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Vignoble{% endblock %}
+
+{% block body %}
+    <h1>Vignoble</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>IdVignoble</th>
+                <td>{{ vignoble.IdVignoble }}</td>
+            </tr>
+            <tr>
+                <th>NomVignoble</th>
+                <td>{{ vignoble.NomVignoble }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('vignoble_index') }}">back to list</a>
+
+    <a href="{{ path('vignoble_edit', {'IdVignoble': vignoble.IdVignoble}) }}">edit</a>
+
+    {{ include('vignoble/_delete_form.html.twig') }}
+{% endblock %}
