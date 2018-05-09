@@ -12,19 +12,21 @@
 				<th>TypeBiere</th>
 				<th>Couleur</th>
 				<th>TypeConteneur</th>
-                <th>Volume</th>
 				<th>DateCreationProduit</th>
                 <th>actions</th>
             </tr>
         </thead>
         <tbody>
-        {% for biere in bieres %}
+		{% for biere in bieres %}
             <tr>
                 <td>{{ biere.NomProduit }}</td>
 				<td>{{ biere.typeBiere.NomTypeBiere}}</td>
 				<td>{{ biere.couleur.NomCouleur}}</td>
-				<td>{{ biere.typeConteneur.NomTypeConteneur}}</td>
-                <td>{{ biere.Volume }}</td>
+				<td>
+				{% for conteneur in biere.typeConteneurs %}
+					{{ conteneur }}<br>
+				{% endfor %}
+				</td>
 				<td>{{ biere.DateCreationProduit ? biere.DateCreationProduit|date('Y-m-d H:i:s') : '' }}</td>
 				<td>
                     <a href="{{ path('biere_show', {'IdProduit': biere.IdProduit}) }}">show</a>
@@ -35,7 +37,7 @@
             <tr>
                 <td colspan="13">no records found</td>
             </tr>
-        {% endfor %}
+        {% endfor %}	
         </tbody>
     </table>
 

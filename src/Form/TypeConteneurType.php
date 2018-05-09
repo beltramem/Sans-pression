@@ -14,6 +14,7 @@ class TypeConteneurType extends AbstractType
     {
         $builder
             ->add('nomTypeConteneur', TextType::class)
+            ->add('Volume', TextType::class)
         ;
     }
 

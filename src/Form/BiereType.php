@@ -35,18 +35,18 @@ class BiereType extends AbstractType
             ->add('Note_amertume_biere')
             ->add('Note_alcool_biere')
             ->add('Note_puissance_biere')
-            ->add('Volume')
-            ->add('type_conteneur', EntityType::class, array(
+            ->add('typeConteneurs', EntityType::class, array(
 			'required'   => true,
 			'label' => 'Type conteneur :',
    			'class' => TypeConteneur::class,
-			'choice_label' => 'NomTypeConteneur'
+			'multiple' => true,
+            'expanded' => true
 			))
-            ->add('type_biere', EntityType::class, array(
+            ->add('typeBiere', EntityType::class, array(
 			'required'   => true,
 			'label' => 'Type biere :',
    			'class' => TypeBiere::class,
-			'choice_label' => 'NomTypeBiere'
+			'choice_label' => 'NomTypeBiere',
 			))
 			->add('brasserie', EntityType::class, array(
 			'required'   => true,

@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Entity;
+use Doctrine\Common\Collections\ArrayCollection;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -29,16 +30,19 @@ class Biere extends Produit
      */
     private $NotePuissanceBiere;
 
-    /**
-     * @ORM\Column(type="string", length=5)
-     */
-    private $Volume;
 
 	/**
-	* @ORM\ManyToOne(targetEntity="TypeConteneur")
-	* @ORM\JoinColumn(name="id_type_conteneur", referencedColumnName="id_type_conteneur", nullable=false)
+	* @ORM\ManyToMany(targetEntity="TypeConteneur")
+	*  * @ORM\JoinTable(name="biere_typeConteneur",
+     *   joinColumns={
+     *     @ORM\JoinColumn(name="id_produit", referencedColumnName="id_produit")
+     *   },
+     *   inverseJoinColumns={
+     *     @ORM\JoinColumn(name="id_type_conteneur", referencedColumnName="id_type_conteneur")
+     *   }
+     * )
 	*/
-	private $typeConteneur;	
+	private $typeConteneurs;
 	
 	/**
 	* @ORM\ManyToOne(targetEntity="TypeBiere")
@@ -57,6 +61,11 @@ class Biere extends Produit
 	* @ORM\JoinColumn(name="id_couleur", referencedColumnName="id_couleur", nullable=false)
 	*/
 	private $couleur;
+	
+	public function __construct()
+	{
+		$this->typeConteneurs = new ArrayCollection();
+	}
 	
 	public function getCouleur()
     {
@@ -82,26 +91,35 @@ class Biere extends Produit
         return $this;
     }	
 	
+	// Notez le singulier, on ajoute une seule catégorie à la fois
+	public function addTypeConteneur(TypeConteneur $TypeConteneur)
+	{
+	// Ici, on utilise l'ArrayCollection vraiment comme un tableau
+	$this->typeConteneurs[] = $TypeConteneur;
+
+	return $this;
+	}
+
+	public function removeCategory(TypeConteneur $TypeConteneur)
+	{
+	// Ici on utilise une méthode de l'ArrayCollection, pour supprimer la catégorie en argument
+	$this->typeConteneurs->removeElement($TypeConteneur);
+	}
+
+	// Notez le pluriel, on récupère une liste de catégories ici !
+	public function getTypeConteneurs()
+	{
+	return $this->typeConteneurs;
+	}
+		
 	public function getTypeBiere()
     {
         return $this->typeBiere;
     }
 
-    public function setTypeBiere(Typebiere $typeBiere)
+    public function setTypeBiere(TypeBiere $TypeBiere)
     {
-        $this->typeBiere = $typeBiere;
-
-        return $this;
-    }
-	
-	public function getTypeConteneur()
-    {
-        return $this->typeConteneur;
-    }
-
-    public function setTypeConteneur(Typeconteneur $typeConteneur)
-    {
-        $this->typeConteneur = $typeConteneur;
+        $this->typeBiere = $TypeBiere;
 
         return $this;
     }
@@ -150,18 +168,6 @@ class Biere extends Produit
     public function setNotePuissanceBiere(int $NotePuissanceBiere): self
     {
         $this->NotePuissanceBiere = $NotePuissanceBiere;
-
-        return $this;
-    }
-
-    public function getVolume()
-    {
-        return $this->Volume;
-    }
-
-    public function setVolume(string $Volume)
-    {
-        $this->Volume = $Volume;
 
         return $this;
     }

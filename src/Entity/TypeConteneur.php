@@ -20,7 +20,19 @@ class TypeConteneur
      * @ORM\Column(type="string", length=100)
      */
     private $nomTypeConteneur;
-
+	
+	/**
+     * @var \Doctrine\Common\Collections\ArrayCollection
+     *
+     * @ORM\ManyToMany(targetEntity="Biere", mappedBy="typeConteneurs")
+     */
+    private $biere;
+	
+	/**
+     * @ORM\Column(type="string", length=5)
+     */
+    private $Volume;
+	
     public function getidTypeConteneur()
     {
         return $this->idTypeConteneur;
@@ -37,4 +49,22 @@ class TypeConteneur
 
         return $this;
     }
+	
+	public function getVolume()
+    {
+        return $this->Volume;
+    }
+
+    public function setVolume(string $Volume)
+    {
+        $this->Volume = $Volume;
+
+        return $this;
+    }
+	
+	public function __toString()
+	{
+		$string =$this->getNomTypeConteneur().' '.$this->getVolume();
+		return $string;
+	}
 }
