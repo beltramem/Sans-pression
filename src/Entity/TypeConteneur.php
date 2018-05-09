@@ -27,12 +27,20 @@ class TypeConteneur
      * @ORM\ManyToMany(targetEntity="Biere", mappedBy="typeConteneurs")
      */
     private $biere;
+	
 	/**
      * @var \Doctrine\Common\Collections\ArrayCollection
      *
      * @ORM\ManyToMany(targetEntity="Vin", mappedBy="typeConteneurs")
      */
-    private $vin;
+    private $vin;	
+	
+	/**
+     * @var \Doctrine\Common\Collections\ArrayCollection
+     *
+     * @ORM\ManyToMany(targetEntity="Alcool", mappedBy="typeConteneurs")
+     */
+    private $alcool;
 	
 	/**
      * @ORM\Column(type="string", length=5)

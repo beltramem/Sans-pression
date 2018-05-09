@@ -59,6 +59,19 @@ class Alcool extends Produit
 	*/
 	private $couleur;
 	
+	/**
+	* @ORM\ManyToMany(targetEntity="TypeConteneur")
+	*  * @ORM\JoinTable(name="biere_typeConteneur",
+     *   joinColumns={
+     *     @ORM\JoinColumn(name="id_produit", referencedColumnName="id_produit")
+     *   },
+     *   inverseJoinColumns={
+     *     @ORM\JoinColumn(name="id_type_conteneur", referencedColumnName="id_type_conteneur")
+     *   }
+     * )
+	*/
+	private $typeConteneurs;
+	
 	public function getCouleur()
     {
         return $this->couleur;
@@ -166,4 +179,25 @@ class Alcool extends Produit
 
         return $this;
     }
+	
+	// Notez le singulier, on ajoute une seule catégorie à la fois
+	public function addTypeConteneur(TypeConteneur $TypeConteneur)
+	{
+	// Ici, on utilise l'ArrayCollection vraiment comme un tableau
+	$this->typeConteneurs[] = $TypeConteneur;
+
+	return $this;
+	}
+
+	public function removeCategory(TypeConteneur $TypeConteneur)
+	{
+	// Ici on utilise une méthode de l'ArrayCollection, pour supprimer la catégorie en argument
+	$this->typeConteneurs->removeElement($TypeConteneur);
+	}
+
+	// Notez le pluriel, on récupère une liste de catégories ici !
+	public function getTypeConteneurs()
+	{
+	return $this->typeConteneurs;
+	}
 }
