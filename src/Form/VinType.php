@@ -5,6 +5,7 @@ namespace App\Form;
 use App\Entity\Vin;
 use App\Entity\Couleur;
 use App\Entity\Vignoble;
+use App\Entity\TypeConteneur;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -35,7 +36,6 @@ class VinType extends AbstractType
             ->add('NotePuissanceVin')
             ->add('NoteAlcoolVin')
             ->add('NoteAmertumeVin')
-            ->add('Volume')
             ->add('Vignoble', EntityType::class, array(
 			'required'   => true,
 			'label' => 'Vignoble :',
@@ -47,6 +47,13 @@ class VinType extends AbstractType
 			'label' => 'Couleur :',
    			'class' => Couleur::class,
 			'choice_label' => 'nomCouleur'
+			))
+			->add('typeConteneurs', EntityType::class, array(
+			'required'   => true,
+			'label' => 'Type conteneur :',
+   			'class' => TypeConteneur::class,
+			'multiple' => true,
+            'expanded' => true
 			))
         ;
     }
