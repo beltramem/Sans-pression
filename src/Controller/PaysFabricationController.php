@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/pays/fabrication")
+ * @Route("gestion/pays/fabrication")
  */
 class PaysFabricationController extends Controller
 {

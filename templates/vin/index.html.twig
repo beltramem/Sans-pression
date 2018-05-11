@@ -28,7 +28,9 @@
 				<td>{{ vin.Vignoble.RegionFabrication.PaysFabrication.NomPays}}</td>
 				<td>{{ vin.Vignoble.RegionFabrication.NomRegion}}</td>
 				<td>{{ vin.Couleur.NomCouleur}}</td>
-				<td>{{ vin.Volume }}</td>
+				{% for conteneur in biere.typeConteneurs %}
+					{{ conteneur }}<br>
+				{% endfor %}
 				<td>{{ vin.DateCreationProduit ? vin.DateCreationProduit|date('Y-m-d H:i:s') : '' }}</td>
                 <td>
                     <a href="{{ path('vin_show', {'IdProduit': vin.IdProduit}) }}">show</a>

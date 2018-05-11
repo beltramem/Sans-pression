@@ -13,7 +13,7 @@ use App\Service\FileUploader;
 
 
 /**
- * @Route("/biere")
+ * @Route("gestion/biere")
  */
 class BiereController extends Controller
 {
@@ -25,6 +25,12 @@ class BiereController extends Controller
         return $this->render('biere/index.html.twig', ['bieres' => $biereRepository->findAll()]);
     }
 
+	public function randBiere(BiereRepository $biereRepository): Response
+    {
+		var_dump($biereRepository->randBiere());
+        return "bitze";
+    }
+	
     /**
      * @Route("/new", name="biere_new", methods="GET|POST")
      */

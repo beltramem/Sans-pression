@@ -12,7 +12,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use App\Service\FileUploader;
 
 /**
- * @Route("/vin")
+ * @Route("gestion/vin")
  */
 class VinController extends Controller
 {

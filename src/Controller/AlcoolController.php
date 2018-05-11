@@ -10,8 +10,9 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Service\FileUploader;
+
 /**
- * @Route("/alcool")
+ * @Route("gestion/alcool")
  */
 class AlcoolController extends Controller
 {

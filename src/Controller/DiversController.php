@@ -12,7 +12,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use App\Service\FileUploader;
 
 /**
- * @Route("/divers")
+ * @Route("gestion/divers")
  */
 class DiversController extends Controller
 {

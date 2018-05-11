@@ -32,10 +32,6 @@ class Vin extends Produit
      */
     private $NoteAmertumeVin;
 
-    /**
-     * @ORM\Column(type="string", length=5)
-     */
-    private $Volume;
 	
 	/**
 	* @ORM\Column(type="integer")
@@ -139,18 +135,6 @@ class Vin extends Produit
     public function setNoteAmertumeVin(int $NoteAmertumeVin): self
     {
         $this->NoteAmertumeVin = $NoteAmertumeVin;
-
-        return $this;
-    }
-
-    public function getVolume()
-    {
-        return $this->Volume;
-    }
-
-    public function setVolume(string $Volume)
-    {
-        $this->Volume = $Volume;
 
         return $this;
     }

@@ -7,8 +7,15 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * @ORM\Entity(repositoryClass="App\Repository\TireuseRepository")
  */
-class Tireuse extends Biere
+class Tireuse
 {
+	/**
+     * @ORM\Id()
+     * @ORM\GeneratedValue()
+     * @ORM\Column(type="integer")
+     */
+    private $idTireuse;
+	
     /**
      * @ORM\Column(type="boolean")
      */
@@ -20,7 +27,11 @@ class Tireuse extends Biere
 	*/
 	private $Biere;
 
-
+	public function getidTireuse()
+    {
+        return $this->idTireuse;
+    }
+	
     public function getDisponibleHappyHourTireuse(): ?bool
     {
         return $this->DisponibleHappyHourTireuse;
@@ -41,7 +52,5 @@ class Tireuse extends Biere
     public function setBiere(Biere $Biere)
     {
         $this->Biere = $Biere;
-
-        return $this;
     }
 }

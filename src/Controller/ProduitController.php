@@ -17,6 +17,9 @@ use Symfony\Component\Routing\Annotation\Route; //add this line to add usage of 
 use Doctrine\Common\Collections\ArrayCollection;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 
+/**
+ * @Route("gestion/produit")
+ */
 class ProduitController extends Controller
 {
 	

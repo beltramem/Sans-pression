@@ -8,19 +8,8 @@
     <table class="table">
         <thead>
             <tr>
-                <th>IdProduit</th>
+                <th>idTireuse</th>
                 <th>NomProduit</th>
-                <th>DisponibiliteProduit</th>
-                <th>NoteProduit</th>
-                <th>DescriptionProduit</th>
-                <th>DateCreationProduit</th>
-                <th>AltPhoto</th>
-                <th>NomPhoto</th>
-                <th>DegreeBiere</th>
-                <th>NoteAmertumeBiere</th>
-                <th>NoteAlcoolBiere</th>
-                <th>NotePuissanceBiere</th>
-                <th>Volume</th>
                 <th>DisponibleHappyHourTireuse</th>
                 <th>actions</th>
             </tr>
@@ -28,23 +17,12 @@
         <tbody>
         {% for tireuse in tireuses %}
             <tr>
-                <td>{{ tireuse.IdProduit }}</td>
-                <td>{{ tireuse.NomProduit }}</td>
-                <td>{{ tireuse.DisponibiliteProduit }}</td>
-                <td>{{ tireuse.NoteProduit }}</td>
-                <td>{{ tireuse.DescriptionProduit }}</td>
-                <td>{{ tireuse.DateCreationProduit ? tireuse.DateCreationProduit|date('Y-m-d H:i:s') : '' }}</td>
-                <td>{{ tireuse.AltPhoto }}</td>
-                <td>{{ tireuse.NomPhoto }}</td>
-                <td>{{ tireuse.DegreeBiere }}</td>
-                <td>{{ tireuse.NoteAmertumeBiere }}</td>
-                <td>{{ tireuse.NoteAlcoolBiere }}</td>
-                <td>{{ tireuse.NotePuissanceBiere }}</td>
-                <td>{{ tireuse.Volume }}</td>
-                <td>{{ tireuse.DisponibleHappyHourTireuse ? 'Yes' : 'No' }}</td>
+                <td>{{ tireuse.idTireuse }}</td>
+                <td>{{ tireuse.Biere.NomProduit }}</td>
+                <td>{{ tireuse.DisponibleHappyHourTireuse ? 'OUI' : 'NON' }}</td>
                 <td>
-                    <a href="{{ path('tireuse_show', {'IdProduit': tireuse.IdProduit}) }}">show</a>
-                    <a href="{{ path('tireuse_edit', {'IdProduit': tireuse.IdProduit}) }}">edit</a>
+                    <a href="{{ path('tireuse_show', {'idTireuse': tireuse.idTireuse}) }}">show</a>
+                    <a href="{{ path('tireuse_edit', {'idTireuse': tireuse.idTireuse}) }}">edit</a>
                 </td>
             </tr>
         {% else %}

@@ -32,6 +32,18 @@ class BiereRepository extends ServiceEntityRepository
  
         return $result;
 	}
+	
+	public function randBiere()
+	{
+		$builder = $this->createQueryBuilder('e');
+		$query = $builder
+		->addSelect('RAND() as HIDDEN rand')
+		->orderBy('rand');
+		
+		$result = $builder->getQuery()->execute();
+ 
+        return $result;
+	}
 
 //    /**
 //     * @return Biere[] Returns an array of Biere objects

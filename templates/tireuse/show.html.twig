@@ -8,67 +8,70 @@
     <table class="table">
         <tbody>
             <tr>
-                <th>IdProduit</th>
-                <td>{{ tireuse.IdProduit }}</td>
+                <th>IdTireuse</th>
+                <td>{{ tireuse.idTireuse }}</td>
             </tr>
             <tr>
                 <th>NomProduit</th>
-                <td>{{ tireuse.NomProduit }}</td>
+                <td>{{ tireuse.Biere.NomProduit }}</td>
             </tr>
             <tr>
                 <th>DisponibiliteProduit</th>
-                <td>{{ tireuse.DisponibiliteProduit }}</td>
+                <td>{{ tireuse.Biere.DisponibiliteProduit }}</td>
             </tr>
             <tr>
                 <th>NoteProduit</th>
-                <td>{{ tireuse.NoteProduit }}</td>
+                <td>{{ tireuse.Biere.NoteProduit }}</td>
             </tr>
             <tr>
                 <th>DescriptionProduit</th>
-                <td>{{ tireuse.DescriptionProduit }}</td>
+                <td>{{ tireuse.Biere.DescriptionProduit }}</td>
             </tr>
             <tr>
                 <th>DateCreationProduit</th>
-                <td>{{ tireuse.DateCreationProduit ? tireuse.DateCreationProduit|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ tireuse.Biere.DateCreationProduit ? tireuse.Biere.DateCreationProduit|date('Y-m-d H:i:s') : '' }}</td>
             </tr>
             <tr>
                 <th>AltPhoto</th>
-                <td>{{ tireuse.AltPhoto }}</td>
+                <td>{{ tireuse.Biere.AltPhoto }}</td>
             </tr>
             <tr>
                 <th>NomPhoto</th>
-                <td>{{ tireuse.NomPhoto }}</td>
+                <td>{{ tireuse.Biere.NomPhoto }}</td>
             </tr>
             <tr>
                 <th>DegreeBiere</th>
-                <td>{{ tireuse.DegreeBiere }}</td>
+                <td>{{ tireuse.Biere.DegreeBiere }}</td>
             </tr>
             <tr>
                 <th>NoteAmertumeBiere</th>
-                <td>{{ tireuse.NoteAmertumeBiere }}</td>
+                <td>{{ tireuse.Biere.NoteAmertumeBiere }}</td>
             </tr>
             <tr>
                 <th>NoteAlcoolBiere</th>
-                <td>{{ tireuse.NoteAlcoolBiere }}</td>
+                <td>{{ tireuse.Biere.NoteAlcoolBiere }}</td>
             </tr>
             <tr>
                 <th>NotePuissanceBiere</th>
-                <td>{{ tireuse.NotePuissanceBiere }}</td>
+                <td>{{ tireuse.Biere.NotePuissanceBiere }}</td>
             </tr>
             <tr>
                 <th>Volume</th>
-                <td>{{ tireuse.Volume }}</td>
+				{% for conteneur in tireuse.biere.typeConteneurs %}
+					{{ conteneur }}<br>
+				{% endfor %}
             </tr>
             <tr>
                 <th>DisponibleHappyHourTireuse</th>
-                <td>{{ tireuse.DisponibleHappyHourTireuse ? 'Yes' : 'No' }}</td>
+                <td>{{ tireuse.DisponibleHappyHourTireuse ? 'OUI' : 'NON
+				' }}</td>
             </tr>
         </tbody>
     </table>
 
     <a href="{{ path('tireuse_index') }}">back to list</a>
 
-    <a href="{{ path('tireuse_edit', {'IdProduit': tireuse.IdProduit}) }}">edit</a>
+    <a href="{{ path('tireuse_edit', {'idTireuse': tireuse.idTireuse}) }}">edit</a>
 
     {{ include('tireuse/_delete_form.html.twig') }}
 {% endblock %}

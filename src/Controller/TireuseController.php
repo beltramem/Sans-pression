@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/tireuse")
+ * @Route("gestion/tireuse")
  */
 class TireuseController extends Controller
 {
@@ -47,7 +47,7 @@ class TireuseController extends Controller
     }
 
     /**
-     * @Route("/{IdProduit}", name="tireuse_show", methods="GET")
+     * @Route("/{idTireuse}", name="tireuse_show", methods="GET")
      */
     public function show(Tireuse $tireuse): Response
     {
@@ -55,7 +55,7 @@ class TireuseController extends Controller
     }
 
     /**
-     * @Route("/{IdProduit}/edit", name="tireuse_edit", methods="GET|POST")
+     * @Route("/{idTireuse}/edit", name="tireuse_edit", methods="GET|POST")
      */
     public function edit(Request $request, Tireuse $tireuse): Response
     {
@@ -65,7 +65,7 @@ class TireuseController extends Controller
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('tireuse_edit', ['IdProduit' => $tireuse->getIdProduit()]);
+            return $this->redirectToRoute('tireuse_edit', ['idTireuse' => $tireuse->getIdProduit()]);
         }
 
         return $this->render('tireuse/edit.html.twig', [
@@ -75,7 +75,7 @@ class TireuseController extends Controller
     }
 
     /**
-     * @Route("/{IdProduit}", name="tireuse_delete", methods="DELETE")
+     * @Route("/{idTireuse}", name="tireuse_delete", methods="DELETE")
      */
     public function delete(Request $request, Tireuse $tireuse): Response
     {
