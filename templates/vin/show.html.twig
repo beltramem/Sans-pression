@@ -57,7 +57,11 @@
             </tr>
             <tr>
                 <th>Volume</th>
-                <td>{{ vin.Volume }}</td>
+				<td>
+				{% for conteneur in biere.typeConteneurs %}
+					{{ conteneur }}<br>
+				{% endfor %}
+				</td>
             </tr>
         </tbody>
     </table>

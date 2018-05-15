@@ -25,10 +25,9 @@ class BiereController extends Controller
         return $this->render('biere/index.html.twig', ['bieres' => $biereRepository->findAll()]);
     }
 
-	public function randBiere(BiereRepository $biereRepository): Response
+	public function randBiere(BiereRepository $biereRepository)
     {
-		var_dump($biereRepository->randBiere());
-        return "bitze";
+        return $this->render('biere/showAcc.html.twig',['biere' => $biereRepository->randBiere()[0]]);
     }
 	
     /**

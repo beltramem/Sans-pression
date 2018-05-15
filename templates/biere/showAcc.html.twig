@@ -1,0 +1,21 @@
+<div class="col-md-5 produit-home">
+	<img src={{photoProduit_directory}}/{{biere.NomPhoto}} class="col-md-4 produit-home-photo">
+	<div class="col-md-8 produit-home-text">
+		<h3>{{biere.NomProduit}}</h3>
+		<div class="col-md-12 barre-separation"></div>
+		<p class="produit-home-description">{{biere.DescriptionProduit}}</p>
+		<div class="col-md-10 barre-separation-2">
+			<p>{{biere.Brasserie.NomBrasserie}}</p>
+		</div>
+		<div class="col-md-10 barre-separation-2">
+			<p class="col-md-6 produit-home-tableau-gauche">{{biere.Brasserie.PaysFabrication.NomPays}}</p>
+			<p class="col-md-6">{{biere.TypeBiere.NomTypeBiere}}</p>
+		</div>
+		<div class="col-md-10 barre-separation-2">
+			<p class="col-md-6 produit-home-tableau-gauche">{{biere.DegreeBiere}}°</p>
+			<p class="col-md-6">{% for conteneur in biere.typeConteneurs %}
+					{{ conteneur }}<br>
+				{% endfor %}</p>
+		</div>
+	</div>
+</div>

@@ -1,27 +1,43 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Biere index{% endblock %}
+{% block title %}Gestion index{% endblock %}
 
 {% block body %}
 		<h1>Gestion</h1>
-		<div class="col-md-12">
-			<div class="col-md-3 blanc"></div><a href="alcool/"><input class="col-md-6" type="button" value="Alcool"></a><div class="col-md-3" blanc></div>
-		</div>		
-		<div class="col-md-12">
-			<div class="col-md-3 blanc"></div><a href="biere/"><input class="col-md-6" type="button" value="Bière"></a><div class="col-md-3" blanc></div>
-		</div>		
-		<div class="col-md-12">
-			<div class="col-md-3 blanc"></div><a href="divers/"><input class="col-md-6" type="button" value="Divers"></a><div class="col-md-3" blanc></div>
-		</div>		
-		<div class="col-md-12">
-			<div class="col-md-3 blanc"></div><a href="vin/"><input class="col-md-6" type="button" value="Vin"></a><div class="col-md-3" blanc></div>
-		</div>		
-		<div class="col-md-12">
-			<div class="col-md-3 blanc"></div><a href="utilisateur/"><input class="col-md-6" type="button" value="Utilisateur"></a><div class="col-md-3" blanc></div>
-		</div>		
-		<div class="col-md-12">
-			<div class="col-md-3 blanc"></div><a href="commentaire/"><input class="col-md-6" type="button" value="Commentaire"></a><div class="col-md-3" blanc></div>
-		</div>
+		
+		
+			<div class="col-md-2"><h2>Alcool</h2>
+				<a href="alcool/"><input class="col-md-12" type="button" value="Alcool"></a>
+				<a href="type/alcool/"><input class="col-md-12" type="button" value="Type Alcool"></a>
+				<a href="type/conteneur/"><input class="col-md-12" type="button" value="Type Conteneur"></a>
+				<a href="categorie/vieillissement/"><input class="col-md-12" type="button" value="Categorie Vieillissement"></a>
+				<a href="pays/fabrication/"><input class="col-md-12" type="button" value="Pays Fabrication"></a>
+				<a href="couleur/"><input class="col-md-12" type="button" value="Couleur"></a>
+			</div>
+			<div class="col-md-2"><h2>Bière</h2>
+				<a href="biere/"><input class="col-md-12" type="button" value="Bière"></a>
+				<a href="type/biere/"><input class="col-md-12" type="button" value="Type Bière"></a>
+				<a href="type/conteneur/"><input class="col-md-12" type="button" value="Type Conteneur"></a>
+				<a href="brasserie/"><input class="col-md-12" type="button" value="Brasserie"></a>
+				<a href="couleur/"><input class="col-md-12" type="button" value="Couleur"></a>
+				<a href="tireuse/"><input class="col-md-12" type="button" value="Tireuse"></a>
+			</div>
+			<div class="col-md-2"><h2>Vin</h2>
+				<a href="vin/"><input class="col-md-12" type="button" value="Vin"></a>
+				<a href="vignoble/"><input class="col-md-12" type="button" value="Vignoble"></a>
+				<a href="type/conteneur/"><input class="col-md-12" type="button" value="Type Conteneur"></a>
+				<a href="couleur/"><input class="col-md-12" type="button" value="Couleur"></a>
+			</div>
+			<div class="col-md-2"><h2>Divers</h2>
+				<a href="divers/"><input class="col-md-12" type="button" value="Divers"></a>
+				<a href="type/divers/"><input class="col-md-12" type="button" value="Type Divers"></a>
+			</div>
+			<div class="col-md-2"><h2>Utilisateur</h2>
+				<a href="utilisateur/"><input class="col-md-12" type="button" value="Utilisateur"></a>
+			</div>
+			<div class="col-md-2"><h2>Commentaire</h2>
+				<a href="commentaire/"><input class="col-md-12" type="button" value="Commentaire"></a>
+			</div>
 		
 
 {% endblock %}
