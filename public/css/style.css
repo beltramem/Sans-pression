@@ -314,6 +314,16 @@ h3
 	width : 18%;
 }
 
+#description-tireuse-inactive
+{
+	display : none;
+}
+
+#description-tireuse-active
+{
+	display : block;
+}
+
 .div-tableau-tireuse
 {
 	font-family: 'tableau';

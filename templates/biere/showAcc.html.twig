@@ -3,7 +3,7 @@
 	<div class="col-md-8 produit-home-text">
 		<h3>{{biere.NomProduit}}</h3>
 		<div class="col-md-12 barre-separation"></div>
-		<p class="produit-home-description">{{biere.DescriptionProduit}}</p>
+		<p class="produit-home-description">{{biere.DescriptionProduit|slice(0,150)}}</p>
 		<div class="col-md-10 barre-separation-2">
 			<p>{{biere.Brasserie.NomBrasserie}}</p>
 		</div>

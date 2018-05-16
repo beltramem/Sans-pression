@@ -21,6 +21,10 @@ class TireuseController extends Controller
     public function index(TireuseRepository $tireuseRepository): Response
     {
         return $this->render('tireuse/index.html.twig', ['tireuses' => $tireuseRepository->findAll()]);
+    }    
+	public function showHome(TireuseRepository $tireuseRepository): Response
+    {
+        return $this->render('tireuse/showHome.html.twig', ['tireuses' => $tireuseRepository->findAll()]);
     }
 
     /**

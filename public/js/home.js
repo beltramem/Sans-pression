@@ -91,25 +91,36 @@ function unselectTireuse(id)
 	tireuse[1].style.backgroundColor = 'rgba(0,0,0,0)';
 }
 
-function dispoHappyHour()
+function dispoHappyHour(id)
 {
 	var happyHour = document.getElementsByClassName("dispo-happy-hour");
-	if(happyHour[0].innerHTML=="<div class=\"glyphicon glyphicon-ok-circle\"></div>Disponible en happy hour")
+	for (var i = 0; i < 12; i++)
 	{
-		happyHour[0].style.color = "green";
+		if(happyHour[i].innerHTML=="<div class=\"glyphicon glyphicon-ok-circle\"></div>Disponible en happy hour")
+		{
+			happyHour[i].style.color = "green";
+		}
+		else
+		{
+			happyHour[i].style.color = "red";
+		}
 	}
-	else
-	{
-		happyHour[0].style.color = "red";
-		var happyIcon = document.getElementsByClassName("glyphicon glyphicon-ok-circle")
-		happyIcon[0].className = "glyphicon glyphicon-remove-circle"
-	}
+}
+
+function afficheDescriptionTireuse(id)
+{
+	id=id.concat("-description")
+	console.log(id)
+	var divDescription = document.getElementsByClassName(id);
+	divDescription=divDescription[0]
+	$("#description-tireuse-active").attr("id","description-tireuse-inactive")
+	$(divDescription).attr("id","description-tireuse-active");
 }
 
 function scrollTireuse()
 {
 	var speed = 750; // Durée de l'animation (en ms)
-	$('html, body').animate( { scrollTop: $(".description-tireuse").offset().top }, speed ); // Go
+	$('html, body').animate( { scrollTop: $("#description-tireuse-active").offset().top }, speed ); // Go
 	return false;
 }
 
@@ -136,6 +147,7 @@ $(document).ready(function() {
 		unselectTireuse(this.getAttribute('id'));
 	});
 	$('.click-tireuse').on('click', function() {
+		afficheDescriptionTireuse(this.getAttribute('id'));
 		scrollTireuse();
 	});	
 	$('.js-scrollTo').on('click', function() {

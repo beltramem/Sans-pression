@@ -1,0 +1,98 @@
+<div class="col-md-12 div-image-tireuse">
+				<div class="relative-top">
+					<div class="col-md-2 blanc"></div>
+					<div class="col-md-8 div-tableau-tireuse">
+						<table class="table-table-tireuse">
+							<tr class="ligne-table">
+								<td class="col-md-2 click-tireuse tireuse-1" id="tireuse-1">{{tireuses[0].biere.NomProduit}}</td><td class="col-md-2 click-tireuse tireuse-2" id="tireuse-2">{{tireuses[1].biere.NomProduit}}</td>
+							</tr><tr class="ligne-table">
+								<td class="col-md-2 click-tireuse tireuse-3" id="tireuse-3">{{tireuses[2].biere.NomProduit}}</td><td class="col-md-2 click-tireuse tireuse-4" id="tireuse-4">{{tireuses[3].biere.NomProduit}}</td>
+							</tr>
+							<tr class="ligne-table">
+								<td class="col-md-2 click-tireuse tireuse-5" id="tireuse-5">{{tireuses[4].biere.NomProduit}}</td><td class="col-md-2 click-tireuse tireuse-6" id="tireuse-6">{{tireuses[5].biere.NomProduit}}</td>
+							</tr>
+							<tr class="ligne-table">
+								<td class="col-md-2 click-tireuse tireuse-7" id="tireuse-7">{{tireuses[6].biere.NomProduit}}</td><td class="col-md-2 click-tireuse tireuse-8" id="tireuse-8">{{tireuses[7].biere.NomProduit}}</td>
+							</tr>
+							<tr class="ligne-table">
+								<td class="col-md-2 click-tireuse tireuse-9" id="tireuse-9">{{tireuses[8].biere.NomProduit}}</td><td class="col-md-2 click-tireuse tireuse-10" id="tireuse-10">{{tireuses[9].biere.NomProduit}}</td>
+							</tr>
+							<tr class="ligne-table">
+								<td class="col-md-2 click-tireuse tireuse-11" id="tireuse-11">{{tireuses[10].biere.NomProduit}}</td><td class="col-md-2 click-tireuse tireuse-12" id="tireuse-12">{{tireuses[11].biere.NomProduit}}</td>
+							</tr>							
+						</table>
+					</div>
+					<div class="col-md-2 blanc"></div>
+				</div>
+				<table class="table-image-tireuse">
+					<tr>
+						<td class="tireuse click-tireuse tireuse-1" id="tireuse-1"></td>
+						<td class="tireuse click-tireuse tireuse-2" id="tireuse-2"></td>
+						<td class="tireuse click-tireuse tireuse-3" id="tireuse-3"></td>
+						<td class="tireuse click-tireuse tireuse-4" id="tireuse-4"></td>
+						<td class="tireuse click-tireuse tireuse-5" id="tireuse-5"></td>
+						<td class="tireuse click-tireuse tireuse-6" id="tireuse-6"></td>
+						<td class="tireuse click-tireuse tireuse-7" id="tireuse-7"></td>
+						<td class="tireuse click-tireuse tireuse-8" id="tireuse-8"></td>
+						<td class="tireuse click-tireuse tireuse-9" id="tireuse-9"></td>
+						<td class="tireuse click-tireuse tireuse-10" id="tireuse-10"></td>
+						<td class="tireuse click-tireuse tireuse-11" id="tireuse-11"></td>
+						<td class="tireuse click-tireuse tireuse-12" id="tireuse-12"></td>
+					</tr>
+				</table>
+			</div>
+			{% for tireuse in tireuses %}
+				<div class="col-md-12 tireuse-{{tireuse.idTireuse}}-description" id="description-tireuse-inactive">
+					<span class="titre-description-tireuse"><h3>{{tireuse.biere.NomProduit}}</h3></span>
+					<div class="col-md-5 barre-separation"></div>
+					<p class="produit-home-description">{{tireuse.biere.descriptionProduit}}</p>
+					<span class="col-md-12 ">
+							<div class="col-md-10 barre-separation-2">
+								<p>{{tireuse.biere.Brasserie.NomBrasserie}}</p>
+							</div>
+							<div class="col-md-10 barre-separation-2">
+								<p class="col-md-6 produit-home-tableau-gauche">{{tireuse.biere.brasserie.paysFabrication.NomPays}}</p>
+								<p class="col-md-6">{{tireuse.biere.typeBiere.nomTypeBiere}}</p>
+							</div>
+							<div class="col-md-10 barre-separation-2">
+								<p class="col-md-6 produit-home-tableau-gauche">{{tireuse.biere.degreeBiere}}°</p>
+								<p class="col-md-6"></p>
+							</div>
+					</span>
+					{% if tireuse.DisponibleHappyHourTireuse == 1 %}
+					<span class="col-md-6 dispo-happy-hour"><div class='glyphicon glyphicon-ok-circle'></div>Disponible en happy hour</span>
+					{% else %}
+						<span class="col-md-6 dispo-happy-hour"><div class='glyphicon glyphicon-remove-circle'></div>Indisponible en happy hour</span>
+					{% endif %}
+					<span class="col-md-6 note">
+					<div class="col-md-3">Note produit :</div>
+					<div class="col-md-9">
+						{% if tireuse.biere.NoteProduit>0 %}
+							{% for i in 1..tireuse.biere.NoteProduit %}
+								<div class="glyphicon glyphicon-star note-star"></div>
+							{% endfor %}		
+							{% if tireuse.biere.NoteProduit<5 %}
+								{% for j in 0..5-tireuse.biere.NoteProduit %}
+									<div class="glyphicon glyphicon-star-empty note-star note-star-empty"></div>
+								{% endfor %}
+							{% endif %}
+						{% else %}
+							{% for j in 0..4 %}
+								<div class="glyphicon glyphicon-star-empty note-star note-star-empty"></div>
+							{% endfor %}
+						{% endif %}
+					</div>
+					</span>				
+					<span class="col-md-6 note col-md-offset-6">
+					<div class="col-md-3">Ma Note :</div>
+					<div class="col-md-9">
+						<div class="glyphicon glyphicon-star note-star"></div>
+						<div class="glyphicon glyphicon-star note-star"></div>
+						<div class="glyphicon glyphicon-star note-star"></div>
+						<div class="glyphicon glyphicon-star note-star"></div>
+						<div class="glyphicon glyphicon-star-empty note-star note-star-empty"></div>
+					</div>
+					</span>
+				</div>
+			{% endfor %}
+		</div>
