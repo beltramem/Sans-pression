@@ -1,0 +1,25 @@
+<div class="col-md-5 produit-home">
+	<img src={{photoProduit_directory}}/{{vin.NomPhoto}} class="col-md-4 produit-home-photo">
+	<div class="col-md-8 produit-home-text">
+		<h3>{{vin.NomProduit}}</h3>
+		<div class="col-md-12 barre-separation"></div>
+		<p class="produit-home-description">{{vin.DescriptionProduit|slice(0,150)}}</p>
+		<div class="table-responsive-md">
+			<table class="table">
+		<tr>
+			<h2>{{vin.Vignoble.NomVignoble}}</h2>
+		</tr>
+		<tr>
+			<td class="col produit-home-tableau-gauche">{{vin.Vignoble.RegionFabrication.PaysFabrication.NomPays}}-{{vin.Vignoble.RegionFabrication.NomRegion}}</td>
+			<td class="col">{{vin.couleur.NomCouleur}}</td>
+		</tr>
+		<tr>
+			<td class="col produit-home-tableau-gauche">{{vin.Degreevin}}°</p>
+			<td class="col">{% for conteneur in vin.typeConteneurs %}
+					{{ conteneur }}<br>
+				{% endfor %}</p>
+		</tr>
+		</table>
+	</div>
+	</div>
+</div>

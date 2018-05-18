@@ -14,13 +14,13 @@
             </tr>
         </thead>
         <tbody>
-        {% for region_fabrication in region_fabrications %}
+        {% for regionFabrication in regionFabrications %}
             <tr>
-                <td>{{ region_fabrication.IdRegionFabrication }}</td>
-                <td>{{ region_fabrication.NomRegion }}</td>
+                <td>{{ regionFabrication.IdRegionFabrication }}</td>
+                <td>{{ regionFabrication.NomRegion }}</td>
                 <td>
-                    <a href="{{ path('region_fabrication_show', {'id_region_fabrication': region_fabrication.IdRegionFabrication}) }}">show</a>
-                    <a href="{{ path('region_fabrication_edit', {'id_region_fabrication': region_fabrication.IdRegionFabrication}) }}">edit</a>
+                    <a href="{{ path('region_fabrication_show', {'IdRegionFabrication': regionFabrication.IdRegionFabrication}) }}">show</a>
+                    <a href="{{ path('region_fabrication_edit', {'IdRegionFabrication': regionFabrication.IdRegionFabrication}) }}">edit</a>
                 </td>
             </tr>
         {% else %}

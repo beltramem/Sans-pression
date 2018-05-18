@@ -61,7 +61,7 @@ class Alcool extends Produit
 	
 	/**
 	* @ORM\ManyToMany(targetEntity="TypeConteneur")
-	*  * @ORM\JoinTable(name="biere_typeConteneur",
+	*  * @ORM\JoinTable(name="alcool_typeConteneur",
      *   joinColumns={
      *     @ORM\JoinColumn(name="id_produit", referencedColumnName="id_produit")
      *   },

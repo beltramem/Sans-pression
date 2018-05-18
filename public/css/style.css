@@ -113,7 +113,7 @@ h1
 	text-align : center;
 	color : #a7a129;      /* couleur murs*/
 	font-family: 'titre-graphique';
-	font-size : 120px;
+	font-size : 80px;
 }
 
 
@@ -141,7 +141,7 @@ h2
 	text-align : center;
 	color : #535352;
 	font-family: sherif;
-	font-size : 25px;
+	font-size : 20px;
 }
 
 h3 
@@ -213,6 +213,14 @@ h3
 	padding : 0px;
 	margin : 0px;
 }
+.produit-home-tableau-droite
+{
+	border-left-style : solid;
+	border-left-width : 0.5px;
+	border-left-color : #aaaaaa !important;
+	padding : 0px;
+	margin : 0px;
+}
 
 .produit-home-text p
 {
@@ -223,9 +231,15 @@ h3
 	font-size : 100%;
 }
 
-.section-produit-tireuse
+.section-produit-tireuse, .section-produit-vin
 {
 	display : none;
+	background-color :  rgba(0,0,0,0)
+}
+
+.section-produit-biere, .section-produit-vin, .section-produit-alcool, .section-produit-divers, .titre-section-produit
+{
+	background-color :  rgba(255,255,255,0.98)
 }
 
 .div-image-tireuse
@@ -333,7 +347,7 @@ h3
 	background-repeat : no-repeat;
 	color : white;
 	position : relative;
-	top : calc(-1vw);
+	top : calc(-6.5vw);
 	z-index : 1;
 }
 
@@ -366,4 +380,9 @@ h3
 .rechercher
 {
 	width : 100%;
+}
+
+.padding-15
+{
+	padding : 15px; !important
 }

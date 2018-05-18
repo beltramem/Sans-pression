@@ -18,6 +18,18 @@ class VinRepository extends ServiceEntityRepository
     {
         parent::__construct($registry, Vin::class);
     }
+	
+	public function randVin()
+	{
+		$builder = $this->createQueryBuilder('e');
+		$query = $builder
+		->addSelect('RAND() as HIDDEN rand')
+		->orderBy('rand');
+		
+		$result = $builder->getQuery()->execute();
+ 
+        return $result;
+	}
 
 //    /**
 //     * @return Vin[] Returns an array of Vin objects

@@ -65,7 +65,7 @@ class TypeConteneurController extends Controller
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('type_conteneur_edit', ['id_type_conteneur' => $typeConteneur->getId_type_conteneur()]);
+            return $this->redirectToRoute('type_conteneur_edit', ['idTypeConteneur' => $typeConteneur->getIdTypeConteneur()]);
         }
 
         return $this->render('type_conteneur/edit.html.twig', [

@@ -54,9 +54,9 @@ class Vin extends Produit
 	*/
 	private $Couleur;
 	
-	/**
+/**
 	* @ORM\ManyToMany(targetEntity="TypeConteneur")
-	*  * @ORM\JoinTable(name="biere_typeConteneur",
+	*  * @ORM\JoinTable(name="vin_typeConteneur",
      *   joinColumns={
      *     @ORM\JoinColumn(name="id_produit", referencedColumnName="id_produit")
      *   },
@@ -150,7 +150,6 @@ class Vin extends Produit
 	 return $this;
 	}
 	
-	// Notez le singulier, on ajoute une seule catégorie à la fois
 	public function addTypeConteneur(TypeConteneur $TypeConteneur)
 	{
 	// Ici, on utilise l'ArrayCollection vraiment comme un tableau
@@ -159,7 +158,7 @@ class Vin extends Produit
 	return $this;
 	}
 
-	public function removeCategory(TypeConteneur $TypeConteneur)
+	public function removeTypeConteneur(TypeConteneur $TypeConteneur)
 	{
 	// Ici on utilise une méthode de l'ArrayCollection, pour supprimer la catégorie en argument
 	$this->typeConteneurs->removeElement($TypeConteneur);

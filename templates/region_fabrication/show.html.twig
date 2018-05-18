@@ -8,19 +8,19 @@
     <table class="table">
         <tbody>
             <tr>
-                <th>Id_region_fabrication</th>
-                <td>{{ region_fabrication.id_region_fabrication }}</td>
+                <th>Id_regionFabrication</th>
+                <td>{{ regionFabrication.IdRegionFabrication }}</td>
             </tr>
             <tr>
                 <th>Nom_region</th>
-                <td>{{ region_fabrication.nom_region }}</td>
+                <td>{{ regionFabrication.NomRegion }}</td>
             </tr>
         </tbody>
     </table>
 
     <a href="{{ path('region_fabrication_index') }}">back to list</a>
 
-    <a href="{{ path('region_fabrication_edit', {'id_region_fabrication': region_fabrication.id_region_fabrication}) }}">edit</a>
+    <a href="{{ path('region_fabrication_edit', {'IdRegionFabrication': regionFabrication.IdRegionFabrication}) }}">edit</a>
 
     {{ include('region_fabrication/_delete_form.html.twig') }}
 {% endblock %}

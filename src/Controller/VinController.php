@@ -23,6 +23,11 @@ class VinController extends Controller
     {
         return $this->render('vin/index.html.twig', ['vins' => $vinRepository->findAll()]);
     }
+	
+	public function randVin(VinRepository $vinRepository)
+    {
+        return $this->render('vin/showAcc.html.twig',['vin' => $vinRepository->randVin()[0]]);
+    }
 
     /**
      * @Route("/new", name="vin_new", methods="GET|POST")
@@ -94,8 +99,6 @@ class VinController extends Controller
     {
         if ($this->isCsrfTokenValid('delete'.$vin->getIdProduit(), $request->request->get('_token'))) {
             $em = $this->getDoctrine()->getManager();
-			$fileName = $alcool->getNomPhoto();
-			$fileUploader->updateUpload($file,$fileName);
             $em->remove($vin);
             $em->flush();
         }

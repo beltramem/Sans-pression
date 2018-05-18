@@ -20,7 +20,7 @@ class RegionFabricationController extends Controller
      */
     public function index(RegionFabricationRepository $regionFabricationRepository): Response
     {
-        return $this->render('region_fabrication/index.html.twig', ['region_fabrications' => $regionFabricationRepository->findAll()]);
+        return $this->render('region_fabrication/index.html.twig', ['regionFabrications' => $regionFabricationRepository->findAll()]);
     }
 
     /**
@@ -41,21 +41,21 @@ class RegionFabricationController extends Controller
         }
 
         return $this->render('region_fabrication/new.html.twig', [
-            'region_fabrication' => $regionFabrication,
+            'regionFabrication' => $regionFabrication,
             'form' => $form->createView(),
         ]);
     }
 
     /**
-     * @Route("/{id_region_fabrication}", name="region_fabrication_show", methods="GET")
+     * @Route("/{IdRegionFabrication}", name="region_fabrication_show", methods="GET")
      */
     public function show(RegionFabrication $regionFabrication): Response
     {
-        return $this->render('region_fabrication/show.html.twig', ['region_fabrication' => $regionFabrication]);
+        return $this->render('region_fabrication/show.html.twig', ['regionFabrication' => $regionFabrication]);
     }
 
     /**
-     * @Route("/{id_region_fabrication}/edit", name="region_fabrication_edit", methods="GET|POST")
+     * @Route("/{IdRegionFabrication}/edit", name="region_fabrication_edit", methods="GET|POST")
      */
     public function edit(Request $request, RegionFabrication $regionFabrication): Response
     {
@@ -65,21 +65,21 @@ class RegionFabricationController extends Controller
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('region_fabrication_edit', ['id_region_fabrication' => $regionFabrication->getId_region_fabrication()]);
+            return $this->redirectToRoute('region_fabrication_edit', ['idRegionFabrication' => $regionFabrication->getIdRegionFabrication()]);
         }
 
         return $this->render('region_fabrication/edit.html.twig', [
-            'region_fabrication' => $regionFabrication,
+            'regionFabrication' => $regionFabrication,
             'form' => $form->createView(),
         ]);
     }
 
     /**
-     * @Route("/{id_region_fabrication}", name="region_fabrication_delete", methods="DELETE")
+     * @Route("/{IdRegionFabrication}", name="region_fabrication_delete", methods="DELETE")
      */
     public function delete(Request $request, RegionFabrication $regionFabrication): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$regionFabrication->getId_region_fabrication(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete'.$regionFabrication->getIdRegionFabrication(), $request->request->get('_token'))) {
             $em = $this->getDoctrine()->getManager();
             $em->remove($regionFabrication);
             $em->flush();

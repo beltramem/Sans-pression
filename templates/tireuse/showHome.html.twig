@@ -43,56 +43,104 @@
 			</div>
 			{% for tireuse in tireuses %}
 				<div class="col-md-12 tireuse-{{tireuse.idTireuse}}-description" id="description-tireuse-inactive">
-					<span class="titre-description-tireuse"><h3>{{tireuse.biere.NomProduit}}</h3></span>
+				<div class="table-responsive-md">
+					<p class="titre-description-tireuse"><h3>{{tireuse.biere.NomProduit}}</h3></p>
 					<div class="col-md-5 barre-separation"></div>
 					<p class="produit-home-description">{{tireuse.biere.descriptionProduit}}</p>
-					<span class="col-md-12 ">
-							<div class="col-md-10 barre-separation-2">
-								<p>{{tireuse.biere.Brasserie.NomBrasserie}}</p>
-							</div>
-							<div class="col-md-10 barre-separation-2">
-								<p class="col-md-6 produit-home-tableau-gauche">{{tireuse.biere.brasserie.paysFabrication.NomPays}}</p>
-								<p class="col-md-6">{{tireuse.biere.typeBiere.nomTypeBiere}}</p>
-							</div>
-							<div class="col-md-10 barre-separation-2">
-								<p class="col-md-6 produit-home-tableau-gauche">{{tireuse.biere.degreeBiere}}°</p>
-								<p class="col-md-6"></p>
-							</div>
+					<div class="table-responsive-md">
+						<table class="table">
+							<tr>
+								<h2>{{tireuse.biere.Brasserie.NomBrasserie}}</h2>
+							</tr>
+							<tr>
+								<td class="col">{{tireuse.biere.brasserie.paysFabrication.NomPays}}</td>
+								<td class="col">{{tireuse.biere.typeBiere.nomTypeBiere}}-{{tireuse.biere.couleur.nomCouleur}}</td>
+							</tr>
+							<tr>
+								<td class="col">{{tireuse.biere.degreeBiere}}°</td>
+								{% if tireuse.DisponibleHappyHourTireuse == 1 %}
+									<td class="col dispo-happy-hour"><div class='glyphicon glyphicon-ok-circle'></div>Disponible en happy hour</td>
+								{% else %}
+									<td class="col dispo-happy-hour"><div class='glyphicon glyphicon-remove-circle'></div>Indisponible en happy hour</td>
+								{% endif %}
+							</tr>
 					</span>
-					{% if tireuse.DisponibleHappyHourTireuse == 1 %}
-					<span class="col-md-6 dispo-happy-hour"><div class='glyphicon glyphicon-ok-circle'></div>Disponible en happy hour</span>
-					{% else %}
-						<span class="col-md-6 dispo-happy-hour"><div class='glyphicon glyphicon-remove-circle'></div>Indisponible en happy hour</span>
-					{% endif %}
-					<span class="col-md-6 note">
-					<div class="col-md-3">Note produit :</div>
-					<div class="col-md-9">
-						{% if tireuse.biere.NoteProduit>0 %}
-							{% for i in 1..tireuse.biere.NoteProduit %}
-								<div class="glyphicon glyphicon-star note-star"></div>
-							{% endfor %}		
-							{% if tireuse.biere.NoteProduit<5 %}
-								{% for j in 0..5-tireuse.biere.NoteProduit %}
+					<tr>
+						<td class="col-md-6 produit-home-tableau-gauche">
+						Note Alcool : {% if tireuse.biere.NoteAlcoolBiere>0 %}
+											{% for i in 1..tireuse.biere.NoteAlcoolBiere %}
+												<div class="glyphicon glyphicon-star note-star"></div>
+											{% endfor %}		
+										{% if tireuse.biere.NoteAlcoolBiere<5 %}
+											{% for j in 1..5-tireuse.biere.NoteAlcoolBiere %}
+												<div class="glyphicon glyphicon-star-empty note-star note-star-empty"></div>
+											{% endfor %}
+										{% endif %}
+										{% else %}
+										{% for j in 0..4 %}
+											<div class="glyphicon glyphicon-star-empty note-star note-star-empty"></div>
+										{% endfor %}
+										{% endif %}
+						<br>
+							Note Amertume : {% if tireuse.biere.NoteAmertumeBiere>0 %}
+											{% for i in 1..tireuse.biere.NoteAmertumeBiere %}
+												<div class="glyphicon glyphicon-star note-star"></div>
+											{% endfor %}		
+										{% if tireuse.biere.NoteAmertumeBiere<5 %}
+											{% for j in 1..5-tireuse.biere.NoteAmertumeBiere %}
+												<div class="glyphicon glyphicon-star-empty note-star note-star-empty"></div>
+											{% endfor %}
+										{% endif %}
+										{% else %}
+										{% for j in 0..4 %}
+											<div class="glyphicon glyphicon-star-empty note-star note-star-empty"></div>
+										{% endfor %}
+										{% endif %}<br>
+							Note Puissance : {% if tireuse.biere.NotePuissanceBiere>0 %}
+											{% for i in 1..tireuse.biere.NotePuissanceBiere %}
+												<div class="glyphicon glyphicon-star note-star"></div>
+											{% endfor %}		
+											{% if tireuse.biere.NotePuissanceBiere<5 %}
+											{% for j in 1..5-tireuse.biere.NotePuissanceBiere %}
+												<div class="glyphicon glyphicon-star-empty note-star note-star-empty"></div>
+											{% endfor %}
+											{% endif %}
+										{% else %}
+										{% for j in 0..4 %}
+											<div class="glyphicon glyphicon-star-empty note-star note-star-empty"></div>
+										{% endfor %}
+										{% endif %}
+						</td>
+						<td class="col">
+						<div class="col-md-3">Note produit :</div>
+						<div class="col-md-9">
+							{% if tireuse.biere.NoteProduit>0 %}
+								{% for i in 1..tireuse.biere.NoteProduit %}
+									<div class="glyphicon glyphicon-star note-star"></div>
+								{% endfor %}		
+								{% if tireuse.biere.NoteProduit<5 %}
+									{% for j in 0..5-tireuse.biere.NoteProduit %}
+										<div class="glyphicon glyphicon-star-empty note-star note-star-empty"></div>
+									{% endfor %}
+								{% endif %}
+							{% else %}
+								{% for j in 0..4 %}
 									<div class="glyphicon glyphicon-star-empty note-star note-star-empty"></div>
 								{% endfor %}
 							{% endif %}
-						{% else %}
-							{% for j in 0..4 %}
-								<div class="glyphicon glyphicon-star-empty note-star note-star-empty"></div>
-							{% endfor %}
-						{% endif %}
-					</div>
-					</span>				
-					<span class="col-md-6 note col-md-offset-6">
-					<div class="col-md-3">Ma Note :</div>
-					<div class="col-md-9">
-						<div class="glyphicon glyphicon-star note-star"></div>
-						<div class="glyphicon glyphicon-star note-star"></div>
-						<div class="glyphicon glyphicon-star note-star"></div>
-						<div class="glyphicon glyphicon-star note-star"></div>
-						<div class="glyphicon glyphicon-star-empty note-star note-star-empty"></div>
-					</div>
-					</span>
+						</div>
+						<div class="col-md-3">Ma Note :</div>
+						<div class="col-md-9">
+							<div class="glyphicon glyphicon-star note-star"></div>
+							<div class="glyphicon glyphicon-star note-star"></div>
+							<div class="glyphicon glyphicon-star note-star"></div>
+							<div class="glyphicon glyphicon-star note-star"></div>
+							<div class="glyphicon glyphicon-star-empty note-star note-star-empty"></div>
+						</div>
+						</td>
+						</table>
 				</div>
+			</div>
+		</div>
 			{% endfor %}
 		</div>

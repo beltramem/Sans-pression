@@ -49,7 +49,14 @@
 					{{ render(controller('App\\Controller\\BiereController:randBiere')) }}
 				<div class="col-md-1 blanc">
 				</div>
-			</div>			
+			</div>		
+			<div class="col-md-12 ligne-produit-home">
+				<div class="col-md-1 blanc"></div>	
+					{{ render(controller('App\\Controller\\BiereController:randBiere')) }}
+					{{ render(controller('App\\Controller\\BiereController:randBiere')) }}
+				<div class="col-md-1 blanc">
+				</div>
+			</div>		
 		</div>
 		<div class="col-md-12 section-produit-tireuse">
 			{{ render(controller('App\\Controller\\TireuseController:showHome')) }}
@@ -68,7 +75,14 @@
 					{{ render(controller('App\\Controller\\VinController:randVin')) }}
 				<div class="col-md-1 blanc">
 				</div>
-			</div>			
+			</div>		
+			<div class="col-md-12 ligne-produit-home">
+				<div class="col-md-1 blanc"></div>	
+					{{ render(controller('App\\Controller\\VinController:randVin')) }}
+					{{ render(controller('App\\Controller\\VinController:randVin')) }}
+				<div class="col-md-1 blanc">
+				</div>
+			</div>		
 		</div>
 		<div class="col-md-5 blanc"></div><button type="button" class="col-md-2 btn-produit-home">Tous nos produits</button><div class="col-md-5 blanc"></div>
 	</section>

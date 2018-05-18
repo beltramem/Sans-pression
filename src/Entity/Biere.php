@@ -100,7 +100,7 @@ class Biere extends Produit
 	return $this;
 	}
 
-	public function removeCategory(TypeConteneur $TypeConteneur)
+	public function removeTypeConteneur(TypeConteneur $TypeConteneur)
 	{
 	// Ici on utilise une méthode de l'ArrayCollection, pour supprimer la catégorie en argument
 	$this->typeConteneurs->removeElement($TypeConteneur);
