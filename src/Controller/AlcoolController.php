@@ -23,6 +23,11 @@ class AlcoolController extends Controller
     {
         return $this->render('alcool/index.html.twig', ['alcools' => $alcoolRepository->findAll()]);
     }
+	
+	public function randAlcool(AlcoolRepository $alcoolRepository)
+    {
+        return $this->render('alcool/showAcc.html.twig',['alcool' => $alcoolRepository->randAlcool()[0]]);
+    }
 
     /**
      * @Route("/new", name="alcool_new", methods="GET|POST")
@@ -73,6 +78,7 @@ class AlcoolController extends Controller
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
+			$file = $alcool->getPhoto();
 			$fileName = $alcool->getNomPhoto();
 			$fileUploader->updateUpload($file,$fileName);
 			$em->flush();
@@ -95,7 +101,7 @@ class AlcoolController extends Controller
             $em = $this->getDoctrine()->getManager();
 			$file = $alcool->getPhoto();
 			$fileName = $alcool->getNomPhoto();
-			$fileUploader->removeUpload($fileName);
+			$fileUploader->removeUpload($file,$fileName);
             $em->remove($alcool);
             $em->flush();
         }

@@ -231,7 +231,7 @@ h3
 	font-size : 100%;
 }
 
-.section-produit-tireuse, .section-produit-vin
+.section-produit-tireuse, .section-produit-vin, .section-produit-alcool, .section-produit-divers
 {
 	display : none;
 	background-color :  rgba(0,0,0,0)

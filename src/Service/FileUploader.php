@@ -29,7 +29,7 @@ class FileUploader
 	public function removeUpload(string $fileName)
 	{
 		$file = new Filesystem();
-		$file->remove($this->getTargetDirectory(), $fileName);
+		$file->remove($this->getTargetDirectory()."/".$fileName);
 	}
 
     public function getTargetDirectory()

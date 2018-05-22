@@ -51,10 +51,11 @@ class AlcoolType extends AbstractType
 			'choice_label' => 'NomTypeAlcool'
 			))
 			->add('CategorieVieillissement', EntityType::class, array(
-			'required'   => true,
+			'required'   => false,
 			'label' => 'CategorieVieillissement :',
    			'class' => CategorieVieillissement::class,
-			'choice_label' => 'NomCategorieVieillissement'
+			'choice_label' => 'NomCategorieVieillissement',
+			'choice_value' => 'idCategorieVieillissement'
 			))
             ->add('paysFabrication', EntityType::class, array(
 			'required'   => true,

@@ -42,11 +42,6 @@ class Alcool extends Produit
      */
     private $NoteAmertumeAlcool;
 
-    /**
-     * @ORM\Column(type="string", length=5)
-     */
-    private $Volume;
-	
 	/**
 	* @ORM\ManyToOne(targetEntity="PaysFabrication")
 	* @ORM\JoinColumn(name="idPaysFabrication", referencedColumnName="idPaysFabrication", nullable=false)
@@ -100,7 +95,7 @@ class Alcool extends Produit
         return $this->CategorieVieillissement;
     }
 
-    public function setCategorieVieillissement(CategorieVieillissement $CategorieVieillissement): self
+    public function setCategorieVieillissement(CategorieVieillissement $CategorieVieillissement)
     {
         $this->CategorieVieillissement = $CategorieVieillissement;
 
@@ -154,19 +149,6 @@ class Alcool extends Produit
 
         return $this;
     }
-
-    public function getVolume()
-    {
-        return $this->Volume;
-    }
-
-    public function setVolume(string $Volume)
-    {
-        $this->Volume = $Volume;
-
-        return $this;
-    }
-
 	
 	public function getPaysFabrication()
     {
@@ -189,7 +171,7 @@ class Alcool extends Produit
 	return $this;
 	}
 
-	public function removeCategory(TypeConteneur $TypeConteneur)
+	public function removeTypeConteneur(TypeConteneur $TypeConteneur)
 	{
 	// Ici on utilise une méthode de l'ArrayCollection, pour supprimer la catégorie en argument
 	$this->typeConteneurs->removeElement($TypeConteneur);

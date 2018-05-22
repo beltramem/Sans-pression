@@ -1,0 +1,22 @@
+<div class="col-md-5 produit-home">
+	<img src={{photoProduit_directory}}/{{alcool.NomPhoto}} class="col-md-4 produit-home-photo">
+	<div class="col-md-8 produit-home-text">
+		<h3>{{alcool.NomProduit}}</h3>
+		<div class="col-md-12 barre-separation"></div>
+		<p class="produit-home-description">{{alcool.DescriptionProduit|slice(0,150)}}</p>
+		<div class="table-responsive-md">
+			<table class="table">
+		<tr>
+			<td class="col produit-home-tableau-gauche">{{alcool.PaysFabrication.nomPays}}</td>
+			<td class="col">{% if alcool.CategorieVieillissement is not null%} {{alcool.CategorieVieillissement.NomCategorieVeillissement}}- {% endif %} {{alcool.couleur.NomCouleur}}</td>
+		</tr>
+		<tr>
+			<td class="col produit-home-tableau-gauche">{{alcool.DegreeAlcool}}°</p>
+			<td class="col">{% for conteneur in alcool.typeConteneurs %}
+					{{ conteneur }}<br>
+				{% endfor %}</p>
+		</tr>
+		</table>
+	</div>
+	</div>
+</div> 

@@ -95,12 +95,13 @@ class BiereController extends Controller
     /**
      * @Route("/{IdProduit}", name="biere_delete", methods="DELETE")
      */
-    public function delete(Request $request, Biere $biere): Response
+    public function delete(Request $request, Biere $biere, FileUploader $fileUploader)
     {
         if ($this->isCsrfTokenValid('delete'.$biere->getIdProduit(), $request->request->get('_token'))) {
             $em = $this->getDoctrine()->getManager();
-			$fileName = $alcool->getNomPhoto();
-			$fileUploader->updateUpload($file,$fileName);
+			$file = $biere->getPhoto();
+			$fileName = $biere->getNomPhoto();
+			$fileUploader->removeUpload($fileName);
             $em->remove($biere);
             $em->flush();
         }

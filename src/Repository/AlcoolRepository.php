@@ -19,6 +19,18 @@ class AlcoolRepository extends ServiceEntityRepository
         parent::__construct($registry, Alcool::class);
     }
 
+	
+	public function randAlcool()
+	{
+		$builder = $this->createQueryBuilder('e');
+		$query = $builder
+		->addSelect('RAND() as HIDDEN rand')
+		->orderBy('rand');
+		
+		$result = $builder->getQuery()->execute();
+ 
+        return $result;
+	}
 //    /**
 //     * @return Alcool[] Returns an array of Alcool objects
 //     */

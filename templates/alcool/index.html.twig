@@ -13,7 +13,7 @@
                 <th>Couleur</th>
 				<th>CategorieVieillissement</th>
 				<th>Pays</th>
-                <th>Volume</th>
+				<th>TypeConteneur</th>
 				<th>DateCreationProduit</th>
                 <th>actions</th>
             </tr>
@@ -24,9 +24,17 @@
                 <td>{{ alcool.NomProduit }}</td>
                 <td>{{ alcool.TypeAlcool.NomTypeAlcool }}</td>
 				<td>{{ alcool.Couleur.NomCouleur }}</td>
-				<th>{{ alcool.CategorieVieillissement.NomCategorieVieillissement }}</th>
+				<td>
+				{% if alcool.CategorieVieillissement is not null %}
+					{{ alcool.CategorieVieillissement.nomCategorieVieillissement }}
+				{% endif %}
+				</td>
                 <td>{{ alcool.PaysFabrication.NomPays }}</td>
-                <td>{{ alcool.Volume }}</td>
+				<td>
+				{% for conteneur in alcool.typeConteneurs %}
+					-{{ conteneur }}<br>
+				{% endfor %}
+				</td>
 				<td>{{ alcool.DateCreationProduit ? alcool.DateCreationProduit|date('Y-m-d H:i:s') : '' }}</td>
                 <td>
                     <a href="{{ path('alcool_show', {'IdProduit': alcool.IdProduit}) }}">show</a>
