@@ -18,6 +18,31 @@ class DiversRepository extends ServiceEntityRepository
     {
         parent::__construct($registry, Divers::class);
     }
+	
+	public function randDivers()
+	{
+		$builder = $this->createQueryBuilder('e');
+		$query = $builder
+		->addSelect('RAND() as HIDDEN rand')
+		->andWhere('e.TypeDivers != 1')
+		->orderBy('rand');
+		
+		$result = $builder->getQuery()->execute();
+ 
+        return $result;
+	}	
+	public function randVerre()
+	{
+		$builder = $this->createQueryBuilder('e');
+		$query = $builder
+		->addSelect('RAND() as HIDDEN rand')
+		->andWhere('e.TypeDivers = 1')
+		->orderBy('rand');
+		
+		$result = $builder->getQuery()->execute();
+ 
+        return $result;
+	}
 
 //    /**
 //     * @return Divers[] Returns an array of Divers objects

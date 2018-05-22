@@ -23,6 +23,15 @@ class DiversController extends Controller
     {
         return $this->render('divers/index.html.twig', ['divers' => $diversRepository->findAll()]);
     }
+	
+	public function randDivers(DiversRepository $diversRepository)
+    {
+        return $this->render('divers/showAcc.html.twig',['divers' => $diversRepository->randDivers()[0]]);
+    }	
+	public function randVerre(DiversRepository $diversRepository)
+    {
+        return $this->render('divers/showAcc.html.twig',['divers' => $diversRepository->randVerre()[0]]);
+    }
 
     /**
      * @Route("/new", name="divers_new", methods="GET|POST")

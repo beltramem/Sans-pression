@@ -52,7 +52,6 @@ function menuRight(){
 	else if ($('.home-type-produit').text()=="Nos vins")
 	{
 		$('.home-type-produit').text("Nos alcools");
-		console.log("bite");
 		$(".section-produit-vin").toggle();
 		$(".section-produit-alcool").toggle();
 	}	
