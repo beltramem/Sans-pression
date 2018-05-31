@@ -87,4 +87,9 @@ class TypeBiereController extends Controller
 
         return $this->redirectToRoute('type_biere_index');
     }
+	
+	public function afficheFiltre(TypeBiereRepository $typeBiereRepository)
+	{
+		return $this->render('type_biere/index.html.twig', ['type_bieres' => $typeBiereRepository->findAll()]);
+	}
 }

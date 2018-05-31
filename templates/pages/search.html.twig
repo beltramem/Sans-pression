@@ -1,0 +1,62 @@
+{% extends 'base.html.twig' %}
+{% block header %}
+<div class="search-head col-md-12">
+	<nav class="navbar navbar-default bar-nav navbar-menu">
+		<div class="container-fluid">
+			<a href="/"><div class="navbar-brand" ><img src="/images/logo/LOGO_Sans_Pression.png" alt="Logo"/></div></a>
+			<ul class="nav navbar-nav navbar-brand contact">
+				<li><span class="glyphicon glyphicon-phone"></span>04.74.61.95.26</li>
+				<li><span class="glyphicon glyphicon-envelope"></span>sanspression@orange.fr</li>
+			</ul>
+			<ul class="nav navbar-nav navbar-right account">
+				<li><a href="https://www.facebook.com/SARLSansPression/"><img src="/images/facebook/facebook.png" class="facebook"></a></li>
+				<li><a href="#" class="nav"><span class="glyphicon glyphicon-user pills"></span> S'inscrire</a></li>
+				<li><a href="#" class="nav"><span class="glyphicon glyphicon-log-in pills"></span> Se connecter</a></li>
+			</ul>
+		</div>
+		<div class="col-md-12 barre-separation"></div>
+		<div class="container-fluid">
+			<ul class="nav nav-pills nav-justified">
+				<li class="nav-item"><a>Bières</a></li>
+				<li class="nav-item"><a>Pressions</a></li>
+				<li class="nav-item"><a>Alcools</a></li>
+				<li class="nav-item"><a>Vins</a></li>
+				<li class="nav-item"><a>Verres</a></li>
+				<li class="nav-item"><a>Divers</a></li>
+			</ul>
+		</div>
+	</nav>
+		<div class="col-md-2 blanc"></div>
+		<div class="col-md-8 trie-menu">
+			<div class=" col-md-12 trie-biere" >
+					<div class="col-md-3 item-filtre" id="filtre-pays">
+						<span class="glyphicon glyphicon-globe col-md-12" aria-hidden="true"></span>
+						<p>Pays</p>
+						<span class="glyphicon glyphicon-chevron-down col-md-12"></span>
+					</div>				
+					<div class="col-md-3 item-filtre" id="filtre-couleursBiere">
+						<span class="glyphicon glyphicon-tint icon-white col-md-12" aria-hidden="true"></span>
+						<p>Couleurs</p>
+						<span class="glyphicon glyphicon-chevron-down col-md-12"></span>
+					</div>				
+					<div class="col-md-3 item-filtre" id="filtre-typeBiere">
+						<span class="filtre filtre-type-biere"></span>
+						<p>Type de bière</p>
+						<span class="glyphicon glyphicon-chevron-down col-md-12"></span>
+					</div>				
+					<div class="col-md-3 item-filtre" id="filtre-typeConteneurBiere">
+						<span class="filtre filtre-type-conteneur"></span>
+						<p>Volume</p>
+						<span class="glyphicon glyphicon-chevron-down col-md-12"></span>
+					</div>
+			</div>
+			<div class="col-md-2 blanc"></div>
+		</div>
+</div>
+{% endblock %}
+{% block body %}
+	
+{% endblock %}
+{% block script %}
+
+{% endblock %}

@@ -15,7 +15,7 @@
 				</ul>
 			</div>
 			<div class="container-fluid">
-			<div class="navbar-brand" href="#"><img src="images/logo/LOGO_Sans_Pression.png" alt="Logo"/></div>
+			<div class="navbar-brand"><a href="/"><img src="images/logo/LOGO_Sans_Pression.png" alt="Logo"/></a></div>
 			<ul class="nav navbar-nav navbar-right">
 				<li><a class="js-scrollTo" href="#produit">Produits</a></li>
 				<li><a href="#">Événements</a></li>
@@ -30,7 +30,7 @@
 	</div>
 {% endblock %}
 {% block body %}
-	<section class="produit" id="produit">
+	<section class="col-md-12 produit" id="produit">
 		<h1>Nos Produits</h1>
 		<h2>
 			<span class="glyphicon glyphicon-menu-left"></span><span class='home-type-produit'>Nos bières</span><span class="glyphicon glyphicon-menu-right"></span>
@@ -118,10 +118,13 @@
 				</div>
 			</div>			
 		</div>
-		<div class="col-md-5 blanc"></div><button type="button" class="col-md-2 btn-produit-home">Tous nos produits</button><div class="col-md-5 blanc"></div>
+		<div class="col-md-5 blanc"></div><a href=search><button type="button" class="col-md-2 btn-produit-home">Tous nos produits</button></a><div class="col-md-5 blanc"></div>
 	</section>
 	<section class="evenement"
 	
 	</section>
 	
+{% endblock %}
+{% block script %}
+	<script language="JavaScript" type="text/javascript"src="/js/home.js"></script>
 {% endblock %}
