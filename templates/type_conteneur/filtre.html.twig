@@ -1,0 +1,9 @@
+{% block body %}
+	{% for type_conteneur in type_conteneurs %}
+		<div class="col-md-12">
+			<div class="col-md-12 glyphicon glyphicon-unchecked">{{ type_conteneur }}</div>
+		</div>
+	{% else %}
+		<p> pas de volume disponible </p>
+	{% endfor %}
+{% endblock %}

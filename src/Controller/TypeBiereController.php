@@ -90,6 +90,6 @@ class TypeBiereController extends Controller
 	
 	public function afficheFiltre(TypeBiereRepository $typeBiereRepository)
 	{
-		return $this->render('type_biere/index.html.twig', ['type_bieres' => $typeBiereRepository->findAll()]);
+		return $this->render('type_biere/filtre.html.twig', ['type_bieres' => $typeBiereRepository->findAllAlphabet()]);
 	}
 }

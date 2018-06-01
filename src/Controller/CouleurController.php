@@ -87,4 +87,9 @@ class CouleurController extends Controller
 
         return $this->redirectToRoute('couleur_index');
     }
+	
+	public function afficheFiltre(CouleurRepository $couleurRepository): Response
+    {
+        return $this->render('couleur/filtre.html.twig', ['couleurs' => $couleurRepository->findAllAlphabet()]);
+    }
 }

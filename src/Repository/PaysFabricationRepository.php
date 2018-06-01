@@ -18,6 +18,14 @@ class PaysFabricationRepository extends ServiceEntityRepository
     {
         parent::__construct($registry, PaysFabrication::class);
     }
+	
+	public function findAllAlphabet()
+	{
+		$qb = $this->createQueryBuilder('p')
+					->orderBy('p.nomPays')
+					->getQuery();
+			return $qb->execute();
+	}
 
 //    /**
 //     * @return PaysFabrication[] Returns an array of PaysFabrication objects

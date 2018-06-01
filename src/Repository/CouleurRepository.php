@@ -18,6 +18,14 @@ class CouleurRepository extends ServiceEntityRepository
     {
         parent::__construct($registry, Couleur::class);
     }
+	
+		public function findAllAlphabet()
+	{
+		$qb = $this->createQueryBuilder('p')
+					->orderBy('p.nomCouleur')
+					->getQuery();
+			return $qb->execute();
+	}
 
 //    /**
 //     * @return Couleur[] Returns an array of Couleur objects

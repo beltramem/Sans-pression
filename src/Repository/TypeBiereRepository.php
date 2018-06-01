@@ -19,6 +19,14 @@ class TypeBiereRepository extends ServiceEntityRepository
         parent::__construct($registry, TypeBiere::class);
     }
 
+	public function findAllAlphabet()
+	{
+		$qb = $this->createQueryBuilder('p')
+					->orderBy('p.NomTypeBiere')
+					->getQuery();
+			return $qb->execute();
+	}
+	
 //    /**
 //     * @return TypeBiere[] Returns an array of TypeBiere objects
 //     */

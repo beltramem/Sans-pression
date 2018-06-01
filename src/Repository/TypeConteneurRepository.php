@@ -18,6 +18,14 @@ class TypeConteneurRepository extends ServiceEntityRepository
     {
         parent::__construct($registry, TypeConteneur::class);
     }
+	
+	public function findAllAlphabet()
+	{
+		$qb = $this->createQueryBuilder('p')
+					->orderBy('p.nomTypeConteneur')
+					->getQuery();
+			return $qb->execute();
+	}
 
 //    /**
 //     * @return TypeConteneur[] Returns an array of TypeConteneur objects

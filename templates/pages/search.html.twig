@@ -29,25 +29,37 @@
 		<div class="col-md-2 blanc"></div>
 		<div class="col-md-8 trie-menu">
 			<div class=" col-md-12 trie-biere" >
-					<div class="col-md-3 item-filtre" id="filtre-pays">
+					<div class="col-md-3 item-filtre" id="filtre-paysBiere">
 						<span class="glyphicon glyphicon-globe col-md-12" aria-hidden="true"></span>
 						<p>Pays</p>
 						<span class="glyphicon glyphicon-chevron-down col-md-12"></span>
+						<div class="col-md-12 drop-down" id="drop-down-filtre-paysBiere">
+							{{ render(controller('App\\Controller\\PaysFabricationController:afficheFiltre')) }}
+						</div>
 					</div>				
-					<div class="col-md-3 item-filtre" id="filtre-couleursBiere">
+					<div class="col-md-3 item-filtre" id="filtre-couleurBiere">
 						<span class="glyphicon glyphicon-tint icon-white col-md-12" aria-hidden="true"></span>
 						<p>Couleurs</p>
 						<span class="glyphicon glyphicon-chevron-down col-md-12"></span>
+						<div class="col-md-12 drop-down" id="drop-down-filtre-couleurBiere">
+							{{ render(controller('App\\Controller\\CouleurController:afficheFiltre')) }}
+						</div>
 					</div>				
 					<div class="col-md-3 item-filtre" id="filtre-typeBiere">
 						<span class="filtre filtre-type-biere"></span>
 						<p>Type de bière</p>
 						<span class="glyphicon glyphicon-chevron-down col-md-12"></span>
+						<div class="col-md-12 drop-down" id="drop-down-filtre-typeBiere">
+							{{ render(controller('App\\Controller\\TypeBiereController:afficheFiltre')) }}
+						</div>
 					</div>				
 					<div class="col-md-3 item-filtre" id="filtre-typeConteneurBiere">
 						<span class="filtre filtre-type-conteneur"></span>
 						<p>Volume</p>
 						<span class="glyphicon glyphicon-chevron-down col-md-12"></span>
+						<div class="col-md-12 drop-down" id="drop-down-filtre-typeConteneurBiere">
+							{{ render(controller('App\\Controller\\TypeConteneurController:afficheFiltre')) }}
+						</div>
 					</div>
 			</div>
 			<div class="col-md-2 blanc"></div>
@@ -58,5 +70,5 @@
 	
 {% endblock %}
 {% block script %}
-
+	<script language="JavaScript" type="text/javascript"src="/js/search.js"></script>
 {% endblock %}

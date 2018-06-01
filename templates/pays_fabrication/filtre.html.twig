@@ -1,0 +1,9 @@
+{% block body %}
+	{% for pays_fabrication in pays_fabrications %}
+		<div class="col-md-12">
+			<div class="col-md-12 glyphicon glyphicon-unchecked">{{ pays_fabrication.nomPays }}</div>
+		</div>
+	{% else %}
+		<p> pas de pays disponible </p>
+	{% endfor %}
+{% endblock %}

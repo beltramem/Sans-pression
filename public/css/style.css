@@ -416,6 +416,16 @@ h3
 	margin-top : 5px;
 }
 
+.trie-menu .glyphicon-unchecked
+{
+	font-size : 15px;
+	text-align : left;
+	margin-top : 5px;
+	margin-bottom : 10px;
+	padding-left : 0px;
+	cursor : pointer;
+}
+
 .filtre
 {
     width: 45px;
@@ -429,7 +439,14 @@ h3
 .item-filtre
 {
 	margin-top : 10px;
+	cursor : pointer;
 }
+
+.item-filtre:hover
+{
+	background-color : rgba(0,0,0,0.6);
+}
+
 .filtre-type-biere
 {
 	background: url(/images/logo/shop.png);
@@ -452,3 +469,35 @@ h3
 	min-height : 250px;
 }
 
+.drop-down
+{
+	background-color : rgba(0,0,0,0.4);
+	padding-left : 0px;
+	position : absolute;
+	left : 0;
+	z-index : 10;
+	height : 150px;
+	overflow-y : auto;
+	overflow-x : hidden;
+	display : none;
+}
+
+#filtre-typeBiere:hover #drop-down-filtre-typeBiere
+{
+	display : block;
+}
+
+#filtre-typeConteneurBiere:hover #drop-down-filtre-typeConteneurBiere
+{
+	display : block;
+	
+}
+#filtre-paysBiere:hover #drop-down-filtre-paysBiere
+{
+	display : block;
+}
+
+#filtre-couleurBiere:hover #drop-down-filtre-couleurBiere
+{
+	display : block;
+}

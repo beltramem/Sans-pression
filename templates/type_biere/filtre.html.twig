@@ -1,0 +1,9 @@
+{% block body %}
+	{% for type_biere in type_bieres %}
+		<div class="col-md-12">
+			<div class="col-md-12 glyphicon glyphicon-unchecked">{{ type_biere.NomTypeBiere }}</div>
+		</div>
+	{% else %}
+		<p> pas de type de bière disponible </p>
+	{% endfor %}
+{% endblock %}

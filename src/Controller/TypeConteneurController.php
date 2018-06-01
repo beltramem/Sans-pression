@@ -87,4 +87,9 @@ class TypeConteneurController extends Controller
 
         return $this->redirectToRoute('type_conteneur_index');
     }
+	
+	public function afficheFiltre(TypeConteneurRepository $typeConteneurRepository)
+	{
+		return $this->render('type_conteneur/filtre.html.twig', ['type_conteneurs' => $typeConteneurRepository->findAllAlphabet()]);
+	}
 }

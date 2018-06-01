@@ -87,4 +87,9 @@ class PaysFabricationController extends Controller
 
         return $this->redirectToRoute('pays_fabrication_index');
     }
+	
+	public function afficheFiltre(PaysFabricationRepository $paysFabricationRepository)
+	{
+		return $this->render('pays_fabrication/filtre.html.twig', ['pays_fabrications' => $paysFabricationRepository->findAllAlphabet()]);
+	}
 }
