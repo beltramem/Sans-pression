@@ -19,6 +19,46 @@ class BiereRepository extends ServiceEntityRepository
         parent::__construct($registry, Biere::class);
     }
 	
+	public function findbyAllFiltre($pays,$couleurs,$typeBieres,$volumes, $productName)
+	{
+		 $qb = $this->createQueryBuilder('b')
+		 ->join('b.brasserie', 'bss')
+		 ->join('b.typeConteneurs', 'tc')
+		 ->join('b.typeBiere', 'tb')
+		 ->join('b.couleur', 'c')
+		 ->join('bss.paysFabrication', 'p')
+		 ->addSelect('b');
+		 if ($productName[0] != "null")
+		 {
+			 $qb->andWhere('b.NomProduit like :productName')
+			 ->orWhere('bss.nomBrasserie like :productName')
+			 ->setParameter('productName', $productName);
+		 }
+		 if ($pays[0] != "null")
+		 {
+			$qb->andWhere('p.idPaysFabrication in (:pays)')
+			->setParameter('pays', $pays);
+		 }
+		 if ($couleurs[0]!= "null")
+		 {
+			$qb->andWhere('c.idCouleur in (:couleurs)')
+			->setParameter('couleurs', $couleurs);
+		 }
+		 if ($typeBieres[0] != "null")
+		 {
+			$qb->andWhere('tb.idTypeBiere in (:typeBieres)')
+			->setParameter('typeBieres', $typeBieres);
+		 }
+		 if ($volumes[0] != "null")
+		 {
+			$qb->andWhere('tc.idTypeConteneur in (:volumes)')
+			->setParameter('volumes', $volumes);
+		 }
+		 $result = $qb->getQuery()->execute();
+		 return $result;
+		 
+	}
+	
 	public function findbyAllBiere ()
 	{
 		$builder = $this->createQueryBuilder('p');

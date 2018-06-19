@@ -1,0 +1,41 @@
+{% block body %}
+	<ul class="col-md-12">
+	{% for biere in bieres %}
+		<li class="col-md-3">
+			<div class="col-md-12">
+				<div class="col-md-3"></div>
+				<div class="image_search"><img src={{photoProduit_directory}}/{{biere.NomPhoto}} class="col-md-6 produit-search-photo"></div>
+				<div class="col-md-3"></div>
+			</div>
+			<div class="col-md-12">
+				<h3>{{biere.NomProduit}}</h3>
+				<div class="col-md-3"></div><div class="col-md-6 barre-separation"></div><div class="col-md-3"></div>
+				<div class="description_search"><p class="col-md-12 produit-home-description">{{biere.DescriptionProduit|slice(0,100)}}...</p></div>
+				<div class="table-responsive-md">
+					<table class="table">
+					<tr>
+						<h2>{{biere.Brasserie.NomBrasserie}}</h2>
+					</tr>
+					<tr>
+						<td class="col produit-home-tableau-gauche">{{biere.Brasserie.PaysFabrication.NomPays}}</td>
+						<td class="col">{{biere.TypeBiere.NomTypeBiere}}-{{biere.couleur.NomCouleur}}</td>
+					</tr>
+					<tr>
+						<td class="col produit-home-tableau-gauche">{{biere.DegreeBiere}}°</td>
+						<td class="col">
+						{% for conteneur in biere.typeConteneurs %}
+							-{{ conteneur }}<br>
+						{% endfor %}
+						</td>
+					</tr>
+					</table>
+				</div>
+			</div>
+		</li>
+		{% if loop.index is divisible by (4) %}
+			</ul>
+			<ul class="col-md-12">
+		{% endif %}
+	{% endfor %}
+	</table>
+{% endblock %}

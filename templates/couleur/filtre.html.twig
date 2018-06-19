@@ -1,7 +1,7 @@
 {% block body %}
 	{% for couleur in couleurs %}
 		<div class="col-md-12">
-			<div class="col-md-12 glyphicon glyphicon-unchecked">{{ couleur.nomCouleur }}</div>
+			<div class="col-md-12 glyphicon glyphicon-unchecked item-filtre" id="{{ couleur.idCouleur }}-" onclick="CheckFiltre(this)">{{ couleur.nomCouleur }}</div>
 		</div>
 	{% else %}
 		<p> pas de couleur disponible </p>

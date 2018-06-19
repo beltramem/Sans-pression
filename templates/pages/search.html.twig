@@ -28,6 +28,12 @@
 	</nav>
 		<div class="col-md-2 blanc"></div>
 		<div class="col-md-8 trie-menu">
+			<div class="col-md-2 blanc"></div>
+			<div class="input-group col-md-8">    
+				<input type="email" class="form-control name-search" id="exampleInputEmail2" placeholder="Nom du produit ou Fabricant">
+				<span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
+			</div>
+			<div class="col-md-2"></div>
 			<div class=" col-md-12 trie-biere" >
 					<div class="col-md-3 item-filtre" id="filtre-paysBiere">
 						<span class="glyphicon glyphicon-globe col-md-12" aria-hidden="true"></span>
@@ -67,7 +73,7 @@
 </div>
 {% endblock %}
 {% block body %}
-	
+	<div id="ajax-results"></div>
 {% endblock %}
 {% block script %}
 	<script language="JavaScript" type="text/javascript"src="/js/search.js"></script>

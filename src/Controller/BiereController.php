@@ -28,7 +28,7 @@ class BiereController extends Controller
 	public function randBiere(BiereRepository $biereRepository)
     {
         return $this->render('biere/showAcc.html.twig',['biere' => $biereRepository->randBiere()[0]]);
-    }
+    }	
 	
     /**
      * @Route("/new", name="biere_new", methods="GET|POST")
