@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+{% block title %}Details {{ alcool.NomProduit }} {% endblock %}
+
+{% block body %}
+	<div class="image_search col-md-3"><img src={{photoProduit_directory}}/{{alcool.NomPhoto}} class=" col-md-12 produit-search-photo"></div>
+	<div class="col-md-9">
+		<div class="col-md-12"><h1> {{alcool.NomProduit}}</h1></div>
+		<p class="produit-home-description">{{ alcool.descriptionProduit }} </p>
+	</div>
+	<div class="table-responsive-md col-md-12">
+		<table class="table">
+		<tr>
+			<td class="col produit-home-tableau-gauche">{{alcool.PaysFabrication.NomPays}}</td>
+			<td class="col">{% if alcool.CategorieVieillissement %} {{ alcool.CategorieVieillissement.NomCategorieVieillissement }} {% endif %} - {{alcool.couleur.NomCouleur}}</td>
+		</tr>
+		<tr>
+			<td class="col produit-home-tableau-gauche">{{alcool.DegreeAlcool}}°</td>
+			<td class="col">
+			{% for conteneur in alcool.typeConteneurs %}
+				-{{ conteneur }}<br>
+			{% endfor %}
+			</td>
+		</tr>
+		</table>
+	</div>
+{% endblock %}

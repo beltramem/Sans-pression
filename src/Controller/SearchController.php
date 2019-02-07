@@ -21,9 +21,9 @@ class SearchController extends Controller
      * @Route("/biere/", name="app_search")
      * @Template("pages/search.html.twig")
      */
-    public function searchAction()
+    public function searchAction(BiereRepository $biereRepository)
     {
-        return ["project_name" => "yourProject"];
+       return $this->render('pages/search.html.twig',['bieres' => $biereRepository->findAllRand()]);
     }
 	/**
      * @Route("/biere/pays={pays}/couleurs={couleurs}/typeBieres={typeBieres}/volumes={volumes}/productName={productName}", defaults={"productName" = null}, name="search-all-filtre")
@@ -39,5 +39,7 @@ class SearchController extends Controller
 		return $this->render('biere/search.html.twig', ['bieres' => $bieres]);
 		
 	}
+	
+
 	
 }

@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+{% block title %}Details {{ vin.NomProduit }} {% endblock %}
+
+{% block body %}
+	<div class="image_search col-md-3"><img src={{photoProduit_directory}}/{{vin.NomPhoto}} class=" col-md-12 produit-search-photo"></div>
+	<div class="col-md-9">
+		<div class="col-md-12"><h1> {{vin.NomProduit}}</h1></div>
+		<p class="produit-home-description">{{ vin.descriptionProduit }} </p>
+	</div>
+	<div class="table-responsive-md col-md-12">
+		<table class="table">
+		<tr>
+			<h2>{{vin.vignoble.NomVignoble}}</h2>
+		</tr>
+		<tr>
+			<td class="col produit-home-tableau-gauche">{{vin.vignoble.RegionFabrication.NomRegion}} - {{vin.vignoble.RegionFabrication.PaysFabrication.NomPays}}</td>
+			<td class="col">{{vin.couleur.NomCouleur}}</td>
+		</tr>
+		<tr>
+			<td class="col produit-home-tableau-gauche">{{vin.DegreeVin}}°</td>
+			<td class="col">
+			{% for conteneur in vin.typeConteneurs %}
+				-{{ conteneur }}<br>
+			{% endfor %}
+			</td>
+		</tr>
+		</table>
+	</div>
+{% endblock %}

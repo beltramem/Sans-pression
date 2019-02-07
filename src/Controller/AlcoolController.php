@@ -101,7 +101,7 @@ class AlcoolController extends Controller
             $em = $this->getDoctrine()->getManager();
 			$file = $alcool->getPhoto();
 			$fileName = $alcool->getNomPhoto();
-			$fileUploader->removeUpload($file,$fileName);
+			$fileUploader->removeUpload($fileName);
             $em->remove($alcool);
             $em->flush();
         }

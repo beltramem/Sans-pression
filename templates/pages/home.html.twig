@@ -9,7 +9,7 @@
 					<li><span class="glyphicon glyphicon-envelope"></span>sanspression@orange.fr</li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right account">
-					<li><a href="https://www.facebook.com/SARLSansPression/"><img src="images/facebook/facebook.png" class="facebook"></a></li>
+					<li><a href="https://www.facebook.com/SARLSansPression/" target="blank"><img src="images/facebook/facebook.png" class="facebook"></a></li>
 					<li><a href="#" class="nav"><span class="glyphicon glyphicon-user pills"></span> S'inscrire</a></li>
 					<li><a href="#" class="nav"><span class="glyphicon glyphicon-log-in pills"></span> Se connecter</a></li>
 				</ul>
@@ -30,6 +30,10 @@
 	</div>
 {% endblock %}
 {% block body %}
+	<section class="col-md-12 Concept" id="concept">
+		{{ include("pages/conceptTemplate.html.twig") }}
+	</section>
+		
 	<section class="col-md-12 produit" id="produit">
 		<h1>Nos Produits</h1>
 		<h2>
@@ -117,7 +121,7 @@
 				</div>
 			</div>			
 		</div>
-		<div class="col-md-5 blanc"></div><a href=search><button type="button" class="col-md-2 btn-produit-home">Tous nos produits</button></a><div class="col-md-5 blanc"></div>
+		<div class="col-md-5 blanc"></div><a href=search/biere/><button type="button" class="col-md-2 btn-produit-home">Tous nos produits</button></a><div class="col-md-5 blanc"></div>
 	</section>
 	<section class="evenement"
 	

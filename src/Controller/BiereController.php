@@ -108,4 +108,7 @@ class BiereController extends Controller
 
         return $this->redirectToRoute('biere_index');
     }
+	
+
+	
 }

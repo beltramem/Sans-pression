@@ -28,9 +28,9 @@ class BiereRepository extends ServiceEntityRepository
 		 ->join('b.couleur', 'c')
 		 ->join('bss.paysFabrication', 'p')
 		 ->addSelect('b');
-		 if ($productName[0] != "null")
+		 if ($productName != "null" && $productName !="all")
 		 {
-			 $qb->andWhere('b.NomProduit like :productName')
+			 $qb->Where('b.NomProduit like :productName')
 			 ->orWhere('bss.nomBrasserie like :productName')
 			 ->setParameter('productName', $productName);
 		 }
@@ -71,6 +71,25 @@ class BiereRepository extends ServiceEntityRepository
         $result = $builder->getQuery()->execute();
  
         return $result;
+	}
+	
+	public function findAllRand ()
+	{
+		$builder = $this->createQueryBuilder('b');
+		$query  = $builder->select()->andWhere("b INSTANCE of App\Entity\Biere")->setMaxResults(20)->orderBy('RAND()');
+		$result = $builder->getQuery()->execute();
+		
+		return $result;
+	}
+	
+	public function findbyBrasserie($brasserie,$nom)
+	{
+		$builder = $this->createQueryBuilder('b')
+		->join('b.brasserie', 'bss');
+		$query  = $builder->select()->andWhere("bss.nomBrasserie like :brasserie")->andWhere('b.NomProduit != :nom')->setParameter('brasserie', $brasserie)->setParameter('nom', $nom)->setMaxResults(4)->orderBy('RAND()');
+		$result = $builder->getQuery()->execute();
+		
+		return $result;
 	}
 	
 	public function randBiere()

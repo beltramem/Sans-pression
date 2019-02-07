@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+{% block title %}Details {{ divers.NomProduit }} {% endblock %}
+
+{% block body %}
+	<div class="image_search col-md-3"><img src={{photoProduit_directory}}/{{divers.NomPhoto}} class=" col-md-12 produit-search-photo"></div>
+	<div class="col-md-9">
+		<div class="col-md-12"><h1> {{divers.NomProduit}}</h1></div>
+		<p class="produit-home-description">{{ divers.descriptionProduit }} </p>
+	</div>
+{% endblock %}

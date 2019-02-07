@@ -1,8 +1,6 @@
 {% block body %}
-	<ul class="col-md-12">
 	{% for biere in bieres %}
-		<a href="/search/{{biere.idProduit}}" target="blank" class="href_produit">
-		<li class="col-md-3">
+		<div class="col-md-3 produit-detail">
 			<div class="col-md-12">
 				<div class="col-md-3"></div>
 				<div class="image_search"><img src={{photoProduit_directory}}/{{biere.NomPhoto}} class="col-md-6 produit-search-photo"></div>
@@ -32,14 +30,6 @@
 					</table>
 				</div>
 			</div>
-		</li>
-		</a>
-		{% if loop.index is divisible by (4) %}
-			</ul>
-			<ul class="col-md-12">
-		{% endif %}
-	{% else %}
-		<h1> Oups aucune correspondance </h1>
+		</div>
 	{% endfor %}
-	</table>
 {% endblock %}

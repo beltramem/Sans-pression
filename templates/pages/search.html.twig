@@ -9,7 +9,7 @@
 				<li><span class="glyphicon glyphicon-envelope"></span>sanspression@orange.fr</li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right account">
-				<li><a href="https://www.facebook.com/SARLSansPression/"><img src="/images/facebook/facebook.png" class="facebook"></a></li>
+				<li><a href="https://www.facebook.com/SARLSansPression/" target="blank"><img src="/images/facebook/facebook.png" class="facebook"></a></li>
 				<li><a href="#" class="nav"><span class="glyphicon glyphicon-user pills"></span> S'inscrire</a></li>
 				<li><a href="#" class="nav"><span class="glyphicon glyphicon-log-in pills"></span> Se connecter</a></li>
 			</ul>
@@ -18,7 +18,6 @@
 		<div class="container-fluid">
 			<ul class="nav nav-pills nav-justified">
 				<li class="nav-item"><a>Bières</a></li>
-				<li class="nav-item"><a>Pressions</a></li>
 				<li class="nav-item"><a>Alcools</a></li>
 				<li class="nav-item"><a>Vins</a></li>
 				<li class="nav-item"><a>Verres</a></li>
@@ -73,7 +72,9 @@
 </div>
 {% endblock %}
 {% block body %}
-	<div id="ajax-results"></div>
+	<div id="ajax-results">
+		{{ include("biere/search.html.twig") }}
+	</div>
 {% endblock %}
 {% block script %}
 	<script language="JavaScript" type="text/javascript"src="/js/search.js"></script>

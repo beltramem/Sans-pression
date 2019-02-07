@@ -29,7 +29,10 @@ function CheckFiltre(item)
 	if ($('.name-search').val().length >= 2)
 	{
 		productName = '%'+$('.name-search').val()+'%'
-		console.log(productName)
+	}
+	else if ($('.name-search').val().length ==0)
+	{
+		productName = 'all'
 	}
 	else 
 	{
@@ -62,7 +65,6 @@ function CheckFiltre(item)
                 async: true,
                 success: function (data)
                 {
-                    console.log(data)
                     $('#ajax-results').html(data);
 
                 }
@@ -71,7 +73,7 @@ function CheckFiltre(item)
 
 $(document).ready(function() {
 	$('.name-search').keyup(function(){
-		if ($('.name-search').val().length >=3)
+		if ($('.name-search').val().length >=3 || $('.name-search').val().length ==0 )
 		{
 			CheckFiltre('null')
 		}
