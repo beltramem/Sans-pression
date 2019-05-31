@@ -1,0 +1,90 @@
+<div class="fond-noir-img col-md-12">
+	<h1>Nos Produits</h1>
+		<h2 class="fond-img">
+			<span class="glyphicon glyphicon-menu-left"></span><span class='home-type-produit'>Nos bières</span><span class="glyphicon glyphicon-menu-right"></span>
+		</h2>
+		<div class="col-md-12 section-produit-biere">
+			<div class="col-md-12 ligne-produit-home">
+				<div class="col-md-1 blanc"></div>	
+					{{ render(controller('App\\Controller\\BiereController:randBiere')) }}
+					{{ render(controller('App\\Controller\\BiereController:randBiere')) }}
+				<div class="col-md-1 blanc"></div>
+			</div>		
+			<div class="col-md-12 ligne-produit-home">
+				<div class="col-md-1 blanc"></div>	
+					{{ render(controller('App\\Controller\\BiereController:randBiere')) }}
+					{{ render(controller('App\\Controller\\BiereController:randBiere')) }}
+				<div class="col-md-1 blanc">
+				</div>
+			</div>			
+		</div>
+		<div class="col-md-12 section-produit-tireuse">
+			{{ render(controller('App\\Controller\\TireuseController:showHome')) }}
+		</div>
+		<div class="col-md-12 section-produit-vin">
+			<div class="col-md-12 ligne-produit-home">
+				<div class="col-md-1 blanc"></div>	
+					{{ render(controller('App\\Controller\\VinController:randVin')) }}
+					{{ render(controller('App\\Controller\\VinController:randVin')) }}
+				<div class="col-md-1 blanc">
+				</div>
+			</div>		
+			<div class="col-md-12 ligne-produit-home">
+				<div class="col-md-1 blanc"></div>	
+					{{ render(controller('App\\Controller\\VinController:randVin')) }}
+					{{ render(controller('App\\Controller\\VinController:randVin')) }}
+				<div class="col-md-1 blanc">
+				</div>
+			</div>			
+		</div>
+		<div class="col-md-12 section-produit-alcool">
+			<div class="col-md-12 ligne-produit-home">
+				<div class="col-md-1 blanc"></div>	
+					{{ render(controller('App\\Controller\\AlcoolController:randAlcool')) }}
+					{{ render(controller('App\\Controller\\AlcoolController:randAlcool')) }}
+				<div class="col-md-1 blanc">
+				</div>
+			</div>		
+			<div class="col-md-12 ligne-produit-home">
+				<div class="col-md-1 blanc"></div>	
+					{{ render(controller('App\\Controller\\AlcoolController:randAlcool')) }}
+					{{ render(controller('App\\Controller\\AlcoolController:randAlcool')) }}
+				<div class="col-md-1 blanc">
+				</div>
+			</div>			
+		</div>		
+		<div class="col-md-12 section-produit-diver">
+			<div class="col-md-12 ligne-produit-home">
+				<div class="col-md-1 blanc"></div>	
+					{{ render(controller('App\\Controller\\DiversController:randDivers')) }}
+					{{ render(controller('App\\Controller\\DiversController:randDivers')) }}
+				<div class="col-md-1 blanc">
+				</div>
+			</div>		
+			<div class="col-md-12 ligne-produit-home">
+				<div class="col-md-1 blanc"></div>	
+					{{ render(controller('App\\Controller\\DiversController:randDivers')) }}
+					{{ render(controller('App\\Controller\\DiversController:randDivers')) }}
+				<div class="col-md-1 blanc">
+				</div>
+			</div>			
+		</div>
+		<div class="col-md-12 section-produit-verre">
+			<div class="col-md-12 ligne-produit-home">
+				<div class="col-md-1 blanc"></div>	
+					{{ render(controller('App\\Controller\\DiversController:randVerre')) }}
+					{{ render(controller('App\\Controller\\DiversController:randVerre')) }}
+				<div class="col-md-1 blanc">
+				</div>
+			</div>		
+			<div class="col-md-12 ligne-produit-home">
+				<div class="col-md-1 blanc"></div>	
+					{{ render(controller('App\\Controller\\DiversController:randVerre')) }}
+					{{ render(controller('App\\Controller\\DiversController:randVerre')) }}
+				<div class="col-md-1 blanc">
+				</div>
+			</div>			
+		</div>
+		<div class="col-md-5 blanc"></div><a href=search/biere/><button type="button" class="col-md-2 btn-produit-home">Tous nos produits</button></a><div class="col-md-5 blanc"></div>
+</div>
+</div>

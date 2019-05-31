@@ -25,15 +25,26 @@ function menuLeft(){
 	}	
 	else if ($('.home-type-produit').text()=="Nos vins")
 	{
+		console.log ("bip");
 		$('.home-type-produit').text("à la tireuse");
 		$(".section-produit-vin").toggle();
 		$(".section-produit-tireuse").toggle();
+		$("#produit").css( "backgroundImage", "none" );
+		$(".fond-noir-img").css("backgroundColor", "rgba(0,0,0,0)");
+		$(".table-responsive-md").toggleClass("table-responsive-md-tireuse");
+		$(".fond-img").toggleClass('fond-img-tireuse');
+		
 	}	
 	else if ($('.home-type-produit').text()=="à la tireuse")
 	{
 		$('.home-type-produit').text("Nos bières");
 		$(".section-produit-tireuse").toggle();
 		$(".section-produit-biere").toggle();
+		$("#produit").css( "backgroundImage", "url('../images/background/backgroundProduitHomePage.jpg')" );
+		$(".fond-noir-img").css("backgroundColor", "rgba(0,0,0,0.4)");
+		$(".table-responsive-md").toggleClass("table-responsive-md-tireuse");
+		$(".fond-img-tireuse").toggleClass('fond-img-tireuse');
+		
 	}
 }
 function menuRight(){
@@ -42,12 +53,20 @@ function menuRight(){
 		$('.home-type-produit').text("à la tireuse");
 		$(".section-produit-biere").toggle();
 		$(".section-produit-tireuse").toggle();
+		$("#produit").css( "backgroundImage", "none");
+		$(".fond-noir-img").css("backgroundColor", "rgba(0,0,0,0)");
+		$(".fond-img").toggleClass('fond-img-tireuse');
+		$(".table-responsive-md").toggleClass("table-responsive-md-tireuse");
 	}	
 	else if ($('.home-type-produit').text()=="à la tireuse")
 	{
 		$('.home-type-produit').text("Nos vins");
 		$(".section-produit-tireuse").toggle();
 		$(".section-produit-vin").toggle();
+		$("#produit").css( "backgroundImage", "url('../images/background/backgroundProduitHomePage.jpg')" );
+		$(".fond-noir-img").css("backgroundColor", "rgba(0,0,0,0.4)");
+		$(".table-responsive-md").toggleClass("table-responsive-md-tireuse");
+		$(".fond-img-tireuse").toggleClass('fond-img-tireuse');
 	}	
 	else if ($('.home-type-produit').text()=="Nos vins")
 	{
