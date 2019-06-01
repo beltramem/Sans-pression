@@ -25,11 +25,11 @@ class BiereRepository extends ServiceEntityRepository
 		 $qb = $this->createQueryBuilder('b')
 		 ->join('b.brasserie', 'bss')
 		 ->join('b.typeConteneurs', 'tc')
-		 ->join('b.typeBiere', 'tb')
-		 ->join('b.couleur', 'c')
-		 ->join('bss.paysFabrication', 'p')
+		 // ->join('b.typeBiere', 'tb')
+		 // ->join('b.couleur', 'c')
+		 //->join('bss.paysFabrication', 'p')
 		 ->addSelect('b');
-		 if ($productName != "null" && $productName !="all")
+		 if ($productName != "%null%" && $productName !="%all%")
 		 {
 			 $qb->Where('b.NomProduit like :productName')
 			 ->orWhere('bss.nomBrasserie like :productName')
@@ -37,17 +37,17 @@ class BiereRepository extends ServiceEntityRepository
 		 }
 		 if ($pays[0] != "null")
 		 {
-			$qb->andWhere('p.idPaysFabrication in (:pays)')
+			$qb->andWhere('bss.paysFabrication in (:pays)')
 			->setParameter('pays', $pays);
 		 }
 		 if ($couleurs[0]!= "null")
 		 {
-			$qb->andWhere('c.idCouleur in (:couleurs)')
+			$qb->andWhere('b.couleur in (:couleurs)')
 			->setParameter('couleurs', $couleurs);
 		 }
 		 if ($typeBieres[0] != "null")
 		 {
-			$qb->andWhere('tb.idTypeBiere in (:typeBieres)')
+			$qb->andWhere('b.typeBiere in (:typeBieres)')
 			->setParameter('typeBieres', $typeBieres);
 		 }
 		 if ($volumes[0] != "null")

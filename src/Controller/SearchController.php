@@ -34,7 +34,6 @@ class SearchController extends Controller
 		$typeBieres = explode("-", $typeBieres);
 		$volumes = explode("-", $volumes);	
 		$em = $this->getDoctrine()->getManager();
-		var_dump($productName);
 		$bieres = $biereRepository->findbyAllFiltre($pays,$couleurs,$typeBieres,$volumes,$productName);
 		
 		return $this->render('biere/search.html.twig', ['bieres' => $bieres]);

@@ -18,12 +18,12 @@
 						<h2>{{biere.Brasserie.NomBrasserie}}</h2>
 					</tr>
 					<tr>
-						<td class="col produit-home-tableau-gauche">{{biere.Brasserie.PaysFabrication.NomPays}}</td>
-						<td class="col">{{biere.TypeBiere.NomTypeBiere}}-{{biere.couleur.NomCouleur}}</td>
+						<td class="col produit-search-tableau-gauche">{{biere.Brasserie.PaysFabrication.NomPays}}</td>
+						<td class="col produit-search-tableau-droite">{{biere.TypeBiere.NomTypeBiere}}-{{biere.couleur.NomCouleur}}</td>
 					</tr>
 					<tr>
-						<td class="col produit-home-tableau-gauche">{{biere.DegreeBiere}}°</td>
-						<td class="col">
+						<td class="col produit-search-tableau-gauche">{{biere.DegreeBiere}}°</td>
+						<td class="col produit-search-tableau-droite">
 						{% for conteneur in biere.typeConteneurs %}
 							-{{ conteneur }}<br>
 						{% endfor %}
