@@ -41,7 +41,6 @@
 {
 	width : 100%;
 	max-height : 100vh;
-	box-shadow: 0px 12px 30px black;
 }
 
 
@@ -53,7 +52,13 @@
 
 .fond-noir-img
 {
-	background-color : rgba(0,0,0,0.4);
+	background-color : rgba(0,0,0,0.6);
+	background-size : cover;
+}
+
+.fond-blanc-img
+{
+	background-color : rgba(255,255,255,0.6);
 	background-size : cover;
 }
 
@@ -210,13 +215,14 @@ h3
 	margin-right : 15px;
 }
 
+
 .ligne-produit-home
 {
 	padding-top : 25px;
 }
 
 .ligne-concept{
-	padding-top: 30px;
+	padding-top: 80px;
 	padding-bottom :80px;
 }
 .btn-produit-home
@@ -258,7 +264,17 @@ h3
 	margin-top : 20px !important;
 	margin-bottom : 15px !important;
 	font-size : 78% !important;
-	color : #A9A9A9 !important;
+	
+}
+
+.produit-home-description
+{
+	color : #DCDCDC !important;
+}
+
+.concep-description
+{
+	color : #696969 !important;
 }
 
 .produit-home-description
@@ -307,6 +323,11 @@ td
 	padding-left : 10%;
 	color : white;
 	font-size : 100%;
+}
+
+section
+{
+	padding : 0px !important;
 }
 
 .section-produit-tireuse, .section-produit-vin, .section-produit-alcool, .section-produit-diver, .section-produit-verre

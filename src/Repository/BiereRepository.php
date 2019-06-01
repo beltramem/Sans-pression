@@ -21,6 +21,7 @@ class BiereRepository extends ServiceEntityRepository
 	
 	public function findbyAllFiltre($pays,$couleurs,$typeBieres,$volumes, $productName)
 	{
+		$productName = '%'.$productName.'%';
 		 $qb = $this->createQueryBuilder('b')
 		 ->join('b.brasserie', 'bss')
 		 ->join('b.typeConteneurs', 'tc')

@@ -28,15 +28,15 @@ function CheckFiltre(item)
 	typeConteneurBiere = typeConteneurBiere.substring(0,typeConteneurBiere.length-1)
 	if ($('.name-search').val().length >= 2)
 	{
-		productName = '%'+$('.name-search').val()+'%'
+		productName = $('.name-search').val();
 	}
 	else if ($('.name-search').val().length ==0)
 	{
-		productName = 'all'
+		productName = 'all';
 	}
 	else 
 	{
-		productName = 'null'
+		productName = 'null';
 	}
 	if (pays.length == 0)
 	{
@@ -57,6 +57,7 @@ function CheckFiltre(item)
                 type: "GET",
                 dataType: "html",
                 data: {
+					"productName" : productName,
                     "pays": pays,
 					"couleurs" : couleurs,
 					"typeBieres" : typeBieres,

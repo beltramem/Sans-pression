@@ -15,7 +15,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("search")
+ * @Route("detail")
  */
 class DetailsController extends Controller
 {

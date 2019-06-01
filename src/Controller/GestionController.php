@@ -7,14 +7,14 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("gestion/")
+ * @Route("gestion")
  */
 class GestionController extends Controller
 {
 	/**
-     * @Route("/", name="gestion_index", methods="GET")
+     * @Route("", name="gestion_index", methods="GET")
      */
-	public function index(): Response
+	public function index()
     {
         return $this->render('gestion/index.html.twig');
     }
