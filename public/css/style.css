@@ -234,6 +234,7 @@ h3
 	color : white;
 	font-size : 20px;
 	border-radius: 20px;
+	margin-bottom : 30px;
 }
 
 .produit-home-photo
@@ -670,4 +671,9 @@ ul {
 .blanc-details
 {
 	height: 50px;
+}
+
+.image_search
+{
+	height : 1.11*100vw;
 }
