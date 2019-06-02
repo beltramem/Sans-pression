@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+{% block title %}Details {{ biere.NomProduit }} {% endblock %}
+
+{% block body %}
+<div class="col-md-12 fond-detail">
+	<div class="col-md-3"><img src={{photoProduit_directory}}/{{biere.NomPhoto}} class=" col-md-12 produit-search-photo"></div>
+	<div class="col-md-9 description-detail">
+			<div class="col-md-12 nomProduit"><h1> {{biere.NomProduit}}</h1></div>
+			<p class="produit-home-description">{{ biere.descriptionProduit }} </p>
+	</div>
+	<div class="table-responsive-md col-md-12 tableau-detail">
+		<table class="table">
+			<tr>
+				<h2 class="brasserieName">{{biere.Brasserie.NomBrasserie}}</h2>
+			</tr>
+			<tr>
+				<td class="col produit-search-tableau-gauche">{{biere.Brasserie.PaysFabrication.NomPays}}</td>
+				<td class="col produit-search-tableau-droite">{{biere.TypeBiere.NomTypeBiere}}-{{biere.couleur.NomCouleur}}</td>
+			</tr>
+			<tr>
+				<td class="col produit-search-tableau-gauche">{{biere.DegreeBiere}}°</td>
+				<td class="col produit-search-tableau-droite">
+				{% for conteneur in biere.typeConteneurs %}
+					-{{ conteneur }}<br>
+				{% endfor %}
+				</td>
+			</tr>
+		</table>
+	</div>
+	<div class="col-md-12 blanc-details"></div>
+	<div class="col-md-12 meme-brasserie">
+		<h3 class="sous-titre-detail">Quelques Produits de la même brasserie </h3>
+		<div class="col-md-12 blanc-details"></div>
+		<div class="col-md-12 produit-meme-brasserie" id="ajax-brasserie-results">
+		
+		</div>
+		</div>
+	</div>
+</dov>
+{% endblock %}
+{% block script %}
+	<script language="JavaScript" type="text/javascript"src="/js/detailSearch.js"></script>
+{% endblock %}

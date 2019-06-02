@@ -247,6 +247,7 @@ h3
 {
 	border-bottom-style : solid;
 	border-bottom-width :3px;
+	padding-top : 9px;
 }
 
 .barre-separation
@@ -629,8 +630,14 @@ ul {
 	padding : 20px;
 }
 
-.input-group input, .input-group-addon{
-	border-radius : 15px;
+.name-search{
+	border-top-left-radius : 15px !important;
+	border-bottom-left-radius : 15px !important;
+}
+
+.input-group-addon{
+	border-top-right-radius : 15px !important;
+	border-bottom-right-radius : 15px !important;
 }
 
 .input-group .input-group-addon
@@ -652,8 +659,6 @@ ul {
 {
 	color : #a7a129;
 	font-size : 350%;
-	border-radius : 10px;
-	background-color : rgb(230,230,230);
 }
 
 .produit-detail
@@ -675,5 +680,37 @@ ul {
 
 .image_search
 {
-	height : 1.11*100vw;
+	height : 13vw;
+}
+
+.image_detail
+{
+	height : 13vw;
+}
+
+.fond-detail
+{
+	background : url("../images/background/backgroundProduitHomePage.jpg")  no-repeat center fixed;
+	background-size : cover;
+}
+
+.produit-detail-description
+{
+	margin-top : 20px !important;
+	margin-bottom : 15px !important;
+	color : #A9A9A9;
+	font-family: cursive;
+}
+
+dt {
+  display:table-cell;
+  vertical-align:middle;
+  padding-right:5px;
+  color : #A7A129;
+}
+
+dd {
+  display:table-cell;
+  vertical-align:middle;
+  margin-bottom: 15px;
 }

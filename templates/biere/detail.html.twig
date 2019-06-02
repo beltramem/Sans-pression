@@ -2,23 +2,49 @@
 {% block title %}Details {{ biere.NomProduit }} {% endblock %}
 
 {% block body %}
-	<div class="image_search col-md-3"><img src={{photoProduit_directory}}/{{biere.NomPhoto}} class=" col-md-12 produit-search-photo"></div>
-		<div class="col-md-9">
-			<div class="col-md-12 nomProduit"><h1> {{biere.NomProduit}}</h1></div>
-			<p class="produit-home-description">{{ biere.descriptionProduit }} </p>
+<section id="produit">
+<nav class="navbar navbar-default bar-nav navbar-menu">
+		<div class="container-fluid">
+			<a href="/"><div class="navbar-brand" ><img src="/images/logo/LOGO_Sans_Pression.png" alt="Logo"/></div></a>
+			<ul class="nav navbar-nav navbar-brand contact">
+				<li><span class="glyphicon glyphicon-phone"></span>04.74.61.95.26</li>
+				<li><span class="glyphicon glyphicon-envelope"></span>sanspression@orange.fr</li>
+			</ul>
+			<ul class="nav navbar-nav navbar-right account">
+				<li><a href="https://www.facebook.com/SARLSansPression/" target="blank"><img src="/images/facebook/facebook.png" class="facebook"></a></li>
+				<li><a href="#" class="nav"><span class="glyphicon glyphicon-user pills"></span> S'inscrire</a></li>
+				<li><a href="#" class="nav"><span class="glyphicon glyphicon-log-in pills"></span> Se connecter</a></li>
+			</ul>
+			<ul class="col-md-6 navbar-nav navbar-brand">
+			<li class="input-group">
+					<input type="email" class="form-control name-search" id="exampleInputEmail2" placeholder="Quel produit cherchez vous ? Quel fabriquant ?">
+					<span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
+				</div>
+			</li>
+			</ul>
 		</div>
-		<div class="table-responsive-md col-md-12">
+		<div class="col-md-12 barre-separation"></div>
+</nav>
+
+	<div class="col-md-3"><img src={{photoProduit_directory}}/{{biere.NomPhoto}} class=" col-md-12 produit-search-photo"></div>
+	
+	<div class="col-md-9 description-detail">
+		<div class="col-md-12 nomProduit"><h1> {{biere.NomProduit}}</h1></div>
+		<div class="col-md-2"></div><div class="col-md-8 barre-separation"></div><div class="col-md-2"></div>
+		<div class="col-md-12 blanc-details"></div>
+		<div class="col-md-12"><p class="produit-detail-description">{{ biere.descriptionProduit }}</p></div>
+		<div class="col-md-6 detail-general">
 			<table class="table">
 				<tr>
 					<h2 class="brasserieName">{{biere.Brasserie.NomBrasserie}}</h2>
 				</tr>
 				<tr>
-					<td class="col produit-home-tableau-gauche">{{biere.Brasserie.PaysFabrication.NomPays}}</td>
-					<td class="col">{{biere.TypeBiere.NomTypeBiere}}-{{biere.couleur.NomCouleur}}</td>
+					<td class="col produit-search-tableau-gauche">{{biere.Brasserie.PaysFabrication.NomPays}}</td>
+					<td class="col produit-search-tableau-droite">{{biere.TypeBiere.NomTypeBiere}}-{{biere.couleur.NomCouleur}}</td>
 				</tr>
 				<tr>
-					<td class="col produit-home-tableau-gauche">{{biere.DegreeBiere}}°</td>
-					<td class="col">
+					<td class="col produit-search-tableau-gauche">{{biere.DegreeBiere}}°</td>
+					<td class="col produit-search-tableau-droite">
 					{% for conteneur in biere.typeConteneurs %}
 						-{{ conteneur }}<br>
 					{% endfor %}
@@ -26,16 +52,36 @@
 				</tr>
 			</table>
 		</div>
-		<div class="col-md-12 blanc-details"></div>
-		<div class="col-md-12 meme-brasserie">
-			<h3 class="sous-titre-detail"> Produits de la même brasserie </h3>
-			<div class="col-md-12 blanc-details"></div>
-			<div class="col-md-12 produit-meme-brasserie" id="ajax-brasserie-results">
+		<div class="col-md-6 detail-gout">
+			<dl>
+				<dt class="col-md-6">Note</dt>
+				<dd class="col-md-6">A large feline inhabiting Bodmin Moor.</dd>
+
+				<dt class="col-md-6">Ma note</dt>
+				<dd class="col-md-6">A sea serpent.</dd>
 				
-			</div>
+				<dt class="col-md-6">Amertume</dt>
+				<dd class="col-md-6">A sea serpent.</dd>
+				
+				<dt class="col-md-6">Alcool</dt>
+				<dd class="col-md-6">A sea serpent.</dd>
+				
+				<dt class="col-md-6">Puissance goût</dt>
+				<dd class="col-md-6">A sea serpent.</dd>
+			</dl>
 		</div>
-	
 	</div>
+	
+	<div class="col-md-12 blanc-details"></div>
+	<div class="col-md-12 blanc-details"></div>
+	<h3 class="sous-titre-detail col-md-6">Produits de la même brasserie</h3> <h3 class="sous-titre-detail col-md-6">Vous devriez apprécier</h3>
+	<div class="col-md-3"></div><div class="col-md-6 barre-separation"></div><div class="col-md-3"></div>
+	<div class="col-md-12 produit-meme-brasserie">
+		<div class="col-md-12 blanc-details"></div>
+		<div id="ajax-brasserie-results"></div>
+	</div>
+	</div>
+</section>
 {% endblock %}
 {% block script %}
 	<script language="JavaScript" type="text/javascript"src="/js/detailSearch.js"></script>
