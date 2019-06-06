@@ -104,7 +104,7 @@ abstract class Produit
         return $this;
     }
 
-    public function getNoteProduit(): ?int
+    public function getNoteProduit() 
     {
         return $this->NoteProduit;
     }

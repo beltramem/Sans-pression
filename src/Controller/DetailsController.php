@@ -6,6 +6,7 @@ use App\Entity\Biere;
 use App\Entity\Vin;
 use App\Entity\Alcool;
 use App\Entity\Divers;
+use App\Entity\Note;
 use App\Form\BrasserieType;
 use App\Repository\ProduitRepository;
 use App\Repository\BiereRepository;
@@ -35,8 +36,9 @@ class DetailsController extends Controller
 	public function details(ProduitRepository $produitRepository, $idProduit)
 	{
 		$produit = $produitRepository->find($idProduit);
+		
 		if ($produit instanceof Biere)
-		{
+		{	
 			return $this->render('biere/detail.html.twig',['biere' => $produit]);
 		}			
 		else if ($produit instanceof Vin)

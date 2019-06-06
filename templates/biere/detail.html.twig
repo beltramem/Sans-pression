@@ -29,7 +29,7 @@
 	<div class="col-md-3"><img src={{photoProduit_directory}}/{{biere.NomPhoto}} class=" col-md-12 produit-search-photo"></div>
 	
 	<div class="col-md-9 description-detail">
-		<div class="col-md-12 nomProduit"><h1> {{biere.NomProduit}}</h1></div>
+		<div class="col-md-12 nomProduit"><h1>{{biere.NomProduit}}</h1></div>
 		<div class="col-md-2"></div><div class="col-md-8 barre-separation"></div><div class="col-md-2"></div>
 		<div class="col-md-12 blanc-details"></div>
 		<div class="col-md-12"><p class="produit-detail-description">{{ biere.descriptionProduit }}</p></div>
@@ -55,19 +55,54 @@
 		<div class="col-md-6 detail-gout">
 			<dl>
 				<dt class="col-md-6">Note</dt>
-				<dd class="col-md-6">A large feline inhabiting Bodmin Moor.</dd>
+				<dd class="col-md-6">
+					{% for i in 1..biere.NoteProduit %}
+						<div class="glyphicon glyphicon-star note-star"></div>
+					{% endfor %}
+					{% for i in 1..5-biere.NoteProduit %}
+						<div class="glyphicon glyphicon-star-empty note-star note-star-empty"></div>
+					{% endfor %}
+				</dd>
 
 				<dt class="col-md-6">Ma note</dt>
-				<dd class="col-md-6">A sea serpent.</dd>
-				
-				<dt class="col-md-6">Amertume</dt>
-				<dd class="col-md-6">A sea serpent.</dd>
+				<dd class="col-md-6">to do when user up</dd>
 				
 				<dt class="col-md-6">Alcool</dt>
-				<dd class="col-md-6">A sea serpent.</dd>
+				<dd class="col-md-6">
+					{% for i in 1..biere.NoteAlcoolBiere %}
+						<div class="glyphicon glyphicon-star note-star"></div>
+					{% endfor %}
+					{% for i in 1..5-biere.NoteAlcoolBiere %}
+						<div class="glyphicon glyphicon-star-empty note-star note-star-empty"></div>
+					{% endfor %}
+				</dd>
 				
 				<dt class="col-md-6">Puissance goût</dt>
-				<dd class="col-md-6">A sea serpent.</dd>
+				<dd class="col-md-6">
+					{% for i in 1..biere.NotePuissanceBiere %}
+						<div class="glyphicon glyphicon-star note-star"></div>
+					{% endfor %}
+					{% for i in 1..5-biere.NotePuissanceBiere %}
+						<div class="glyphicon glyphicon-star-empty note-star note-star-empty"></div>
+					{% endfor %}
+				</dd>
+				
+				<dt class="col-md-2">Amertume</dt>
+				<dd class="col-md-8 noteAmertume" id="{{ biere.NoteAmertumeBiere }}">
+					<div class="col-md-1" id="noteAmertume1"></div>
+					<div class="col-md-1" id="noteAmertume2"></div>
+					<div class="col-md-1" id="noteAmertume3"></div>
+					<div class="col-md-1" id="noteAmertume4"></div>
+					<div class="col-md-1" id="noteAmertume5"></div>
+					<div class="col-md-1" id="noteAmertume6"></div>
+					<div class="col-md-1" id="noteAmertume7"></div>
+					<div class="col-md-1" id="noteAmertume8"></div>
+					<div class="col-md-1" id="noteAmertume9"></div>
+					<div class="col-md-1" id="noteAmertume10"></div>
+					<div class="col-md-1" id="noteAmertume11"></div>
+				</dd>
+				<dt class="col-md-2">acidité</dt>
+				
 			</dl>
 		</div>
 	</div>

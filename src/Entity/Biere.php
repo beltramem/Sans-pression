@@ -137,7 +137,7 @@ class Biere extends Produit
         return $this;
     }
 
-    public function getNoteAmertumeBiere(): ?int
+    public function getNoteAmertumeBiere()
     {
         return $this->NoteAmertumeBiere;
     }
@@ -149,7 +149,7 @@ class Biere extends Produit
         return $this;
     }
 
-    public function getNoteAlcoolBiere(): ?int
+    public function getNoteAlcoolBiere()
     {
         return $this->NoteAlcoolBiere;
     }
@@ -161,7 +161,7 @@ class Biere extends Produit
         return $this;
     }
 
-    public function getNotePuissanceBiere(): ?int
+    public function getNotePuissanceBiere()
     {
         return $this->NotePuissanceBiere;
     }

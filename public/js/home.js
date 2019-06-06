@@ -110,7 +110,7 @@ function unselectTireuse(id)
 	tireuse[1].style.backgroundColor = 'rgba(0,0,0,0)';
 }
 
-function dispoHappyHour(id)
+/*function dispoHappyHour(id)
 {
 	var happyHour = document.getElementsByClassName("dispo-happy-hour");
 	for (var i = 0; i < 12; i++)
@@ -124,7 +124,7 @@ function dispoHappyHour(id)
 			happyHour[i].style.color = "red";
 		}
 	}
-}
+} */
 
 function afficheDescriptionTireuse(id)
 {
@@ -152,7 +152,7 @@ function scrollTo(div)
 }
 
 $(document).ready(function() {
-	dispoHappyHour();
+	//dispoHappyHour();
 	$(".glyphicon-menu-left").click(function() {
 		menuLeft();
 	});

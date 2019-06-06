@@ -87,7 +87,7 @@ class BiereRepository extends ServiceEntityRepository
 	{
 		$builder = $this->createQueryBuilder('b')
 		->join('b.brasserie', 'bss');
-		$query  = $builder->select()->andWhere("bss.nomBrasserie like :brasserie")->andWhere('b.NomProduit != :nom')->setParameter('brasserie', $brasserie)->setParameter('nom', $nom)->setMaxResults(4)->orderBy('RAND()');
+		$query  = $builder->select()->Where("bss.nomBrasserie like :brasserie")->andWhere('UPPER(b.NomProduit) NOT LIKE UPPER(:nom)')->setParameter('brasserie', $brasserie)->setParameter('nom', $nom)->setMaxResults(4)->orderBy('RAND()');
 		$result = $builder->getQuery()->execute();
 		
 		return $result;
