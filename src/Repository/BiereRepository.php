@@ -93,6 +93,19 @@ class BiereRepository extends ServiceEntityRepository
 		return $result;
 	}
 	
+	public function findbyConseil($type,$couleur,$alcool,$amertume)
+	{
+		
+		
+		$builder = $this->createQueryBuilder('b')
+		->join('b.typeBiere', 'tb')
+		->join('b.couleur', 'cb');
+		$query  = $builder->select()->Where("tb.NomTypeBiere like :type")->andWhere('cb.nomCouleur like :couleur')->andWhere(':alcool>b.DegreeBiere-1')->andWhere(':alcool<b.DegreeBiere+1')->andWhere(':amertume>b.NoteAmertumeBiere-1')->andWhere(':amertume<b.NoteAmertumeBiere+1')->setParameter('type', $type)->setParameter('couleur', $couleur)->setParameter('alcool', $alcool)->setParameter('amertume', $amertume)->setMaxResults(4)->orderBy('b.NoteProduit');
+		$result = $builder->getQuery()->execute();
+		
+		return $result;
+	}
+	
 	public function randBiere()
 	{
 		$builder = $this->createQueryBuilder('e');

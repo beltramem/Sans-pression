@@ -31,6 +31,15 @@ class DetailsController extends Controller
 	}
 	
 	/**
+     * @Route("/type={type}/color={color}/alcool={alcool}/amertume={amertume}", name="biere_conseil", methods="GET")
+	 */
+	public function biereSearchConseil(BiereRepository $biereRepository,$type,$color,$alcool,$amertume)
+	{
+		$bieres = $biereRepository->findbyConseil($type,$color,$alcool,$amertume);
+		return $this->render('biere/sousProduitDetail.html.twig', ['bieres' => $bieres]);
+	}
+	
+	/**
      * @Route("/{idProduit}", name="details_show", methods="GET")
      */
 	public function details(ProduitRepository $produitRepository, $idProduit)

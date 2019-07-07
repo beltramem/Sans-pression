@@ -40,10 +40,10 @@
 				</tr>
 				<tr>
 					<td class="col produit-search-tableau-gauche">{{biere.Brasserie.PaysFabrication.NomPays}}</td>
-					<td class="col produit-search-tableau-droite">{{biere.TypeBiere.NomTypeBiere}}-{{biere.couleur.NomCouleur}}</td>
+					<td class="col produit-search-tableau-droite detail-type-couleur">{{biere.TypeBiere.NomTypeBiere}}-{{biere.couleur.NomCouleur}}</td>
 				</tr>
 				<tr>
-					<td class="col produit-search-tableau-gauche">{{biere.DegreeBiere}}°</td>
+					<td class="col produit-search-tableau-gauche detail-degree">{{biere.DegreeBiere}}°</td>
 					<td class="col produit-search-tableau-droite">
 					{% for conteneur in biere.typeConteneurs %}
 						-{{ conteneur }}<br>
@@ -59,9 +59,11 @@
 					{% for i in 1..biere.NoteProduit %}
 						<div class="glyphicon glyphicon-star note-star"></div>
 					{% endfor %}
-					{% for i in 1..5-biere.NoteProduit %}
-						<div class="glyphicon glyphicon-star-empty note-star note-star-empty"></div>
-					{% endfor %}
+					{% if biere.NoteProduit < 5 %} 
+						{% for i in 1..5-biere.NoteProduit %}
+							<div class="glyphicon glyphicon-star-empty note-star note-star-empty"></div>
+						{% endfor %}
+					{% endif %}
 				</dd>
 
 				<dt class="col-md-6">Ma note</dt>
@@ -72,9 +74,11 @@
 					{% for i in 1..biere.NoteAlcoolBiere %}
 						<div class="glyphicon glyphicon-star note-star"></div>
 					{% endfor %}
-					{% for i in 1..5-biere.NoteAlcoolBiere %}
-						<div class="glyphicon glyphicon-star-empty note-star note-star-empty"></div>
-					{% endfor %}
+					{% if biere.NoteAlcoolBiere < 5 %} 
+						{% for i in 1..5-biere.NoteAlcoolBiere %}
+							<div class="glyphicon glyphicon-star-empty note-star note-star-empty"></div>
+						{% endfor %}
+					{% endif %}
 				</dd>
 				
 				<dt class="col-md-6">Puissance goût</dt>
@@ -82,9 +86,11 @@
 					{% for i in 1..biere.NotePuissanceBiere %}
 						<div class="glyphicon glyphicon-star note-star"></div>
 					{% endfor %}
-					{% for i in 1..5-biere.NotePuissanceBiere %}
-						<div class="glyphicon glyphicon-star-empty note-star note-star-empty"></div>
-					{% endfor %}
+					{% if biere.NotePuissanceBiere < 5 %} 
+						{% for i in 1..5-biere.NotePuissanceBiere %}
+							<div class="glyphicon glyphicon-star-empty note-star note-star-empty"></div>
+						{% endfor %}
+					{% endif %}
 				</dd>
 				
 				<dt class="col-md-2">Amertume</dt>
@@ -101,7 +107,7 @@
 					<div class="col-md-1" id="noteAmertume10"></div>
 					<div class="col-md-1" id="noteAmertume11"></div>
 				</dd>
-				<dt class="col-md-2">acidité</dt>
+				<dt class="col-md-2">Acidité</dt>
 				
 			</dl>
 		</div>
@@ -109,12 +115,24 @@
 	
 	<div class="col-md-12 blanc-details"></div>
 	<div class="col-md-12 blanc-details"></div>
-	<h3 class="sous-titre-detail col-md-6">Produits de la même brasserie</h3> <h3 class="sous-titre-detail col-md-6">Vous devriez apprécier</h3>
+	<div class="col-md-6">
+		<h3 class="sous-titre-detail" id="memeBrasserie">Produits de la même brasserie</h3>
+	</div>
+	<div class="col-md-6">
+		<h3 class="sous-titre-detail" id="conseille">Vous devriez apprécier</h3>
+	</div>
 	<div class="col-md-3"></div><div class="col-md-6 barre-separation"></div><div class="col-md-3"></div>
+	
 	<div class="col-md-12 produit-meme-brasserie">
 		<div class="col-md-12 blanc-details"></div>
 		<div id="ajax-brasserie-results"></div>
 	</div>
+	
+	<div class="col-md-12 produit-conseille">
+		<div class="col-md-12 blanc-details"></div>
+		<div id="ajax-conseille-results"></div>
+	</div>
+	
 	</div>
 </section>
 {% endblock %}

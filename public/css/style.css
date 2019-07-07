@@ -471,7 +471,7 @@ section
 
 .note-star-empty
 {
-	color : auto;
+	color : #D3D3D3;
 }
 
 .glyphicon-ok-circle
@@ -659,6 +659,12 @@ ul {
 {
 	color : #a7a129;
 	font-size : 350%;
+}
+
+.sous-titre-detail:hover
+{
+	background-color : #a7a129;
+	color : #D3D3D3;
 }
 
 .produit-detail
