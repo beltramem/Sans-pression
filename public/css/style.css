@@ -769,3 +769,13 @@ dd {
 	background-color : rgba(167,161,41,0.1);
 }
 
+.produit-conseil
+{
+	display : none;
+}
+
+.sous-titre-detail-active
+{
+	background-color : #a7a129;
+	color : #D3D3D3;
+}

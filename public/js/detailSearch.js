@@ -41,16 +41,18 @@ function getConseille()
 	color = typeColor[1]
 	alcool = getAlcool()
 	amertume = $('.noteAmertume')[0].id
+	nom = $('.nomProduit').text()
 	
 	$.ajax({
-                url:"type=" + type +"/color=" + color +"/alcool=" + alcool +"/amertume="+ amertume,
+                url:"type=" + type +"/color=" + color +"/alcool=" + alcool +"/amertume="+ amertume + "/nom=" + nom,
                 type: "GET",
                 dataType: "html",
                 data: {
                     "type": type,
 					"color": color,
 					"alcool": alcool,
-					"amertume": amertume
+					"amertume": amertume,
+					"nom" : nom
                 },
                 async: true,
                 success: function (data)
@@ -77,8 +79,27 @@ function setNoteAmertume()
 	$('#noteAmertume'+indice)[0].innerHTML = "<div class='glyphicon glyphicon-ok'></div>"
 }
 
+function afficheBrasserie()
+{
+	$("#memeBrasserie").addClass("sous-titre-detail-active")
+	$("#conseille").removeClass("sous-titre-detail-active")
+	$(".produit-meme-brasserie").show();
+	$(".produit-conseil").hide();
+}
+
+function afficheConseil()
+{
+	$("#conseille").addClass("sous-titre-detail-active")
+	$("#memeBrasserie").removeClass("sous-titre-detail-active")
+	$(".produit-meme-brasserie").hide();
+	$(".produit-conseil").show();
+}
+
 $(document).ready(function() {
 	setNoteAmertume()
 	getMemeBrasserie()
 	getConseille()
+	
+	$(".bouton-meme-brasserie").click(function() {afficheBrasserie()})
+	$(".bouton-conseil").click(function() {afficheConseil()})
 });	
