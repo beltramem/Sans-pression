@@ -1,55 +1,94 @@
 {% extends 'base.html.twig' %}
 {% block header %}
-	<div>
-		<img src="images/background/background.jpg" class="background" alt="background"/>
-		<nav class="navbar navbar-default bar-nav navbar-1">
-			<div class="container-fluid">
-				<ul class="nav navbar-nav navbar-brand contact">
-					<li><span class="glyphicon glyphicon-phone"></span>04.74.61.95.26</li>
-					<li><span class="glyphicon glyphicon-envelope"></span>sanspression@orange.fr</li>
-				</ul>
-				<ul class="nav navbar-nav navbar-right account">
-					<li><a href="https://www.facebook.com/SARLSansPression/" target="blank"><img src="images/facebook/facebook.png" class="facebook"></a></li>
-					<li><a href="#" class="nav"><span class="glyphicon glyphicon-user pills"></span> S'inscrire</a></li>
-					<li><a href="#" class="nav"><span class="glyphicon glyphicon-log-in pills"></span> Se connecter</a></li>
-				</ul>
-			</div>
-			<div class="container-fluid">
-			<div class="navbar-brand"><a href="/"><img src="images/logo/LOGO_Sans_Pression.png" alt="Logo"/></a></div>
-			<ul class="col-md-8 navbar-nav navbar-brand">
-			<li>
-				<div class="input-group">
-					<input type="email" class="form-control name-search" id="exampleInputEmail2" placeholder="Quel produit cherchez vous ? Quel fabriquant ?">
-					<span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
-				</div>
-			</li>
+	<nav class="navbar fixed-bottom navbar-default bar-nav navbar-1">
+		<div class="container-fluid">
+			<ul class="nav navbar-nav navbar-brand contact">
+				<li><a class="no-padding" href="/"><img src="images/logo/LOGO_Sans_Pression.png" alt="Logo"/></a></li>
+				<li><span class="glyphicon glyphicon-phone"></span>04.74.61.95.26</li>
+				<li><span class="glyphicon glyphicon-envelope"></span>sanspression@orange.fr</li>
 			</ul>
-			<ul class="nav navbar-nav navbar-right">
-				<li><a class="js-scrollTo" href="#produit">Produits</a></li>
-				<li><a href="#">Événements</a></li>
-				<li><a href="#">Promotions</a></li>
-				<li><a href="#">Magasin</a></li>
-				</ul>
-			</div>
-			<div class="col-md-12 barre-separation"></div>
-		</nav>
-		<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 description">
-		<h1>Sans Pression</h1><p>Cave et bar à bières. 160 références de bières en stock sur un choix de plus de 1000 références.12 pressions au bar, terrasse et grand parking.</p>
+			<ul class="nav navbar-nav navbar-right account">
+				<li><a href="https://www.facebook.com/SARLSansPression/" target="blank"><img src="images/facebook/facebook.png" class="facebook"></a></li>
+				<li><a href="#" class="nav"><span class="glyphicon glyphicon-user pills"></span> S'inscrire</a></li>
+				<li><a href="#" class="nav"><span class="glyphicon glyphicon-log-in pills"></span> Se connecter</a></li>
+			</ul>
 		</div>
-	</div>
+		<div class="container-fluid">
+			<ul class="nav navbar-nav navbar-right">
+			<li><a class="js-scrollTo" href="#produit">Produits</a></li>
+			<li><a href="#">Événements</a></li>
+			<li><a href="#">Promotions</a></li>
+			<li><a href="#">Magasin</a></li>
+			</ul>
+		<div>
+		<div class="col-md-12 barre-separation"></div>
+	</nav>
 {% endblock %}
 {% block body %}
-	<section class="col-md-12 Concept" id="concept">
-		{{ include("pages/conceptTemplate.html.twig") }}
-	</section>	
-		
-	<section class="col-md-12 produit " id="produit">
-		{{ include("pages/produitTemplateHomePage.html.twig") }}
+	<img src="images/background/background.jpg" class="home-background" alt="background"/>
+	<div class="acc-descr">	
+		<hgroup class="titre">
+				<h1 class="h1-acc-descr">Sans Pression</h1>
+				<h2 class="h2-acc-descr">Cave et Bar à Bières et Vins</h2>
+			<div class="underline-descr">
+				<div class="line  line-left"></div>
+				<div class="star glyphicon glyphicon glyphicon-grain"></div>
+				<div class="line  line-right"></div>
+			</div>
+			
+			<h3 class="h3-acc-localisation">10 Allée Louis Mouthier, 01500 Ambérieu-en-Bugey</h3>
+		</hgroup>
+	</div>
+	
+	<div class="go-down"><span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></div>
+	
+	<section class=" int concept-section-1">
+	<div class="full">
+		<article class="article-concept">
+				<div class="entete-concept">
+					<div class="entete-concept-text"><h3>Le Bar</h3></div>
+				</div>
+				<img src="images/background/background.jpg" class="img-home-concept" alt="background"/>
+				<div class="description-article">
+				<div class="container-texte"><h3>Venez découvrir nos 22 pressions !</h3></div> </div>		
+		</article>
+	</div>
 	</section>
 	
-	<section class="col-md-12 Concept" id="evenement">
-		{{ include("pages/homeTemplateEvent.html.twig") }}
+	<section class=" int concept-section-2">
+		<div class="int clearfix">
+			<div class="container-liste">
+			
+				<div class="third article-concept">
+					<div class="entete-concept-third">
+						<div class="entete-concept-text"><h3 class="entete-concept-text-third">La Cave</h3></div>
+					</div>
+						<img src="images/background/cave.jpg" class="img-home-concept" alt="background"/>
+						<div class="description-article">
+						<div class="container-texte"><h3>Venez découvrir toutes nos références en stock !</h3></div> </div>
+				</div>
+				
+				<div class="third article-concept">
+					<div class="entete-concept-third">
+						<div class="entete-concept-text"><h3 class="entete-concept-text-third">Les Tireuse</h3></div>
+					</div>
+						<img src="images/background/cave.jpg" class="img-home-concept" alt="background"/>
+						<div class="description-article">
+						<div class="container-texte"><h3>Prêt de tireuse dès l'achat d'un fût</h3></div> </div>
+				</div>
+				
+				<div class="third article-concept">
+					<div class="entete-concept-third">
+						<div class="entete-concept-text"><h3 class="entete-concept-text-third">Les Evènements</h3></div>
+					</div>
+						<img src="images/background/cave.jpg" class="img-home-concept" alt="background"/>
+						<div class="description-article">
+						<div class="container-texte"><h3>Quand venir s'ammuser ?</h3></div> </div>
+				</div>
+			</div>
+		</div>
 	</section>
+	
 	
 {% endblock %}
 {% block script %}

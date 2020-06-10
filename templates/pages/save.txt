@@ -1,0 +1,58 @@
+		
+<div class="col-md-12 ligne-concept">
+	<div class="col-md-1 blanc"></div>
+	<div class="col-md-5 concept-div" id="concept-div-1">
+		<div class="col-md-4 concep-photo" id="concep-photo-1"> 
+			<img src="images/logo/LOGO_Sans_Pression.png" alt="Logo"/>
+		</div>
+		<div class=col-md-8 concep-text" id="concep-text-1">
+			<h3 class="concept-titre" id="concept-titre-1">Le bar</h3>
+			<div class="col-md-12 barre-separation"></div>
+			<div class="col-md-12 concep-description">
+				<p>Bar à bière convivial, qui convient aux groupes et dispose d'une grande terrasse courverte. Grand choix de bière. Propose de la restauration rapide le midi et des planches fromages, charcuterie, tapas et flammekueche tout la journée</p>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-5 concept-div" id="concept-div-1">
+		<div class="col-md-4 concep-photo" id="concep-photo-2"> 
+			<img src="images/logo/LOGO_Sans_Pression.png" alt="Logo"/>
+		</div>
+		<div class=col-md-8 concep-text" id="concep-text-2">
+			<h3 class="concept-titre" id="concept-titre-2">Les Evénements</h3>
+			<div class="col-md-12 barre-separation"></div>
+			<div class="col-md-12 concep-description">
+				<p>Bar à bière convivial, qui convient aux groupes et dispose d'une grande terrasse courverte. Grand choix de bière. Propose de la restauration rapide le midi et des planches fromages, charcuterie, tapas et flammekueche tout la journée</p>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-1 blanc"></div>
+
+	
+</div>
+<div class="col-md-12 ligne-concept">
+	<div class="col-md-1 blanc"></div>
+	<div class="col-md-5 concept-div" id="concept-div-1">
+		<div class="col-md-4 concep-photo" id="concep-photo-1"> 
+			<img src="images/logo/LOGO_Sans_Pression.png" alt="Logo"/>
+		</div>
+		<div class=col-md-8 concep-text" id="concep-text-1">
+			<h3 class="concept-titre" id="concept-titre-1">La cave</h3>
+			<div class="col-md-12 barre-separation"></div>
+			<div class="col-md-12 concep-description">
+				<p>Bar à bière convivial, qui convient aux groupes et dispose d'une grande terrasse courverte. Grand choix de bière. Propose de la restauration rapide le midi et des planches fromages, charcuterie, tapas et flammekueche tout la journée</p>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-5 concept-div" id="concept-div-1">
+		<div class="col-md-4 concep-photo" id="concep-photo-2"> 
+			<img src="images/logo/LOGO_Sans_Pression.png" alt="Logo"/>
+		</div>
+		<div class=col-md-8 concep-text" id="concep-text-2">
+			<h3 class="concept-titre" id="concept-titre-2">Les Tireuses</h3>
+			<div class="col-md-12 barre-separation"></div>
+			<div class="col-md-12 concep-description">
+				<p>Bar à bière convivial, qui convient aux groupes et dispose d'une grande terrasse courverte. Grand choix de bière. Propose de la restauration rapide le midi et des planches fromages, charcuterie, tapas et flammekueche tout la journée. Baby-foot et jeu de fléchette</p>
+			</div>
+		</div>
+	</div><div class="col-md-1 blanc"></div>
+</div>

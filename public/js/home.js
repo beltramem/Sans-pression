@@ -152,25 +152,8 @@ function scrollTo(div)
 }
 
 $(document).ready(function() {
-	//dispoHappyHour();
-	$(".glyphicon-menu-left").click(function() {
-		menuLeft();
-	});
-	$(".glyphicon-menu-right").click(function() {
-		menuRight();
-	});
-	$(".click-tireuse").hover(function(){
-		selectTireuse(this.getAttribute('id'));
-	});	
-	$(".click-tireuse").mouseout(function(){
-		unselectTireuse(this.getAttribute('id'));
-	});
-	$('.click-tireuse').on('click', function() {
-		afficheDescriptionTireuse(this.getAttribute('id'));
-		scrollTireuse();
-	});	
-	$('.js-scrollTo').on('click', function() {
-		scrollTo(this);
-	});
+
+		$(".titre").fadeIn(2000);
+		$(".semi").fadeIn(2000);
 	}
 );

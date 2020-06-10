@@ -1,3 +1,8 @@
+.no-padding
+{
+	padding : 0px !important;
+}
+
 .navbar-1, .navbar-menu{
 	background-color : rgba(0,0,0,0.4);
 	min-height : 120px;
@@ -5,7 +10,7 @@
 
 .navbar-1
 {
-	position :absolute;
+	position : fixed;
 	top : 0;
 }
 
@@ -32,10 +37,291 @@
 
 .navbar-brand img
 {
-	max-height : 50px;
-	max-width : 50px;
+	max-height : 150px;
+	max-width : 150px;
 }
 
+.acc-descr
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 5vw;
+	display: flex;
+	justify-content: center;
+    text-align: center;
+	align-items: center;
+	background-color : rgba(0,0,0,0.5);
+}
+
+.titre, .text-cave
+{
+	display : none;
+}
+
+.h1-acc-descr
+{
+	font-size : 9em;
+	padding : 0px;
+	margin : 0px;
+	padding-bottom: 0.1em;
+}
+
+.h2-acc-descr
+{
+	font-size : 3em;
+	padding : 0px;
+	margin : -1.2em;
+	color : white;
+	font-family: 'titre-graphique';
+}
+
+.h2-localisation
+{
+	font-size : 3em;
+	color : white;
+	font-family: 'titre-graphique';
+}
+
+.h3-acc-localisation
+{
+	font-size : 2.5em;
+	color : white;
+	font-family: 'titre-graphique';
+	position: absolute;
+    top: 65%;
+	left: 36.3%;
+}
+
+#center {
+  margin-left: auto;
+  margin-right: auto;
+  width: 30%; /* largeur obligatoire pour être centré */
+}
+
+.line
+{
+	width : 10em;
+	border-top: 5px dotted  white;
+	position: absolute;
+    top: 80%;
+}
+
+.star
+{
+	left :30%;
+	color : #a7a129;
+	font-size : 2em;
+	margin-left : 7.2em;
+}
+
+.line-left
+{
+	margin-left : 3em;
+}
+
+.line-right
+{
+	margin-left : 17.5em;
+}
+
+.underline-descr
+{
+	content: "";
+    position: absolute;
+    top: 60%;
+    width: 0;
+}
+
+.go-down
+{
+	background-color : rgba(255,255,255,1);
+	position : absolute;
+	top : 96%;
+	left : 47%;
+	text-align : center;
+	height : 3em;
+	align-items: center;
+	justify-content: center;
+	border-radius: 150em 150em 0px 0px;
+}
+
+.int {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.glyphicon-menu-down
+{
+	padding-left : 1em;
+	padding-right : 1em;
+	padding-top :0.1em;
+	font-size : 2.5em;
+	color : #a7a129;
+}
+
+
+ul
+{
+	padding :0;
+	margin: 0;
+}
+
+.horraire-ligne
+{
+	text-align : center;
+	font-family: MS Serif;
+	font-size : 1.4em;
+	padding-right : 1em;
+}
+
+.horraire-title
+{
+	padding-bottom : 0.5em;
+	font-size : 5em;
+}
+
+.arcticle 
+{
+	padding-top : 65px !important;
+	padding-bottom : 265px !important;
+}
+
+.semi
+{
+	width : 50%;
+	display : none;
+	float : left;
+	padding : 2em;
+	padding-left : 3em;
+}	
+
+.description-article
+{
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.img-home-concept
+{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+	border : 1.5mm solid rgba(174,171,171);
+}
+
+.container-texte {
+    display: block;
+    width: 100%;
+    position: absolute;
+    bottom: 0.4em;
+    left: 0;
+}
+
+.entete-concept
+{
+	display: block;
+    width: 100%;
+    height: 100%;
+    position: relative;
+	top : 15em;
+}
+
+.entete-concept-third
+{
+	display: block;
+    width: 100%;
+    height: 100%;
+    position: relative;
+	top : 5em;
+}
+
+.entete-concept-text
+{
+	color: #FFF;
+	position: absolute;
+    bottom: 0em;
+    left: 0;
+	width: 100%;
+}
+
+.article-concept  .entete-concept-text h3
+{
+	color: #FFF;
+    display: inline	block;
+    padding: 6px 35px 6px 2%;
+    margin: 0;
+    position: relative;
+    transition: background 0.3s ease;
+	font-size: 10em;
+}
+
+.entete-concept-text-third
+{
+	font-size: 4em !important;
+}
+
+
+.article-concept .container-texte h3 {
+    color: #FFF;
+    display: block;
+    width: 100%;
+    background-color: rgba(30,	30,30,.4);
+    padding: 6px 35px 6px 2%;
+    margin: 0;
+    position: relative;
+    transition: background 0.3s ease;
+	font-size: 3em;
+}
+
+.text-article
+{
+	padding : 2em;
+	color : #535352;
+	text-align : center;
+	font-family: MS Serif;
+	font-size : 1.3em;
+}
+
+.image-droite, .image-gauche
+{
+	width : 45%;
+	float : left;
+	padding-left : 2em;
+}
+
+.image-gauche
+{
+	position : relative;
+	top : 10em;
+	padding-bottom : 5em;
+}
+
+.cadre
+{
+	position: relative;
+}
+
+.cadre-left
+{
+	border: 3px solid #a7a129;
+	width : 38%;
+    top: 8em;
+}
+
+.cadre-right
+{
+	border-top: 16px dotted  #535352;
+	width : 40%;
+    top: 28em;
+	left : 34em;
+}
 
 .background
 {
@@ -338,11 +624,26 @@ section
 	padding : 0px !important;
 }
 
+.concept-section-1
+{
+	padding-top : 10em !important;
+}
+
+.concept-section-2
+{
+	padding-top : 2em !important;
+}
+
 .section-produit-tireuse, .section-produit-vin, .section-produit-alcool, .section-produit-diver, .section-produit-verre
 {
 	display : none;
 }
 
+.int .third
+{
+	float: left;
+    width: 30%;
+    margin: 1.66%;}
 
 .div-image-tireuse
 {
@@ -438,6 +739,12 @@ section
 #description-tireuse-active
 {
 	display : block;
+}
+
+.tireuse-head
+{
+	border-top : 3px solid;
+	border-top-right-radius : 50em;
 }
 
 .div-tableau-tireuse
@@ -663,8 +970,8 @@ ul {
 
 .sous-titre-detail:hover
 {
-	background-color : #a7a129;
-	color : #D3D3D3;
+	background-color : rgba(167,161,41,0.8);
+	color : rgb(255,255,255);
 }
 
 .produit-detail
@@ -776,6 +1083,32 @@ dd {
 
 .sous-titre-detail-active
 {
-	background-color : #a7a129;
-	color : #D3D3D3;
+	background-color : rgba(167,161,41,0.8);
+	color : rgb(255,255,255);
+}
+
+.concept-picture
+{
+	max-height : 20vw;
+	padding-left : 0px !important;
+	padding-right : 0px !important;
+}
+
+.concept-descr
+{
+	color : #535352;
+	text-align : center;
+}
+
+.concept-ligne
+{
+	padding-bottom : 30px;
+	padding-left : 0px !important;
+	padding-right : 0px !important;
+}
+
+.home-background
+{
+	height : 100vh;
+	width : 100%;
 }
