@@ -199,6 +199,12 @@ ul
 	padding-left : 3em;
 }	
 
+.article-concept
+{
+	margin-bottom : 1.5em;
+}
+
+
 .description-article
 {
     display: block;
@@ -213,14 +219,32 @@ ul
 	margin-left: auto;
 	margin-right: auto;
 	width: 100%;
-	border : 1.5mm solid rgba(174,171,171);
+	border : 1mm solid rgba(174,171,171);
 }
+
+.article-concept-description
+{
+	display : none;
+	
+}
+
+.article-active
+{
+	border : 1mm solid #a7a129 !important;
+	
+}
+
+.active
+{
+	color : #a7a129 !important;
+}
+
 
 .container-texte {
     display: block;
     width: 100%;
     position: absolute;
-    bottom: 0.4em;
+    bottom: 0em;
     left: 0;
 }
 
@@ -230,7 +254,7 @@ ul
     width: 100%;
     height: 100%;
     position: relative;
-	top : 15em;
+	top : 12em;
 }
 
 .entete-concept-third
@@ -260,6 +284,7 @@ ul
     position: relative;
     transition: background 0.3s ease;
 	font-size: 10em;
+	background-color: rgba(30,	30,30,.6);
 }
 
 .entete-concept-text-third
@@ -272,12 +297,13 @@ ul
     color: #FFF;
     display: block;
     width: 100%;
-    background-color: rgba(30,	30,30,.4);
+    background-color: rgba(30,	30,30,.6);
     padding: 6px 35px 6px 2%;
     margin: 0;
     position: relative;
     transition: background 0.3s ease;
-	font-size: 3em;
+	font-size: 1.5em;
+	font-family :  "Times New Roman";
 }
 
 .text-article
@@ -643,7 +669,25 @@ section
 {
 	float: left;
     width: 30%;
-    margin: 1.66%;}
+    margin: 1.66%;
+}
+
+.int .quarter
+{
+	width: 25%;
+}
+
+.float-right
+{
+	float : right;
+}
+
+
+.horraire
+{
+	background-color : #8f8f8f	;
+	color : white;
+}
 
 .div-image-tireuse
 {
