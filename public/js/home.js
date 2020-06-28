@@ -19,7 +19,9 @@ $(document).ready(function() {
 		}
 		);
 		
-		$( ".img-home-concept" ).click(function() {
+		
+
+		$( ".img-home-concept" ).on("click", function() {
 			var id = "#"+$( this ).attr("id");
 			console.log(id);
 			$( this ).parent().parent().find("article.article-concept-description"+id).toggle("slow");
@@ -30,5 +32,18 @@ $(document).ready(function() {
 				
 			}
 		});
+		
+		$( ".img-home-concept" ).on("touchstart", function() {
+			var id = "#"+$( this ).attr("id");
+			console.log(id);
+			$( this ).parent().parent().find("article.article-concept-description"+id).toggle("slow");
+			if($( this ).parent().parent().find("article.article-concept-description"+id).css("display")=="none")
+			{
+				$( this ).removeClass( "article-active" );
+				$( this ).find("*").removeClass( "active" );
+				
+			}
+		});
+		
 }
 );

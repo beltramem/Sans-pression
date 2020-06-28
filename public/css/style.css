@@ -1,3 +1,4 @@
+
 .no-padding
 {
 	padding : 0px !important;
@@ -225,7 +226,7 @@ ul
 .article-concept-description
 {
 	display : none;
-	
+	margin-bottom : 1.5em;
 }
 
 .article-active
@@ -1155,4 +1156,9 @@ dd {
 {
 	height : 100vh;
 	width : 100%;
+}
+
+.blanc
+{
+	color : white !important;
 }
